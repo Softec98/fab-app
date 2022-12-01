@@ -1,0 +1,43 @@
+.linha {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  flex-flow: row wrap;
+  display: flex;
+}
+
+.coluna {
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 100%;
+  padding: 0 10px 0 0;
+}
+
+.coluna10 {
+  max-width: 10%;
+}
+
+.coluna25 {
+  max-width: 25%;
+}
+
+.coluna33 {
+  max-width: 33%;
+}
+
+.coluna40 {
+  max-width: 40%;
+}
+
+.coluna50 {
+  max-width: 50%;
+}
+
+.coluna66 {
+  max-width: 66%;
+}
+
+.coluna-isPhonePortrait {
+  max-width: 100%;
+}

@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="container">
+        <mat-card class="card">
+            <mat-card-content>
+                <div class="linha">
+                    <div class="coluna coluna100" style="padding-top: 30px">
+                        <mat-form-field>
+                            <mat-label>Filtro</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Ex: Corante" #input>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="linha">
+                    <div class="coluna coluna25" [ngClass]="{'coluna50': !isPhonePortrait}">
+                        <button type="button" mat-raised-button color="primary"
+                            style="float:inline-end; padding-top: 0px; height: 40px" [disabled]="!AlgumProdutoComQtde()"
+                            (click)="scroll('fecharPedido')">Fechar Pedido</button>
+                    </div>
+                </div>
+                <div class="mat-elevation-z8" style="margin-top: 10px;">
+                    <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort
+                        (matSortChange)="onSortData($any($event))">
+                        <ng-container *ngFor="let column of getColumns(); let i = index"
+                            matColumnDef="{{ column.field }}">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>{{ column.display }}</mat-header-cell>
+                            <mat-cell *matCellDef="let row" (click)="edit(row['Id'], column.field)">
+                                <span *ngIf="i < 3" (click)="editRowId=-1">{{ row[column.field] }}</span>
+                                <ng-container *ngIf="i === 3 && (row['Id'] !== editRowId || !edicaoQtde)">
+                                    <span (click)="editRowId=-1">{{ row[column.field] }}</span>
+                                </ng-container>
+                                <ng-container *ngIf="i === 4 && (row['Id'] !== editRowId || !edicaoVenda)">
+                                    <span (click)="editRowId=-1">{{ row[column.field] | currency }}</span>
+                                </ng-container>
+                                <ng-container *ngIf="i === 3 && row['Id'] === editRowId && campo === 'qProd'">
+                                    <mat-form-field appearance="outline"
+                                        style="margin-top:10px; margin-bottom: 0px; padding: 0px; padding:0">
+                                        <mat-label>Quantidade</mat-label>
+                                        <input matInput type="number" name="qProd"
+                                            (ngModelChange)="row['qProd'] = $event === '' ? 0 : $event"
+                                            [ngModel]="row['qProd']">
+                                        <mat-icon matSuffix style="padding:0 5px;display: inline;"
+                                            (click)="editRowId=-1">save</mat-icon>
+                                    </mat-form-field>
+                                </ng-container>
+                                <ng-container *ngIf="i === 4 && row['Id'] === editRowId && campo === 'vVenda'">
+                                    <mat-form-field appearance="outline"
+                                        style="margin-top:10px; margin-bottom: 0px; padding: 0px; padding:0">
+                                        <mat-label>Valor unitário</mat-label>
+                                        <input matInput type="number" name="vVenda"
+                                            (ngModelChange)="row['vVenda'] = $event === '' ? 0 : $event"
+                                            [ngModel]="row['vVenda']">
+                                        <mat-icon matSuffix style="padding:0 5px;display: inline;"
+                                            (click)="editRowId=-1">save</mat-icon>
+                                    </mat-form-field>
+                                </ng-container>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                        <!-- Group header -->
+                        <ng-container matColumnDef="groupHeader">
+                            <mat-cell colspan="999" *matCellDef="let group">
+                                <mat-icon *ngIf="group.expanded">expand_less</mat-icon>
+                                <mat-icon *ngIf="!group.expanded">expand_more</mat-icon>
+                                <strong>
+                                    {{group[groupByColumns[group.level-1]]}}
+                                    ({{group.totalCounts}})</strong>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-row *matRowDef="let row; columns: ['groupHeader']; when: isGroup;"
+                            (click)="groupHeaderClick(row)"> </mat-row>
+                    </mat-table>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="card" *ngIf="AlgumProdutoComQtde()" id="fecharPedido"
+            style="margin: 15px 0 15px 0; padding-left: 10px;">
+
+            <ng-container [formGroup]="form">
+                <app-cliente cnpj="{{ form.controls['cnpj'].value }}"></app-cliente>
+            </ng-container>
+
+            <div class="linha">
+                <div class="coluna coluna-isPhonePortrait">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Observação</mat-label>
+                        <textarea matInput appearance="outline" rows="3" placeholder="Observação"
+                            [(ngModel)]="obs"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="linha">
+                <div class="coluna coluna25" [ngClass]="{'coluna50': !isPhonePortrait}">
+                    <button type="button" mat-raised-button color="primary" style="float:inline-end;margin-top: 10px"
+                        [disabled]="form.controls['nome'].value == ''" (click)="Salvar()">Salvar Pedido</button>
+                </div>
+            </div>
+            <br>
+        </mat-card>
+    </div>
+</div>

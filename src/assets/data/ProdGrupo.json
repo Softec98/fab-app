@@ -1,0 +1,56 @@
+[
+    {
+      "Id": 1,
+      "xNome": "PÓS, GEL E BRILHO DECORATIVOS",
+      "Id_NCM": 6,
+      "ValidadeEmMeses": 36
+    },
+    {
+      "Id": 2,
+      "xNome": "ALCOOL E SOLUÇÃO",
+      "Id_NCM": 0,
+      "ValidadeEmMeses": 24
+    },
+    {
+      "Id": 3,
+      "xNome": "ADITIVOS",
+      "Id_NCM": 0,
+      "ValidadeEmMeses": 30
+    },      
+    {
+      "Id": 4,
+      "xNome": "CORANTES LÍQUIDO",
+      "Id_NCM": 3,
+      "ValidadeEmMeses": 36
+    },      
+    {
+      "Id": 5,
+      "xNome": "CORANTES (SOFT)GEL",
+      "Id_NCM": 3,
+      "ValidadeEmMeses": 24
+    },        
+    {
+      "Id": 6,
+      "xNome": "GLITTER",
+      "Id_NCM": 4,
+      "ValidadeEmMeses": 48
+    },      
+    {
+      "Id": 7,
+      "xNome": "CANETA",
+      "Id_NCM": 0,
+      "ValidadeEmMeses": 24
+    },
+    {
+      "Id": 8,
+      "xNome": "PÓ P/ DECORAÇÃO NEON",
+      "Id_NCM": 5,
+      "ValidadeEmMeses": 48
+    },
+    {
+      "Id": 9,
+      "xNome": "CORANTES NEOCOLOR",
+      "Id_NCM": 4,
+      "ValidadeEmMeses": 24
+    }     
+  ]

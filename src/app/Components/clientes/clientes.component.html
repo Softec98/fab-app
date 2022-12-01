@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="container">
+        <mat-card class="card">
+            <form [formGroup]="form">
+                <mat-card-content>
+                    <mat-accordion class="example-headers-align">
+                        <mat-expansion-panel [expanded]="false" #exppanel>
+                            <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                                <div class="linha">
+                                    <div class="coluna100">
+                                        <mat-form-field>
+                                            <mat-label>Filtro</mat-label>
+                                            <input matInput (keyup)="applyFilter($event)" placeholder="Ex: Maria"
+                                                #input>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </mat-expansion-panel-header>
+                            <div class="linha">
+                                <div class="coluna" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}"
+                                    *ngIf="exppanel.expanded">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Tipo pessoa</mat-label>
+                                        <mat-select matInput placeholder="Tipo pessoa'" formControlName="Pessoa"
+                                            (selectionChange)="onselect($event)">
+                                            <mat-option value="-1">[ Selecione o tipo de pessoa ]</mat-option>
+                                            <mat-option *ngFor="let pe of pessoas" [value]="pe.key">
+                                                {{ pe.value }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="coluna" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}"
+                                    *ngIf="exppanel.expanded">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Estado</mat-label>
+                                        <mat-select matInput placeholder="Estado" formControlName="Estado"
+                                            (selectionChange)="onselect($event)">
+                                            <mat-option value="-1">[ Selecione o estado ]</mat-option>
+                                            <mat-option *ngFor="let es of estados" [value]="es.key">
+                                                {{ es.value }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                    <div class="mat-elevation-z8" style="margin-top: 10px;">
+                        <table mat-table [dataSource]="dataSource" matSort>
+                            <ng-container matColumnDef="id">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Nº Cliente</th>
+                                <td mat-cell *matCellDef="let row"> {{row.Id}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="xNome">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Razão social</th>
+                                <td mat-cell *matCellDef="let row">{{row.xNome}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="cNPJ">
+                                <th [hidden]="!isPhonePortrait" mat-header-cell *matHeaderCellDef mat-sort-header>
+                                    CNPJ/CPF</th>
+                                <td [hidden]="!isPhonePortrait" mat-cell *matCellDef="let row">
+                                    {{ row.CNPJ.length == 14 ? (row.CNPJ | cnpj) : (row.CNPJ | cpf)}}
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="fone">
+                                <th [hidden]="!isPhonePortrait" mat-header-cell *matHeaderCellDef mat-sort-header>
+                                    Telefone</th>
+                                <td [hidden]="!isPhonePortrait" mat-cell *matCellDef="let row">{{row.fone | fone}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="xMun">
+                                <th [hidden]="!isPhonePortrait" mat-header-cell *matHeaderCellDef mat-sort-header>Cidade
+                                </th>
+                                <td [hidden]="!isPhonePortrait" mat-cell *matCellDef="let row">{{row.xMun}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="uF">
+                                <th [hidden]="!isPhonePortrait" mat-header-cell *matHeaderCellDef mat-sort-header>UF
+                                </th>
+                                <td [hidden]="!isPhonePortrait" mat-cell *matCellDef="let row">{{row.UF}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="idPedidoUltimo">
+                                <th [hidden]="!isPhonePortrait" mat-header-cell *matHeaderCellDef mat-sort-header>
+                                    Últ.pedido</th>
+                                <td [hidden]="!isPhonePortrait" mat-cell *matCellDef="let row">{{row.IdPedidoUltimo |
+                                    zeroEsquerda: 6 }}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="acoes">
+                                <th mat-header-cell *matHeaderCellDef>Ações</th>
+                                <td mat-cell *matCellDef="let row">
+                                    <button (click)="openCliente(row.Id)" mat-icon-button color="primary">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                    <button (click)="apagarCliente(row.Id)" mat-icon-button color="warn">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                    <button (click)="openDialogImpressao(row.IdPedidoUltimo, 'print')" mat-icon-button
+                                        color="accent" [hidden]="!(row.IdPedidoUltimo > 0)">
+                                        <mat-icon>print</mat-icon>
+                                    </button>
+                                </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            <tr class="mat-row" *matNoDataRow>
+                                <td class="mat-cell" colspan="4" *ngIf="input.value">Nenhum cliente encontrado com o
+                                    filtro:
+                                    "{{input.value}}"</td>
+                                <td class="mat-cell" colspan="4" *ngIf="!(input.value)">Nenhum cliente cadastrado</td>
+                            </tr>
+                        </table>
+                        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecione página de clientes">
+                        </mat-paginator>
+                    </div>
+                </mat-card-content>
+            </form>
+        </mat-card>
+    </div>
+</div>

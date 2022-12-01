@@ -1,0 +1,102 @@
+[
+    {
+      "Id": 1,
+      "xNome": "PÓS, GEL E BRILHO DECORATIVOS - METÁLICOS",
+      "Id_Embalagem": 0
+    },
+    {
+        "Id": 2,
+        "xNome": "PÓS, GEL E BRILHO DECORATIVOS - COLORIDOS",
+        "Id_Embalagem": 3
+    },
+    {
+        "Id": 3,
+        "xNome": "PÓS, GEL E BRILHO DECORATIVOS - BRILHO",
+        "Id_Embalagem": 3
+    },
+    {
+        "Id": 4,
+        "xNome": "PÓS, GEL E BRILHO DECORATIVOS - GEL",
+        "Id_Embalagem": 5
+    },                        
+    {
+        "Id": 5,
+        "xNome": "ADITIVOS",
+        "Id_Embalagem": 8
+    },
+    {
+        "Id": 6,
+        "xNome": "ÁLCOOL E SOLUÇÃO ALCOÓLICA",
+        "Id_Embalagem": 0
+    },
+    {
+        "Id": 7,
+        "xNome": "CORANTE LÍQUIDO",
+        "Id_Embalagem": 9
+    },
+    {
+        "Id": 8,
+        "xNome": "CORANTE GEL",
+        "Id_Embalagem": 5
+    },
+    {
+        "Id": 9,
+        "xNome": "CORANTE SOFTGEL 25G",
+        "Id_Embalagem": 1
+    },
+    {
+        "Id": 10,
+        "xNome": "CORANTE SOFTGEL 60G",
+        "Id_Embalagem": 2
+    },
+    {
+        "Id": 11,
+        "xNome": "CORANTE NEOCOLOR",
+        "Id_Embalagem": 1
+    },
+    {
+        "Id": 12,
+        "xNome": "GLITTER COLOR",
+        "Id_Embalagem": 4
+    },
+    {
+        "Id": 13,
+        "xNome": "GLITTER HOLOGRAFICO",
+        "Id_Embalagem": 4
+    },
+    {
+        "Id": 14,
+        "xNome": "PÓ P/ DECORAÇÃO NEON",
+        "Id_Embalagem": 4
+    },
+    {
+        "Id": 15,
+        "xNome": "CORANTE SOFTGEL NEON 25G",
+        "Id_Embalagem": 1
+    },
+    {
+        "Id": 16,
+        "xNome": "GLITTER CANDY",
+        "Id_Embalagem": 4
+    },
+    {
+        "Id": 17,
+        "xNome": "GLITTER NEON",
+        "Id_Embalagem": 4
+    },
+    {
+        "Id": 18,
+        "xNome": "GLITTER COLOR",
+        "Id_Embalagem": 4
+    },        
+    {
+        "Id": 19,
+        "xNome": "CANETA MÁGICA CORES TRADICIONAIS 60G",
+        "Id_Embalagem": 2
+    },                             
+    {
+        "Id": 20,
+        "xNome": "CANETA MÁGICA NEON 60G",
+        "Id_Embalagem": 2
+    }
+]

@@ -1,0 +1,56 @@
+.mainmenu {
+    width: 200px;
+    height: 200px;
+    background: var(--icone);
+    border-radius: 20%;
+    box-shadow: 0 8px 6px -2px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    padding-top: 30px;
+    padding: 20px;
+    transition-duration: 0.4s;
+    text-align: center;
+    flex-grow: 0;
+}
+
+.mainmenu p {
+    color: var(--text-revr);
+    flex-grow: 1;
+}
+
+.mainmenu:hover {
+    background-color: var(--text-revr);
+}
+
+.mainmenu:hover>h3 {
+    color: var(--body);
+}
+
+.mainmenu:hover>p {
+    color: var(--body);
+}
+
+.div-texto-botao {
+    font-family: 'Signika Regular', 'Uni Sans Thin', Arial;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-revr);
+    line-height: 25pt;
+    margin-left: 0px;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    gap: 10px 20px;
+    row-gap: 10px;
+    column-gap: 20px;
+    flex-wrap: column wrap
+}
+
+.item {
+    align-self: center;
+    flex-grow: 1;
+}

@@ -1,0 +1,1493 @@
+[
+    {
+        "cProd": "15010001",
+        "xProd": "METÁLICA DOURADO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15010002",
+        "xProd": "METÁLICA DOURADO ANTIGO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15010006",
+        "xProd": "METÁLICA DOURADO EGÍPCIO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15010005",
+        "xProd": "METÁLICA DOURADO ROSÊ",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15010003",
+        "xProd": "METÁLICA PRATEADO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15010004",
+        "xProd": "METÁLICA ACOBREADO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020010",
+        "xProd": "COLORIDO PEROLADO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020017",
+        "xProd": "COLORIDO AMARELO DAMASCO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020001",
+        "xProd": "COLORIDO AMARELO GEMA",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020002",
+        "xProd": "COLORIDO AZUL ANIS",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020003",
+        "xProd": "COLORIDO AZUL JEANS",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020013",
+        "xProd": "COLORIDO AZUL TIFFANY",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020012",
+        "xProd": "COLORIDO BRANCO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020018",
+        "xProd": "COLORIDO LARANJA",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020006",
+        "xProd": "COLORIDO LILÁS",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020019",
+        "xProd": "COLORIDO MARROM",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020011",
+        "xProd": "COLORIDO PRETO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020007",
+        "xProd": "COLORIDO ROSA CEREJA",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020015",
+        "xProd": "COLORIDO ROSA SECO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020014",
+        "xProd": "COLORIDO ULTRAVIOLETA",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020008",
+        "xProd": "COLORIDO VERDE FOLHA",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020009",
+        "xProd": "COLORIDO VERDE MENTA",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020004",
+        "xProd": "COLORIDO VERMELHO MORANGO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020005",
+        "xProd": "COLORIDO VERMELHO NATAL",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020016",
+        "xProd": "COLORIDO VERMELHO RUBI",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020024",
+        "xProd": "COLORIDO AZUL ROYAL",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020025",
+        "xProd": "COLORIDO AZUL MARINHO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020026",
+        "xProd": "COLORIDO VERMELHO MARSALA",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030006",
+        "xProd": "BRILHO CRISTAL",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030001",
+        "xProd": "BRILHO AMARELO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030002",
+        "xProd": "BRILHO AZUL",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030005",
+        "xProd": "BRILHO ROSA",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030003",
+        "xProd": "BRILHO VERDE",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030004",
+        "xProd": "BRILHO VERMELHO",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15040001",
+        "xProd": "GEL DOURADO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 4,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15040002",
+        "xProd": "GEL PRATEADO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 4,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15040003",
+        "xProd": "GEL PEROLADO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 4,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15060001",
+        "xProd": "ÁLCOOL ETÍLICO DE CEREAIS 93,8º",
+        "Id_Embalagem": 11,
+        "Id_Produto_Familia": 6,
+        "Id_Produto_Grupo": 2
+    },
+    {
+        "cProd": "15060002",
+        "xProd": "SOLUÇÃO ALCOÓLICA NEUTRA",
+        "Id_Embalagem": 10,
+        "Id_Produto_Familia": 6,
+        "Id_Produto_Grupo": 2
+    },
+    {
+        "cProd": "16030501",
+        "xProd": "CORANTE AMARELO",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030502",
+        "xProd": "CORANTE AMARELO GEMA",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030503",
+        "xProd": "CORANTE AZUL",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030504",
+        "xProd": "CORANTE AZUL MARINHO",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030505",
+        "xProd": "CORANTE AZUL TIFFANY",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030506",
+        "xProd": "CORANTE BRANCO",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030507",
+        "xProd": "CORANTE LARANJA",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030508",
+        "xProd": "CORANTE LILÁS",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030509",
+        "xProd": "CORANTE MARROM",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030510",
+        "xProd": "CORANTE PINK",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030511",
+        "xProd": "CORANTE PRETO",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030512",
+        "xProd": "CORANTE ROSA",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030513",
+        "xProd": "CORANTE ROSA SECO",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030514",
+        "xProd": "CORANTE ROXO",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030515",
+        "xProd": "CORANTE SALMÃO",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030516",
+        "xProd": "CORANTE VERDE",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030517",
+        "xProd": "CORANTE VERDE FOLHA",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030519",
+        "xProd": "CORANTE VERDE MENTA",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030520",
+        "xProd": "CORANTE VERMELHO",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030521",
+        "xProd": "CORANTE VERMELHO NATAL",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030522",
+        "xProd": "CORANTE VERMELHO RUBI",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030523",
+        "xProd": "CORANTE VINHO",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16020401",
+        "xProd": "CORANTE GEL AMARELO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020402",
+        "xProd": "CORANTE GEL AMARELO GEMA",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020403",
+        "xProd": "CORANTE GEL AZUL",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020404",
+        "xProd": "CORANTE GEL AZUL MARINHO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020405",
+        "xProd": "CORANTE GEL AZUL TIFFANY",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020406",
+        "xProd": "CORANTE GEL BRANCO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020407",
+        "xProd": "CORANTE GEL LARANJA",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020409",
+        "xProd": "CORANTE GEL MARROM",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020410",
+        "xProd": "CORANTE GEL PINK",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020411",
+        "xProd": "CORANTE GEL PRETO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020412",
+        "xProd": "CORANTE GEL ROSA",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020414",
+        "xProd": "CORANTE GEL ROXO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020415",
+        "xProd": "CORANTE GEL SALMÃO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020416",
+        "xProd": "CORANTE GEL VERDE",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020417",
+        "xProd": "CORANTE GEL VERDE FOLHA",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020419",
+        "xProd": "CORANTE GEL VERDE MENTA",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020420",
+        "xProd": "CORANTE GEL VERMELHO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020421",
+        "xProd": "CORANTE GEL VERMELHO NATAL",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020422",
+        "xProd": "CORANTE GEL VERMELHO RUBI",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010101",
+        "xProd": "CORANTE SOFTGEL 25G AMARELO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010102",
+        "xProd": "CORANTE SOFTGEL 25G AMARELO GEMA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010103",
+        "xProd": "CORANTE SOFTGEL 25G AZUL",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010104",
+        "xProd": "CORANTE SOFTGEL 25G AZUL MARINHO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010105",
+        "xProd": "CORANTE SOFTGEL 25G AZUL TIFFANY",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010106",
+        "xProd": "CORANTE SOFTGEL 25G BRANCO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010107",
+        "xProd": "CORANTE SOFTGEL 25G LARANJA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010108",
+        "xProd": "CORANTE SOFTGEL 25G LILÁS",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010109",
+        "xProd": "CORANTE SOFTGEL 25G MARROM",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010110",
+        "xProd": "CORANTE SOFTGEL 25G PINK",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010112",
+        "xProd": "CORANTE SOFTGEL 25G ROSA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010113",
+        "xProd": "CORANTE SOFTGEL 25G ROSA SECO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010114",
+        "xProd": "CORANTE SOFTGEL 25G ROXO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010115",
+        "xProd": "CORANTE SOFTGEL 25G SALMÃO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010111",
+        "xProd": "CORANTE SOFTGEL 25G SUPER PRETO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010120",
+        "xProd": "CORANTE SOFTGEL 25G SUPER VERMELHO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010116",
+        "xProd": "CORANTE SOFTGEL 25G VERDE",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010117",
+        "xProd": "CORANTE SOFTGEL 25G VERDE FOLHA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010118",
+        "xProd": "CORANTE SOFTGEL 25G VERDE LIMÃO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010119",
+        "xProd": "CORANTE SOFTGEL 25G VERDE MENTA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010121",
+        "xProd": "CORANTE SOFTGEL 25G VERMELHO NATAL",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010122",
+        "xProd": "CORANTE SOFTGEL 25G VERMELHO RUBI",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010301",
+        "xProd": "CORANTE SOFTGEL 60G AMARELO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010302",
+        "xProd": "CORANTE SOFTGEL 60G AMARELO GEMA",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010303",
+        "xProd": "CORANTE SOFTGEL 60G AZUL",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010304",
+        "xProd": "CORANTE SOFTGEL 60G AZUL MARINHO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010305",
+        "xProd": "CORANTE SOFTGEL 60G AZUL TIFFANY",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010306",
+        "xProd": "CORANTE SOFTGEL 60G BRANCO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010307",
+        "xProd": "CORANTE SOFTGEL 60G LARANJA",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010308",
+        "xProd": "CORANTE SOFTGEL 60G LILÁS",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010309",
+        "xProd": "CORANTE SOFTGEL 60G MARROM",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010310",
+        "xProd": "CORANTE SOFTGEL 60G PINK",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010312",
+        "xProd": "CORANTE SOFTGEL 60G ROSA",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010313",
+        "xProd": "CORANTE SOFTGEL 60G ROSA SECO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010314",
+        "xProd": "CORANTE SOFTGEL 60G ROXO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010315",
+        "xProd": "CORANTE SOFTGEL 60G SALMÃO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010311",
+        "xProd": "CORANTE SOFTGEL 60G SUPER PRETO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010320",
+        "xProd": "CORANTE SOFTGEL 60G SUPER VERMELHO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010316",
+        "xProd": "CORANTE SOFTGEL 60G VERDE",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010317",
+        "xProd": "CORANTE SOFTGEL 60G VERDE FOLHA",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010318",
+        "xProd": "CORANTE SOFTGEL 60G VERDE LIMÃO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010319",
+        "xProd": "CORANTE SOFTGEL 60G VERDE MENTA",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010321",
+        "xProd": "CORANTE SOFTGEL 60G VERMELHO NATAL",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010322",
+        "xProd": "CORANTE SOFTGEL 60G VERMELHO RUBI",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16000101",
+        "xProd": "CORANTE NEOCOLOR AMARELO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000102",
+        "xProd": "CORANTE NEOCOLOR AMARELO GEMA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000103",
+        "xProd": "CORANTE NEOCOLOR AZUL",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000104",
+        "xProd": "CORANTE NEOCOLOR AZUL MARINHO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000105",
+        "xProd": "CORANTE NEOCOLOR AZUL TIFFANY",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000106",
+        "xProd": "CORANTE NEOCOLOR BRANCO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000107",
+        "xProd": "CORANTE NEOCOLOR LARANJA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000108",
+        "xProd": "CORANTE NEOCOLOR LILÁS",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000109",
+        "xProd": "CORANTE NEOCOLOR MARROM",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000110",
+        "xProd": "CORANTE NEOCOLOR PINK",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000112",
+        "xProd": "CORANTE NEOCOLOR ROSA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000113",
+        "xProd": "CORANTE NEOCOLOR ROSA SECO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000114",
+        "xProd": "CORANTE NEOCOLOR ROXO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000115",
+        "xProd": "CORANTE NEOCOLOR SALMÃO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000111",
+        "xProd": "CORANTE NEOCOLOR SUPER PRETO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000120",
+        "xProd": "CORANTE NEOCOLOR SUPER VERMELHO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000116",
+        "xProd": "CORANTE NEOCOLOR VERDE",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000117",
+        "xProd": "CORANTE NEOCOLOR VERDE FOLHA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000118",
+        "xProd": "CORANTE NEOCOLOR VERDE LIMÃO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000119",
+        "xProd": "CORANTE NEOCOLOR VERDE MENTA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000121",
+        "xProd": "CORANTE NEOCOLOR VERMELHO NATAL",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000122",
+        "xProd": "CORANTE NEOCOLOR VERMELHO RUBI",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16030601",
+        "xProd": "GLITTER COLOR AZUL",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030602",
+        "xProd": "GLITTER COLOR AZUL TIFFANY",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030603",
+        "xProd": "GLITTER COLOR CHAMPANHE",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030604",
+        "xProd": "GLITTER COLOR CRISTAL",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030605",
+        "xProd": "GLITTER COLOR DOURADO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030606",
+        "xProd": "GLITTER COLOR DOURADO EGIPCIO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030607",
+        "xProd": "GLITTER COLOR LILÁS",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030608",
+        "xProd": "GLITTER COLOR PINK",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030609",
+        "xProd": "GLITTER COLOR PRATEADO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030610",
+        "xProd": "GLITTER COLOR PRETO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030611",
+        "xProd": "GLITTER COLOR ROSA",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030612",
+        "xProd": "GLITTER COLOR ULTRAVIOLETA",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030613",
+        "xProd": "GLITTER COLOR VERDE",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030614",
+        "xProd": "GLITTER COLOR VERMELHO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030701",
+        "xProd": "GLITTER HOLOGRAFICO AZUL",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030702",
+        "xProd": "GLITTER HOLOGRAFICO DOURADO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030703",
+        "xProd": "GLITTER HOLOGRAFICO LILÁS",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030704",
+        "xProd": "GLITTER HOLOGRAFICO PINK",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030705",
+        "xProd": "GLITTER HOLOGRAFICO PRATA",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030706",
+        "xProd": "GLITTER HOLOGRAFICO ROSA",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030707",
+        "xProd": "GLITTER HOLOGRAFICO ROSA SECO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030708",
+        "xProd": "GLITTER HOLOGRAFICO VERMELHO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030801",
+        "xProd": "PÓ P/ DECORAÇÃO NEON AMARELO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030802",
+        "xProd": "PÓ P/ DECORAÇÃO NEON AZUL",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030803",
+        "xProd": "PÓ P/ DECORAÇÃO NEON AZUL MARINHO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030804",
+        "xProd": "PÓ P/ DECORAÇÃO NEON LARANJA",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030805",
+        "xProd": "PÓ P/ DECORAÇÃO NEON PINK",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030806",
+        "xProd": "PÓ P/ DECORAÇÃO NEON ROSA ",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030807",
+        "xProd": "PÓ P/ DECORAÇÃO NEON ROXO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030808",
+        "xProd": "PÓ P/ DECORAÇÃO NEON VERDE",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030809",
+        "xProd": "PÓ P/ DECORAÇÃO NEON VERMELHO",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "",
+        "xProd": "CORANTE SOFTGEL 25G AMARELO NEON",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "",
+        "xProd": "CORANTE SOFTGEL 25G AZUL NEON",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "",
+        "xProd": "CORANTE SOFTGEL 25G AZUL TIFFANY NEON",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "",
+        "xProd": "CORANTE SOFTGEL 25G LARANJA NEON",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "",
+        "xProd": "CORANTE SOFTGEL 25G ROSA NEON",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "",
+        "xProd": "CORANTE SOFTGEL 25G VERDE NEON",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "15050001",
+        "xProd": "ADITIVO GLICERINA",
+        "Id_Embalagem": 8,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "15050003",
+        "xProd": "ADITIVO BICARBONATO DE SÓDIO",
+        "Id_Embalagem": 7,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "",
+        "xProd": "ADITIVO PECTINA",
+        "Id_Embalagem": 6,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "",
+        "xProd": "ADITIVO CREMOR DE TÁRTARO",
+        "Id_Embalagem": 7,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "",
+        "xProd": "ADITIVO DIÓXIDO DE TITÂNIO",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "",
+        "xProd": "ADITIVO CMC",
+        "Id_Embalagem": 6,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "",
+        "xProd": "ADITIVO GELATINA",
+        "Id_Embalagem": 6,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "",
+        "xProd": "ADITIVO ÁCIDO CÍTRICO",
+        "Id_Embalagem": 7,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER ROSA CANDY",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 16,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER AZUL CANDY",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 16,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER LILÁS CANDY",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 16,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER ROSA NEON",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 17,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER AMARELO NEON",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 17,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER LARANJA NEON",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 17,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER VERDE NEON",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 17,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER COLOR MARROM",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 18,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA TRADICIONAL DOURADA",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA TRADICIONAL PRATEADA",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA TRADICIONAL CRISTAL",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA TRADICIONAL VERMELHO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA TRADICIONAL ROSA",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA TRADICIONAL AMARELO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA TRADICIONAL PRETO",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA TRADICIONAL VERDE",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA 60G TRADICIONAL AZUL",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA 60G AZUL NEON",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 20,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA 60G AMARELO NEON",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 20,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA 60G LARANJA NEON",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 20,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA 60G ROSA NEON",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 20,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "",
+        "xProd": "CANETA MÁGICA 60G VERDE NEON",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 20,
+        "Id_Produto_Grupo": 7
+    }
+]

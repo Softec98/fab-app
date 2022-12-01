@@ -1,0 +1,19 @@
+<mat-tab-group mat-align-tabs="start" dynamicHeight #tabGroup (selectedTabChange)="tabChanged($event)"
+    style="padding:10px">
+    <mat-tab label="Visualização do Pedido">
+        <div class="tab-content" mat-dialog-content fxLayout="column">
+            <app-pedido-impressao></app-pedido-impressao>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+<div mat-dialog-action [align]="'end'" style="padding:10px">
+    <button style="margin-left: 8px" mat-raised-button color="primary" (click)="this.print();">
+        <mat-icon>print</mat-icon> Imprimir
+    </button>
+    <button style="margin-left: 8px" mat-raised-button color="accent" (click)="this.print('download');">
+        <mat-icon>download</mat-icon> Baixar
+    </button>&nbsp;
+    <button mat-raised-button color="warn" mat-dialog-close>
+        <mat-icon>cancel</mat-icon> Fechar
+    </button>
+</div>

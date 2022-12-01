@@ -1,0 +1,120 @@
+<div class="container">
+    <div class="container">
+        <mat-card class="card">
+            <form [formGroup]="form">
+                <mat-card-content>
+                    <mat-accordion class="example-headers-align">
+                        <mat-expansion-panel [expanded]="false" #exppanel>
+                            <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                                <div class="linha">
+                                    <div class="coluna100">
+                                        <mat-form-field>
+                                            <mat-label>Filtro</mat-label>
+                                            <input matInput (keyup)="applyFilter($event)" placeholder="Ex: Maria"
+                                                #input>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </mat-expansion-panel-header>
+                            <div class="linha">
+                                <div class="coluna" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}"
+                                    *ngIf="exppanel.expanded">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Cliente</mat-label>
+                                        <mat-select matInput placeholder="Cliente" formControlName="Id_Cliente"
+                                            (selectionChange)="onselect($event)">
+                                            <mat-option value="-1">[ Selecione o cliente ]</mat-option>
+                                            <mat-option *ngFor="let cl of clientes" [value]="cl.key">
+                                                {{ cl.value }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="coluna" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}"
+                                    *ngIf="exppanel.expanded">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Frete</mat-label>
+                                        <mat-select matInput placeholder="Frete" formControlName="Frete"
+                                            (selectionChange)="onselect($event)">
+                                            <mat-option value="-1">[ Selecione o frete ]</mat-option>
+                                            <mat-option *ngFor="let fr of fretes" [value]="fr.key">
+                                                {{ fr.value }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="coluna" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}"
+                                    *ngIf="exppanel.expanded">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Status</mat-label>
+                                        <mat-select matInput placeholder="Status" formControlName="Id_Status"
+                                            (selectionChange)="onselect($event)">
+                                            <mat-option value="-1">[ Selecione o status ]</mat-option>
+                                            <mat-option *ngFor="let st of status" [value]="st.key">
+                                                {{ st.value }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                    <div class="mat-elevation-z8" style="margin-top: 10px;">
+                        <table mat-table [dataSource]="dataSource" matSort>
+                            <ng-container matColumnDef="id">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Nº Pedido</th>
+                                <td mat-cell *matCellDef="let row"> {{row.Id}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="datEmissao">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Emissão</th>
+                                <td mat-cell *matCellDef="let row">{{row.datEmissao | date: 'dd/MM/y':'utc'}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="nomeFrete">
+                                <th [hidden]="!isPhonePortrait" mat-header-cell *matHeaderCellDef mat-sort-header>Frete
+                                </th>
+                                <td [hidden]="!isPhonePortrait" mat-cell *matCellDef="let row">{{row.NomeFrete}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="nomeCliente">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Razão social</th>
+                                <td mat-cell *matCellDef="let row">{{row.NomeCliente}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="valTotal">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Valor total</th>
+                                <td mat-cell *matCellDef="let row">{{row.valTotal | currency }}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="nomeStatus">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+                                <td mat-cell *matCellDef="let row">{{row.NomeStatus}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="acoes">
+                                <th mat-header-cell *matHeaderCellDef>Ações</th>
+                                <td mat-cell *matCellDef="let row">
+                                    <button (click)="openPedido(row.Id)" mat-icon-button color="primary">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                    <button (click)="apagarPedido(row.Id)" mat-icon-button color="warn">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                    <button (click)="openDialogImpressao(row.Id, 'print')" mat-icon-button
+                                        color="accent">
+                                        <mat-icon>print</mat-icon>
+                                    </button>
+                                </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            <tr class="mat-row" *matNoDataRow>
+                                <td class="mat-cell" colspan="4" *ngIf="input.value">Nenhum pedido encontrado com o
+                                    filtro:
+                                    "{{input.value}}"</td>
+                                <td class="mat-cell" colspan="4" *ngIf="!(input.value)">Nenhum pedido cadastrado</td>
+                            </tr>
+                        </table>
+                        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecione página de pedidos">
+                        </mat-paginator>
+                    </div>
+                </mat-card-content>
+            </form>
+        </mat-card>
+    </div>
+</div>

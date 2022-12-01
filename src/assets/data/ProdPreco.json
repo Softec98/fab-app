@@ -1,0 +1,178 @@
+[
+    {
+        "Id": 1,
+        "Id_Cond_Pagto": 1,
+        "cProd": "",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 1,
+        "vPreco": 88.2
+    },
+    {
+        "Id": 2,
+        "Id_Cond_Pagto": 1,
+        "cProd": "15060001",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 84
+    },
+    {
+        "Id": 3,
+        "Id_Cond_Pagto": 1,
+        "cProd": "15060002",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 87
+    },
+    {
+        "Id": 4,
+        "Id_Cond_Pagto": 1,
+        "cProd": "15050001",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 37.2
+    },
+    {
+        "Id": 5,
+        "Id_Cond_Pagto": 1,
+        "cProd": "15050003",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 36.6
+    },
+    {
+        "Id": 6,
+        "Id_Cond_Pagto": 1,
+        "cProd": "",
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 17.8
+    },
+    {
+        "Id": 7,
+        "Id_Cond_Pagto": 1,
+        "cProd": "",
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 21
+    },
+    {
+        "Id": 8,
+        "Id_Cond_Pagto": 1,
+        "cProd": "",
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 18.06
+    },
+    {
+        "Id": 9,
+        "Id_Cond_Pagto": 1,
+        "cProd": "",
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 30.6
+    },
+    {
+        "Id": 10,
+        "Id_Cond_Pagto": 1,
+        "cProd": "16010303",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 31.8
+    },
+    {
+        "Id": 11,
+        "Id_Cond_Pagto": 1,
+        "cProd": "16010308",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 34.8
+    },
+    {
+        "Id": 12,
+        "Id_Cond_Pagto": 1,
+        "cProd": "16010310",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 34.8
+    },
+    {
+        "Id": 13,
+        "Id_Cond_Pagto": 1,
+        "cProd": "16010311",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 34.8
+    },
+    {
+        "Id": 14,
+        "Id_Cond_Pagto": 1,
+        "cProd": "16010320",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 34.8
+    },
+    {
+        "Id": 15,
+        "Id_Cond_Pagto": 1,
+        "cProd": "16010322",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 31.8
+    },
+    {
+        "Id": 16,
+        "Id_Cond_Pagto": 1,
+        "cProd": "",
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 25.8
+    },
+    {
+        "Id": 17,
+        "Id_Cond_Pagto": 1,
+        "cProd": "",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 6,
+        "vPreco": 88.2
+    },
+    {
+        "Id": 18,
+        "Id_Cond_Pagto": 1,
+        "cProd": "",
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 88.2
+    },
+    {
+        "Id": 19,
+        "Id_Cond_Pagto": 1,
+        "cProd": "",
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 18.06
+    },
+    {
+        "Id": 20,
+        "Id_Cond_Pagto": 1,
+        "cProd": "15050001",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 42
+    },
+    {
+        "Id": 21,
+        "Id_Cond_Pagto": 1,
+        "cProd": "15050003",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 0,
+        "vPreco": 32.4
+    },
+    {
+        "Id": 22,
+        "Id_Cond_Pagto": 1,
+        "cProd": "",
+        "Id_Produto_Familia": 0,
+        "Id_Produto_Grupo": 7,
+        "vPreco": 34.62
+    }
+]
