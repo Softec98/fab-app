@@ -5,6 +5,11 @@
             <app-pedido-impressao></app-pedido-impressao>
         </div>
     </mat-tab>
+    <mat-tab label="Guia de expedição">
+        <div class="tab-content" mat-dialog-content fxLayout="column">
+            <app-guia-expedicao></app-guia-expedicao>
+        </div>
+    </mat-tab>      
 </mat-tab-group>
 <div mat-dialog-action [align]="'end'" style="padding:10px">
     <button style="margin-left: 8px" mat-raised-button color="primary" (click)="this.print();">

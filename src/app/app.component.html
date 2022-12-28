@@ -1,22 +1,32 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
     <mat-nav-list *ngIf="!hideSideMenu">
-      <a mat-list-item routerLink="/" (click)="sidenav.toggle()">
+      <a mat-list-item (click)="sidenav.toggle(); menu('/')">
         <mat-icon class="icon">home</mat-icon>
         <span class="label">Home</span>
       </a>
-      <a mat-list-item routerLink="/clientes" (click)="sidenav.toggle()">
+      <a mat-list-item (click)="sidenav.toggle(); menu('/clientes')">
         <mat-icon class="icon">face</mat-icon>
         <span class="label">Clientes</span>
       </a>
-      <a mat-list-item routerLink="/novo_pedido/0" (click)="sidenav.toggle()">
+      <a mat-list-item (click)="sidenav.toggle(); menu('/novo_pedido/0')">
         <mat-icon class="icon">add_box</mat-icon>
         <span class="label">Novo pedido</span>
       </a>
-      <a mat-list-item routerLink="/pedidos" (click)="sidenav.toggle()">
+      <a mat-list-item (click)="sidenav.toggle(); menu('/pedidos')">
         <mat-icon class="icon">view_cozy</mat-icon>
         <span class="label">Histórico pedidos</span>
       </a>
+      <a mat-list-item (click)="sidenav.toggle(); menu('/login')" *ngIf="saudacao === undefined;else logout0">
+        <mat-icon class="icon">login</mat-icon>
+        <span class="label">Login</span>
+      </a>
+      <ng-template #logout0>
+        <a mat-list-item (click)="sidenav.toggle(); loginService.logout()">
+          <mat-icon class="icon">login</mat-icon>
+          <span class="label">{{ saudacao }}</span>
+        </a>
+      </ng-template>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -27,9 +37,8 @@
         </button>
       </div>
       <div style="margin-top: 10px; width: 170px">
-        <img src="assets/images/windows11/SmallTile.scale-100.png"
-          alt="Logo da empresa">
-      </div>        
+        <img src="assets/images/windows11/SmallTile.scale-100.png" alt="Logo da empresa">
+      </div>
       <div>
         <a routerLink="/">
           <span class="label" [ngClass]="{'isPhonePortrait': !hideSideMenu}">Aplicativo de vendas</span>
@@ -54,12 +63,24 @@
               <mat-icon class="icon">add_box</mat-icon>
               <span class="label">Novo pedido</span>
             </a>
-          </li>            
+          </li>
           <li>
             <a routerLink="/pedidos">
               <mat-icon class="icon">view_cozy</mat-icon>
               <span class="label">Histórico pedidos</span>
             </a>
+          </li>
+          <li>
+            &nbsp;
+            <a routerLink="/login" *ngIf="saudacao === undefined;else logout">
+              <mat-icon class="icon">login</mat-icon>
+              <span class="label">Login</span>
+            </a>
+            <ng-template #logout>
+              <a (click)="loginService.logout()">
+                <span class="label">| {{ saudacao }}</span>
+              </a>
+            </ng-template>
           </li>
           <li>
             &nbsp;
@@ -72,8 +93,7 @@
     </mat-toolbar>
 
     <div class="logo" *ngIf="hideSideMenu">
-      <img src="assets/images/windows11/SmallTile.scale-200.png"
-        alt="Logo da empresa">
+      <img src="assets/images/windows11/SmallTile.scale-200.png" alt="Logo da empresa">
     </div>
     <main>
       <router-outlet></router-outlet>

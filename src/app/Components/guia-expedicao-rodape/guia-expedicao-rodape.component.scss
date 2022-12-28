@@ -1,0 +1,33 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    line-height: 13px;
+    font-size: 11px;
+    color: rgb(0, 0, 0);
+    text-shadow: -0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em transparent;
+}
+
+table {
+    margin-left: 27px;
+    margin-right: 27px;
+    border: 0px;
+    width: 665px;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.sem-borda {
+    border: 0px;
+}

@@ -26,6 +26,7 @@ export class ClienteDB extends BaseEntity {
     public indConsumidor!: boolean;
     public indInativo!: boolean;
     public IdPedidoUltimo!: number;
+    public Id_Vendedor!: number;
     public constructor(init?: Partial<ClienteDB> ) {
         super(init as ClienteDB)
         Object.assign(this, init);

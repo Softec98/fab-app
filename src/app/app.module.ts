@@ -25,6 +25,9 @@ import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { CepPipe } from './Infrastructure/Pipes/cep.pipe';
 import { ZeroEsquerdaPipe } from './Infrastructure/Pipes/zero-esquerda.pipe';
+import { GuiaExpedicaoComponent } from './Components/guia-expedicao/guia-expedicao.component';
+import { GuiaExpedicaoRodapeComponent } from './Components/guia-expedicao-rodape/guia-expedicao-rodape.component';
+import { LoginComponent } from './Components/login/login.component';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -45,7 +48,10 @@ registerLocaleData(ptBr);
     CpfPipe,
     CnpjPipe,
     FonePipe,
-    ZeroEsquerdaPipe
+    ZeroEsquerdaPipe,
+    GuiaExpedicaoComponent,
+    GuiaExpedicaoRodapeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

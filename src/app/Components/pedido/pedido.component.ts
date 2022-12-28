@@ -11,8 +11,8 @@ import { MatTableDataSource } from '@angular/material/table'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DataService } from '../../Infrastructure/Services/data.service';
 import { SpinnerOverlayService } from '../../Core/Services/spinner-overlay.service';
+import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ImpressaoDialogComponent } from '../impressao-dialog/impressao-dialog.component';
-import { ChangeDetectorRef, Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-pedido',
@@ -33,7 +33,7 @@ export class PedidoComponent implements OnInit {
     private readonly spinner: SpinnerOverlayService,
     private responsive: BreakpointObserver,
     private dialog: MatDialog,
-    private router: Router,) {
+    private router: Router) {
   }
 
   private carregarSeletores() {

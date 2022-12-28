@@ -2,6 +2,57 @@
     flex: 1 1 auto;
 }
 
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+th,
+td {
+    overflow: hidden;
+    width: auto;
+    white-space: nowrap;
+}
+
+td:nth-child(1),
+th:nth-child(1) {
+    width: 85px;
+    text-align: right !important;
+}
+
+td:nth-child(3),
+th:nth-child(3) {
+    width: 170px;
+}
+
+td:nth-child(4),
+th:nth-child(4) {
+    width: 140px;
+}
+
+td:nth-child(5),
+th:nth-child(5) {
+    width: 140px;
+}
+
+td:nth-child(6),
+th:nth-child(6) {
+    width: 55px;
+    text-align: center !important;
+}
+
+td:nth-child(7),
+th:nth-child(7) {
+    width: 97px;
+    text-align: center !important;
+}
+
+td:last-child,
+th:last-child {
+    width: 180px;
+    text-align: center !important;
+}
+
 .mat-form-field {
     font-size: 14px;
     width: 100%;

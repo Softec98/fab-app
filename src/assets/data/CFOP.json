@@ -1,22 +1,22 @@
 [
-    {
-      "Id": 5101,
-      "xNome": "Venda de produção do estabelecimento",
-      "TipoOperacao": "S"
-    },
-    {
-      "Id": 5102,
-      "xNome": "Venda de mercadoria adquirida ou recebida de terceiros",
-      "TipoOperacao": "S"
-    },
-    {
-      "Id": 6101,
-      "xNome": "Venda de produção do estabelecimento",
-      "TipoOperacao": "S"
-    },
-    {
-      "Id": 6102,
-      "xNome": "Venda de mercadoria adquirida ou recebida de terceiros",
-      "TipoOperacao": "S"
-    }
-  ]
+  {
+    "Id": 5101,
+    "xNome": "Venda de produção do estabelecimento",
+    "TipoOperacao": "S"
+  },
+  {
+    "Id": 5102,
+    "xNome": "Venda de mercadoria adquirida ou recebida de terceiros",
+    "TipoOperacao": "S"
+  },
+  {
+    "Id": 6101,
+    "xNome": "Venda de produção do estabelecimento",
+    "TipoOperacao": "S"
+  },
+  {
+    "Id": 6102,
+    "xNome": "Venda de mercadoria adquirida ou recebida de terceiros",
+    "TipoOperacao": "S"
+  }
+]

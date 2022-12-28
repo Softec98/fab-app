@@ -1,7 +1,7 @@
 <h2 mat-dialog-title>Pedido de venda</h2>
 <mat-dialog-content class="mat-typography">
     <div id="page-container">
-        <div id="pf1" class="pf w0 h0" data-page-no="1" id="frente" #frente>
+        <div id="pf1" class="pf w0 h0" data-page-no="1" id="pedido" #pedido>
             <div class="pc pc1 w0 h0">
                 <div class="pagemargins">
                     <table cellspacing="0" cellpadding="0"
@@ -82,7 +82,7 @@
                             <td class="s9687a88e" colspan="2"
                                 style="max-height:38px;height:38px;width:150px;max-width:150px;">Valor total</td>
                         </tr>
-                        <tr style="height:24px;" *ngFor="let item of data.PedidosItens; let i = index">
+                        <tr style="height:24px;" *ngFor="let item of data.PedidosItensDto; let i = index">
                             <td [ngClass]="{'sData2': i % 2 }" class="sData1"
                                 style="text-align: center;height:18px; width: 27px; padding: 3px 3px 3px 3px;">{{
                                 item.cProd }}</td>
@@ -110,7 +110,6 @@
                         </tr>
                     </table>
                 </div>
-
             </div>
         </div>
     </div>

@@ -2,11 +2,14 @@ import Dexie, { Table } from 'dexie';
 
 import { NCMDB } from '../Core/Entities/NCMDB';
 import { CFOPDB } from '../Core/Entities/CFOPDB';
+import { RegiaoDB } from '../Core/Entities/RegiaoDB';
 import { PedidoDB } from '../Core/Entities/PedidoDB';
 import { ClienteDB } from '../Core/Entities/ClienteDB';
 import { ProdutoDB } from '../Core/Entities/ProdutoDB';
+import { VendedorDB } from '../Core/Entities/VendedorDB';
 import { CondPagtoDB } from '../Core/Entities/CondPagtoDB';
 import { EmbalagemDB } from '../Core/Entities/EmbalagemDB';
+import { FaixaValorDB } from '../Core/Entities/FaixaValorDB';
 import { PedidoItemDB } from '../Core/Entities/PedidoItemDB';
 import { ProdutoGrupoDB } from '../Core/Entities/ProdutoGrupoDB';
 import { ProdutoPrecoDB } from '../Core/Entities/ProdutoPrecoDB'
@@ -14,6 +17,7 @@ import { ProdutoFamiliaDB } from '../Core/Entities/ProdutoFamiliaDB';
 
 import ncm from '../../assets/data/NCM.json';
 import cfop from '../../assets/data/CFOP.json';
+import regiao from '../../assets/data/Regiao.json';
 import fretesJ from '../../assets/data/Frete.json'
 import statusJ from '../../assets/data/Status.json'
 import produtos from '../../assets/data/Produtos.json'
@@ -21,6 +25,8 @@ import prodGrupo from '../../assets/data/ProdGrupo.json'
 import condPagto from '../../assets/data/CondPagto.json'
 import prodPreco from '../../assets/data/ProdPreco.json'
 import embalagem from '../../assets/data/Embalagem.json';
+import vendedores from '../../assets/data/Vendedores.json'
+import faixaValor from '../../assets/data/FaixaValor.json';
 import prodFamilia from '../../assets/data/ProdFamilia.json'
 
 import { Utils } from '../Utils/Utils';
@@ -39,6 +45,9 @@ export class ApplicationDB extends Dexie {
   ProdutoGrupo!: Table<ProdutoGrupoDB, number>;
   ProdutoPreco!: Table<ProdutoPrecoDB, number>;
   Produtos!: Table<ProdutoDB, number>;
+  Vendedores!: Table<VendedorDB, number>;
+  Regioes!: Table<RegiaoDB, number>;
+  FaixaValores!: Table<FaixaValorDB, number>;
 
   clientes_Pedidos: IAuxiliar[] = [];
   clientes: IAuxiliar[] = [];
@@ -50,24 +59,30 @@ export class ApplicationDB extends Dexie {
     this.version(1).stores({
       CFOP: '++Id',
       CondPagto: '++Id',
-      Clientes: '++Id, xNome, CNPJ, IdPedidoUltimo',
+      Clientes: '++Id, xNome, CNPJ, IdPedidoUltimo, Id_Vendedor',
       Embalagens: '++Id',
       NCM: '++Id',
-      Pedidos: '++Id, Id_Cliente',
+      Pedidos: '++Id, Id_Cliente, Id_Vendedor',
       PedidosItens: '++Id, Id_Pedido, Id_Produto',
       ProdutoFamilia: '++Id, Id_Embalagem',
       ProdutoGrupo: '++Id, Id_NCM',
       ProdutoPreco: '++Id, Id_Cond_Pagto, cProd, Id_Produto_Familia, Id_Produto_Grupo',
-      Produtos: '++Id, cProd, xProd, Id_Produto_Familia, Id_Produto_Grupo, Id_Embalagem, Id_NCM'
+      Produtos: '++Id, cProd, xProd, Id_Produto_Familia, Id_Produto_Grupo, Id_Embalagem, Id_NCM',
+      Vendedores: '++Id, xNome, Documento, Id_Regiao',
+      Regioes: '++Id, xNome',
+      FaixaValores: '++Id'
     });
 
     this.NCM.mapToClass(NCMDB);
     this.CFOP.mapToClass(CFOPDB);
+    this.Regioes.mapToClass(RegiaoDB);
     this.Pedidos.mapToClass(PedidoDB);
     this.Produtos.mapToClass(ProdutoDB);
     this.Clientes.mapToClass(ClienteDB);
     this.CondPagto.mapToClass(CondPagtoDB);
+    this.Vendedores.mapToClass(VendedorDB);
     this.Embalagens.mapToClass(EmbalagemDB);
+    this.FaixaValores.mapToClass(FaixaValorDB);
     this.PedidosItens.mapToClass(PedidoItemDB);
     this.ProdutoGrupo.mapToClass(ProdutoGrupoDB);
     this.ProdutoPreco.mapToClass(ProdutoPrecoDB);
@@ -113,14 +128,17 @@ export class ApplicationDB extends Dexie {
 
   async populate() {
     await Promise.all([
+      db.NCM.bulkAdd(Utils.ObterLista<NCMDB>(ncm)),
       db.CFOP.bulkAdd(Utils.ObterLista<CFOPDB>(cfop)),
+      db.Regioes.bulkAdd(Utils.ObterLista<RegiaoDB>(regiao)),
       db.CondPagto.bulkAdd(Utils.ObterLista<CondPagtoDB>(condPagto)),
       db.Embalagens.bulkAdd(Utils.ObterLista<EmbalagemDB>(embalagem)),
-      db.NCM.bulkAdd(Utils.ObterLista<NCMDB>(ncm)),
-      db.ProdutoFamilia.bulkAdd(Utils.ObterLista<ProdutoFamiliaDB>(prodFamilia)),
+      db.Vendedores.bulkAdd(Utils.ObterLista<VendedorDB>(vendedores)),
+      db.FaixaValores.bulkAdd(Utils.ObterLista<FaixaValorDB>(faixaValor)),
       db.ProdutoGrupo.bulkAdd(Utils.ObterLista<ProdutoGrupoDB>(prodGrupo)),
       db.ProdutoPreco.bulkAdd(Utils.ObterLista<ProdutoPrecoDB>(prodPreco)),
-      db.Produtos.bulkAdd(Utils.ObterLista<ProdutoDB>(produtos, "ProdutoDB")) // , ProdutoDB.name
+      db.Produtos.bulkAdd(Utils.ObterLista<ProdutoDB>(produtos, "ProdutoDB")), // , ProdutoDB.name
+      db.ProdutoFamilia.bulkAdd(Utils.ObterLista<ProdutoFamiliaDB>(prodFamilia)),
     ]);
   }
 
@@ -138,6 +156,7 @@ export const ncmJson = ncm;
 export const status = db.status;
 export const fretes = db.fretes;
 export const clientes = db.clientes;
+export const produtoJson = produtos;
 
 export class DynamicClass {
   constructor(className: string, opts: any) {
@@ -159,7 +178,10 @@ export const Store: any = {
   ProdutoFamiliaDB,
   ProdutoGrupoDB,
   ProdutoPrecoDB,
-  ProdutoDB
+  ProdutoDB,
+  VendedorDB,
+  RegiaoDB,
+  FaixaValorDB
 }
 
 export class ProdutosSemListaDePreco {

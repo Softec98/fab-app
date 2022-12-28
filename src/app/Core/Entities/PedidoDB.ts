@@ -4,7 +4,6 @@ import { EFrete } from "../ENums/EFrete.enum"
 import { db } from '../../Infrastructure/ApplicationDB'
 
 export class PedidoDB extends BaseEntity {
-
     public Id!: number;
     public datEmissao!: Date;
     public Referencia!: string;
@@ -37,6 +36,7 @@ export class PedidoDB extends BaseEntity {
     public datEnvio!: Date;
     public obs!: string;
     public PedidosItens!: PedidoItemDB[];
+    public Id_Vendedor!: number;
 
     public constructor(init?: Partial<PedidoDB>) {
         super(init as PedidoDB)

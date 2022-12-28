@@ -139,4 +139,8 @@ export class DataService {
       console.error(err.stack || err);
     });
   }
+
+  async obterVendedorPelasCredenciais(login: string, acesso: string) {
+    return await db.Vendedores.filter(x => x.Login == login && x.Acesso == acesso).first();
+  }
 }

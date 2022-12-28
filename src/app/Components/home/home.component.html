@@ -8,12 +8,12 @@
         <div class="mainmenu">
             <h3 class="div-texto-botao">Novo<br> pedido</h3>
             <p>Cadastre por aqui seu novo pedido.</p>
-            <button mat-raised-button color="primary" routerLink="novo_pedido/0">Cadastrar</button>
+            <button mat-raised-button color="primary" (click)="menu('novo_pedido/0')">Cadastrar</button>
         </div>
         <div class="mainmenu">
             <h3 class="div-texto-botao">Histórico pedido</h3>
             <p>Acesse aqui seu histórico de pedidos.</p>
-            <button mat-raised-button color="primary" routerLink="pedidos">Acessar</button>
+            <button mat-raised-button color="primary" (click)="menu('pedidos')">Acessar</button>
         </div>
     </div>
 </div>

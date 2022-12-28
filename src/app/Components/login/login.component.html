@@ -1,0 +1,42 @@
+<div>
+    <div class="item">
+        <p></p>
+        <h2 class="div-texto-botao" style="text-align: center">Bem-vindo ao login de acesso!</h2>
+        <p style="text-align: center">Para desfrutar de todas a funcionalidades do App,
+            <br>por favor, forneça suas credenciais (login e senha).
+        </p>
+    </div>
+    <div class="container">
+        <div class="mainmenu">
+            <h3 class="div-texto-botao">Seu login e senha</h3>
+            <ng-container class="form-wrapper">
+                <div class="linha">
+                    <div class="coluna">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Login</mat-label>
+                            <input matInput placeholder="Login" #inputLogin autofocus maxlength="6">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="linha">
+                    <div class="coluna">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Senha</mat-label>
+                            <input matInput placeholder="Senha" #inputSenha type="password" maxlength="6"
+                                (keyup.enter)="login(inputLogin.value, inputSenha.value)">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="linha">
+                    <div class="coluna">
+                        <button mat-raised-button color="primary" type="button"
+                            (click)="login(inputLogin.value, inputSenha.value)">Logar-se</button>
+                    </div>
+                    <!-- <div class="coluna coluna50">
+                        <mat-checkbox>Manter-se logado</mat-checkbox>
+                    </div> -->
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

@@ -52,5 +52,17 @@
       "xNome": "CORANTES NEOCOLOR",
       "Id_NCM": 4,
       "ValidadeEmMeses": 24
-    }     
+    },
+    {
+      "Id": 10,
+      "xNome": "CORANTES CHOCOLATE",
+      "Id_NCM": 7,
+      "ValidadeEmMeses": 0
+    },
+    {
+      "Id": 11,
+      "xNome": "AROMAS",
+      "Id_NCM": 8,
+      "ValidadeEmMeses": 0
+    }
   ]

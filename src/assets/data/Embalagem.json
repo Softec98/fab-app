@@ -82,5 +82,12 @@
         "cEmbalagem": "CX",
         "pEmbalagem": 0,
         "Peso": 1.500
+    },
+    {
+        "Id": 12,
+        "xEmbalagem": "12X30ML",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.360
     }
   ]

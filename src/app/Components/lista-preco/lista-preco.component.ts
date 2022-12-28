@@ -8,12 +8,13 @@ import { ProdutoDB } from '../../Core/Entities/ProdutoDB';
 import { ClienteDB } from '../../Core/Entities/ClienteDB';
 import { environment } from 'src/environments/environment';
 import { MatTableDataSource } from '@angular/material/table';
+import { PedidoListaDto } from '../../Core/Dto/PedidoListaDto'
 import { ncmJson } from 'src/app/Infrastructure/ApplicationDB';
-import { ProdutoListaDto } from '../../Core/Dto/PedidoListaDto'
 import { PedidoItemDB } from '../../Core/Entities/PedidoItemDB';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DataService } from '../../Infrastructure/Services/data.service';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
 import cliente_validation from '../../../assets/data/validation/cliente-validation.json'
 import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren, HostListener } from '@angular/core';
 
@@ -41,7 +42,7 @@ export class ListaPrecoComponent implements OnInit {
   allData!: any[];
   _allGroup!: any[];
   expandedProduto: any[] = [];
-  expandedSubProduto: ProdutoListaDto[] = [];
+  expandedSubProduto: PedidoListaDto[] = [];
 
   edicao: boolean = false;
   edicaoQtde: boolean = false;
@@ -63,7 +64,8 @@ export class ListaPrecoComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private responsive: BreakpointObserver,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private readonly spinner: SpinnerOverlayService,
   ) {
     this.columns = [
       {
@@ -277,7 +279,7 @@ export class ListaPrecoComponent implements OnInit {
         data.splice(index, 1);
       }
 
-      data = data.sort((a: ProdutoListaDto, b: ProdutoListaDto) => {
+      data = data.sort((a: PedidoListaDto, b: PedidoListaDto) => {
         const isAsc = sort.direction === 'asc';
         switch (sort.active) {
           case 'cProd':
@@ -323,7 +325,7 @@ export class ListaPrecoComponent implements OnInit {
         data.forEach((item: any) => {
           item.Id = item.Id;
         });
-        this.allData = data.map((preco: Partial<ProdutoDB> | undefined) => new ProdutoListaDto(preco));
+        this.allData = data.map((preco: Partial<ProdutoDB> | undefined) => new PedidoListaDto(preco));
         this.dataSource.data = this.getGroups(this.allData, this.groupByColumns);
       },
       (err: any) => console.log(err)
@@ -359,6 +361,7 @@ export class ListaPrecoComponent implements OnInit {
   }
 
   async Salvar() { // Salvar Pedido
+    this.spinner.show();
     const ncm: NCMDB[] = ncmJson;
     let idCliente = 0;
     let uf = ''
@@ -463,6 +466,7 @@ export class ListaPrecoComponent implements OnInit {
         }
       }
     }
+    this.spinner.hide();
     alert("O pedido foi salvo com sucesso!");
     this.router.navigate(['/pedidos']);
   }

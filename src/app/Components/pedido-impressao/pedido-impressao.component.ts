@@ -28,7 +28,9 @@ export class PedidoImpressaoComponent {
       this.cidade = cliente.xMun + ' - ' + cliente.UF + ', ';
       this.cep = cliente.CEP;
       this.telefone = cliente.fone;
-      this.obs = this.data.obs.toString().split('\n').join("<br />");
+      if (this.data.obs) {
+        this.obs = this.data.obs.toString().split('\n').join("<br />");
+      }
     }
   }
 }

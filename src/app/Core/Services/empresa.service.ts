@@ -28,7 +28,7 @@ export class EmpresaService {
       const url = `https://api.cnpja.com/office/${cnpj}`;
       const httpOptions = {
         headers: new HttpHeaders({
-          'authorization':  Buffer.from(apiKey, 'base64').toString('binary') // depracated: atob(apiKey)
+          'authorization': Buffer.from(apiKey, 'base64').toString('binary') // depracated: atob(apiKey)  
         })
       };
       let retorno = this.http.get<any>(url, httpOptions).pipe(catchError(this.handleError));
