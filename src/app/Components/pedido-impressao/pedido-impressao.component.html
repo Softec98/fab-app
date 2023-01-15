@@ -1,116 +1,186 @@
 <h2 mat-dialog-title>Pedido de venda</h2>
 <mat-dialog-content class="mat-typography">
     <div id="page-container">
-        <div id="pf1" class="pf w0 h0" data-page-no="1" id="pedido" #pedido>
-            <div class="pc pc1 w0 h0">
-                <div class="pagemargins">
-                    <table cellspacing="0" cellpadding="0"
-                        style="border-width:0px;width:719px;border-collapse:collapse;white-space:normal;">
-                        <tr style="height:38px;">
-                            <td class="sHeader" colspan="5"
-                                style="text-align: left; max-height: 38px; height: 38px; width: 447px; max-width: 447px;">
-                                <img src="../../../assets/images/android/android-launchericon-96-96.png" /></td>
-                            <td class="sHeader" colspan="3"
-                                style="text-align:right;max-height: 38px; height: 38px; width: 270px; max-width: 270px;">
-                                Pedido Nº {{ data.Id | zeroEsquerda: 6 }}<br><small><small>Emissão: {{ data.datEmissao |
-                                        date: 'dd/MM/y':'utc' }}</small></small></td>
-                        </tr>
-                        <tr style="height:19px;">
-                            <td class="sFooter" colspan="5"
-                                style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
-                                <b>FAB Industria e Comercio de Produtos para Artes e Festas Ltda.</b></td>
-                            <td class="sFooter" colspan="3"
-                                style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
-                                Telefone: (11) 3996-9707</td>
-                        </tr>
-                        <tr style="height:19px;">
-                            <td class="sFooter2" colspan="5"
-                                style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
-                                Endereço: Estr. Fukutaro Yida, 900 - Cooperativa</td>
-                            <td class="sFooter2" colspan="3"
-                                style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
-                                São Bernardo do Campo - SP, 09852-060</td>
-                        </tr>
-                        <tr style="height:19px;">
-                            <td class="sFooter2" colspan="5"
-                                style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
-                                https://fabindustria.com.br/</td>
-                            <td class="sFooter2" colspan="3"
-                                style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
-                                E-mail: sac@fab.ind.br</td>
-                        </tr>
-                        <tr style="height:10px;">
-                            <td colspan="8" style="border:0px;height:9px;width:719px;"></td>
-                        </tr>
-                        <tr style="height:19px;">
-                            <td class="sFooter" colspan="5"
-                                style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
-                                <b>Cliente: {{ data.Id_Cliente | zeroEsquerda: 6 }}-{{ data.NomeCliente }}</b></td>
-                            <td class="sFooter" colspan="3"
-                                style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
-                                Telefone: {{ telefone | fone }}</td>
-                        </tr>
-                        <tr style="height:19px;">
-                            <td class="sFooter2" colspan="5"
-                                style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
-                                {{ endereco }}</td>
-                            <td class="sFooter2" colspan="3"
-                                style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
-                                {{ cidade }} {{ cep | cep }}</td>
-                        </tr>
-                        <tr style="height:19px;" *ngIf="!(data.obs == null || data.obs == '')">
-                            <td class="sFooter" colspan="8"
-                                style="text-align: left;max-height: 18px; height: 18px; width: 717px; max-width: 717px;">
-                                <b>Observação:</b></td>
-                        </tr>
-                        <tr style="height:19px;" *ngIf="!(data.obs == null || data.obs == '')">
-                            <td class="sFooter2" colspan="8"
-                                style="text-align:justify;max-height: 18px; height: 18px; width: 717px; max-width: 717px;">
-                                {{ obs }}</td>
-                        </tr>
-                        <tr style="height:10px;">
-                            <td colspan="8" style="border:0px;height:9px;width:717px;"></td>
-                        </tr>
-                        <tr style="height:38px;">
-                            <td class="s9687a88e" colspan="2"
-                                style="max-height: 38px; height: 38px; width: 377px; max-width: 377px;">&nbsp;Produtos
-                            </td>
-                            <td class="sHeader3" colspan="2"
-                                style="max-height:38px;height:38px;width:70px;max-width:70px;">Qtde</td>
-                            <td class="sHeader3" colspan="2"
-                                style="max-height:38px;height:38px;width:120px;max-width:120px;">Valor unit.</td>
-                            <td class="s9687a88e" colspan="2"
-                                style="max-height:38px;height:38px;width:150px;max-width:150px;">Valor total</td>
-                        </tr>
-                        <tr style="height:24px;" *ngFor="let item of data.PedidosItensDto; let i = index">
-                            <td [ngClass]="{'sData2': i % 2 }" class="sData1"
-                                style="text-align: center;height:18px; width: 27px; padding: 3px 3px 3px 3px;">{{
-                                item.cProd }}</td>
-                            <td [ngClass]="{'sData2': i % 2 }" class="sData1"
-                                style="text-align: left;max-height: 24px; height: 18px; width: 350px; max-width: 350px; padding: 3px 3px 3px 3px;">
-                                {{ item.xProd }}</td>
-                            <td [ngClass]="{'sData2': i % 2 }" class="sData1" colspan="2"
-                                style="text-align: center; max-height: 24px; height: 18px; width: 70px; max-width: 70px; padding: 3px 3px 3px 3px;">
-                                {{ item.qProd }}</td>
-                            <td [ngClass]="{'sData2': i % 2 }" class="sData1" colspan="2"
-                                style="text-align: right; max-height: 24px; height: 18px; width: 120px; max-width: 120px; padding: 3px 3px 3px 3px;">
-                                {{ item.vProd | currency }}</td>
-                            <td [ngClass]="{'sData2': i % 2 }" class="sData1" colspan="2"
-                                style="text-align: right; max-height: 24px; height: 18px; width: 150px; max-width: 150px; padding: 3px 3px 3px 3px;">
-                                {{ item.vMerc | currency }}</td>
-                        </tr>
-                        <tr style="height:10px;">
-                            <td class="sFooter" colspan="8" style="height:9px;width:717px;"></td>
-                        </tr>
-                        <tr style="height:28px;">
-                            <td colspan="4" style="max-height:28px;height:28px;width:447px;max-width:447px;"></td>
-                            <td class="s9687a88e" colspan="4"
-                                style="text-align: right; max-height: 28px; height: 28px; width: 270px; max-width: 270px;">
-                                Total {{ data.valTotal | currency }} &nbsp;</td>
-                        </tr>
-                    </table>
+        <div id="pedido">
+            <div id="pf1" class="pf w0 h0" data-page-no="0">
+                <div class="pc pc1 w0 h0">
+                    <div class="pagemargins">
+                        <table cellspacing="0" cellpadding="0"
+                            style="border-width:0px;width:719px;border-collapse:collapse;white-space:normal;">
+                            <tr style="height:38px;">
+                                <td class="sHeader" colspan="5"
+                                    style="text-align: left; max-height: 38px; height: 38px; width: 447px; max-width: 447px;">
+                                    <img src="../../../assets/images/android/android-launchericon-96-96.png" />
+                                </td>
+                                <td class="sHeader" colspan="3"
+                                    style="text-align:right;max-height: 38px; height: 38px; width: 270px; max-width: 270px;">
+                                    Pedido Nº {{ data.Id | zeroEsquerda: 6 }}<br><small><small>Emissão: {{
+                                            data.datEmissao |
+                                            date: 'dd/MM/y':'utc' }}</small></small></td>
+                            </tr>
+                            <tr style="height:19px;">
+                                <td class="sFooter" colspan="5"
+                                    style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
+                                    <b>FAB Industria e Comercio de Produtos para Artes e Festas Ltda.</b>
+                                </td>
+                                <td class="sFooter" colspan="3"
+                                    style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
+                                    Telefone: (11) 3996-9707</td>
+                            </tr>
+                            <tr style="height:19px;">
+                                <td class="sFooter2" colspan="5"
+                                    style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
+                                    Endereço: Estr. Fukutaro Yida, 900 - Cooperativa</td>
+                                <td class="sFooter2" colspan="3"
+                                    style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
+                                    São Bernardo do Campo - SP, 09852-060</td>
+                            </tr>
+                            <tr style="height:19px;">
+                                <td class="sFooter2" colspan="5"
+                                    style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
+                                    https://fabindustria.com.br/</td>
+                                <td class="sFooter2" colspan="3"
+                                    style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
+                                    E-mail: sac@fab.ind.br</td>
+                            </tr>
+                            <tr style="height:10px;">
+                                <td colspan="8" style="border:0px;height:9px;width:719px;"></td>
+                            </tr>
+                            <tr style="height:19px;">
+                                <td class="sFooter" colspan="5"
+                                    style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
+                                    <b>Cliente: {{ data.Id_Cliente | zeroEsquerda: 6 }}-{{ data.NomeCliente }}</b>
+                                </td>
+                                <td class="sFooter" colspan="3"
+                                    style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
+                                    Telefone: {{ telefone | fone }}</td>
+                            </tr>
+                            <tr style="height:19px;">
+                                <td class="sFooter2" colspan="5"
+                                    style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
+                                    {{ endereco }}</td>
+                                <td class="sFooter2" colspan="3"
+                                    style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
+                                    {{ cidade }} {{ cep | cep }}</td>
+                            </tr>
+                            <tr style="height:19px;">
+                                <td class="sFooter2" colspan="8"
+                                    style="text-align: left;max-height: 18px; height: 18px; width: 717px; max-width: 717px;">
+                                    Condição de pagto: {{ data.Id_Cond_Pagto | zeroEsquerda: 6 }}-{{ condpagto }}</td>
+                            </tr>                            
+                            <tr style="height:19px;" *ngIf="!(data.obs == null || data.obs == '')">
+                                <td class="sFooter" colspan="8"
+                                    style="text-align: left;max-height: 18px; height: 18px; width: 717px; max-width: 717px;">
+                                    <b>Observação:</b>
+                                </td>
+                            </tr>
+                            <tr style="height:19px;" *ngIf="!(data.obs == null || data.obs == '')">
+                                <td class="sFooter2" colspan="8"
+                                    style="text-align:justify;max-height: 18px; height: 18px; width: 717px; max-width: 717px;">
+                                    {{ obs }}</td>
+                            </tr>
+                            <tr style="height:10px;">
+                                <td colspan="8" style="border:0px;height:9px;width:717px;"></td>
+                            </tr>
+                            <tr style="height:30px;">
+                                <td class="s9687a88e" colspan="2"
+                                    style="max-height: 30px; height: 30px; width: 377px; max-width: 377px;">
+                                    &nbsp;Produtos
+                                </td>
+                                <td class="sHeader3" colspan="2"
+                                    style="max-height:30px;height:30px;width:70px;max-width:70px;">Qtde</td>
+                                <td class="sHeader3" colspan="2"
+                                    style="max-height:30px;height:30px;width:120px;max-width:120px;">Valor unit.
+                                </td>
+                                <td class="s9687a88e" colspan="2"
+                                    style="max-height:30px;height:30px;width:150px;max-width:150px;">Valor total
+                                </td>
+                            </tr>
+                            <ng-container *ngFor="let item of data.PedidosItensDto; let i = index">
+                                <ng-container *ngIf="i <= qtdLinPg1">
+                                    <tr style="height:13px;">
+                                        <td [ngClass]="{'sData2': i % 2 }" class="sData1"
+                                            style="text-align: center;height:13px; width: 27px; padding: 0px 1px 1px 0px;">
+                                            {{
+                                            item.cProd }}</td>
+                                        <td [ngClass]="{'sData2': i % 2 }" class="sData1"
+                                            style="text-align: left;max-height: 15px; height: 13px; width: 350px; max-width: 350px; padding: 0px 1px 1px 0px;">
+                                            {{ item.xProd }}</td>
+                                        <td [ngClass]="{'sData2': i % 2 }" class="sData1" colspan="2"
+                                            style="text-align: center; max-height: 15px; height: 13px; width: 70px; max-width: 70px; padding: 0px 1px 1px 0px;">
+                                            {{ item.qProd }}</td>
+                                        <td [ngClass]="{'sData2': i % 2 }" class="sData1" colspan="2"
+                                            style="text-align: right; max-height: 15px; height: 13px; width: 120px; max-width: 120px; padding: 0px 1px 1px 0px;">
+                                            {{ item.vProd | currency }}</td>
+                                        <td [ngClass]="{'sData2': i % 2 }" class="sData1" colspan="2"
+                                            style="text-align: right; max-height: 15px; height: 13px; width: 150px; max-width: 150px; padding: 0px 1px 1px 0px;">
+                                            {{ item.vMerc | currency }}</td>
+                                    </tr>
+                                </ng-container>
+                            </ng-container>
+                        </table>
+                        <ng-container *ngIf="data.PedidosItensDto.length <= qtdLinPg1">
+                            <app-pedido-impressao-rodape [valTotal]="data.valTotal"></app-pedido-impressao-rodape>
+                        </ng-container>
+                    </div>
                 </div>
             </div>
+
+            <ng-container *ngFor="let p of [].constructor(paginas + 1); let pagina = index">
+                <div id="pf{{pagina+1}}" class="pf w0 h0" data-page-no="0"
+                    *ngIf="data.PedidosItensDto.length > qtdLinPg1 + (qtdLinPgN * pagina)">
+                    <div class="pc pc1 w0 h0">
+                        <div class="pagemargins">
+                            <table cellspacing="0" cellpadding="0"
+                                style="border-width:0px;width:719px;border-collapse:collapse;white-space:normal;">
+                                <tr style="height:20px;">
+                                    <td colspan="8" style="border:0px;height:9px;width:717px;"></td>
+                                </tr>
+                                <tr style="height:30px;">
+                                    <td class="s9687a88e" colspan="2"
+                                        style="max-height: 30px; height: 30px; width: 377px; max-width: 377px;">
+                                        &nbsp;Produtos
+                                    </td>
+                                    <td class="sHeader3" colspan="2"
+                                        style="max-height:30px;height:30px;width:70px;max-width:70px;">Qtde</td>
+                                    <td class="sHeader3" colspan="2"
+                                        style="max-height:30px;height:30px;width:120px;max-width:120px;">Valor unit.
+                                    </td>
+                                    <td class="s9687a88e" colspan="2"
+                                        style="max-height:30px;height:30px;width:150px;max-width:150px;">Valor total
+                                    </td>
+                                </tr>
+                                <ng-container *ngFor="let item of data.PedidosItensDto; let i = index">
+                                    <ng-container
+                                        *ngIf="i > qtdLinPg1 +  (qtdLinPgN * pagina) && i <= qtdLinPg1 +  (qtdLinPgN * (pagina + 1))">
+                                        <tr style="height:13px;">
+                                            <td [ngClass]="{'sData2': i % 2 }" class="sData1"
+                                                style="text-align: center;height:13px; width: 27px; padding: 0px 1px 1px 0px;">
+                                                {{
+                                                item.cProd }}</td>
+                                            <td [ngClass]="{'sData2': i % 2 }" class="sData1"
+                                                style="text-align: left;max-height: 13px; height: 11px; width: 350px; max-width: 350px; padding: 0px 1px 1px 0px;">
+                                                {{ item.xProd }}</td>
+                                            <td [ngClass]="{'sData2': i % 2 }" class="sData1" colspan="2"
+                                                style="text-align: center; max-height: 13px; height: 11px; width: 70px; max-width: 70px; padding: 0px 1px 1px 0px;">
+                                                {{ item.qProd }}</td>
+                                            <td [ngClass]="{'sData2': i % 2 }" class="sData1" colspan="2"
+                                                style="text-align: right; max-height: 13px; height: 11px; width: 120px; max-width: 120px; padding: 0px 1px 1px 0px;">
+                                                {{ item.vProd | currency }}</td>
+                                            <td [ngClass]="{'sData2': i % 2 }" class="sData1" colspan="2"
+                                                style="text-align: right; max-height: 13px; height: 11px; width: 150px; max-width: 150px; padding: 0px 1px 1px 0px;">
+                                                {{ item.vMerc | currency }}</td>
+                                        </tr>
+                                    </ng-container>
+                                </ng-container>
+                            </table>
+                            <ng-container *ngIf="data.PedidosItensDto.length < qtdLinPg1 + (qtdLinPgN * (pagina + 1))">
+                                <app-pedido-impressao-rodape [valTotal]="data.valTotal"></app-pedido-impressao-rodape>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </mat-dialog-content>

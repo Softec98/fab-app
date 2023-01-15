@@ -37,7 +37,8 @@
                                         <mat-label>Quantidade</mat-label>
                                         <input matInput type="number" name="qProd"
                                             (ngModelChange)="row['qProd'] = $event === '' ? 0 : $event"
-                                            [ngModel]="row['qProd']">
+                                            [ngModel]="row['qProd']"
+                                            (blur)="RetornarFaixaValor()">
                                         <mat-icon matSuffix style="padding:0 5px;display: inline;"
                                             (click)="editRowId=-1">save</mat-icon>
                                     </mat-form-field>
@@ -47,8 +48,9 @@
                                         style="margin-top:10px; margin-bottom: 0px; padding: 0px; padding:0">
                                         <mat-label>Valor unitário</mat-label>
                                         <input matInput type="number" name="vVenda"
-                                            (ngModelChange)="row['vVenda'] = $event === '' ? 0 : $event"
-                                            [ngModel]="row['vVenda']">
+                                            (ngModelChange)="row['vVenda'] = $event === '' || $event < row['vPrecoMin'] ? row['vPrecoMin'] : $event;"
+                                            [ngModel]="row['vVenda']"
+                                            (blur)="RetornarFaixaValor()">
                                         <mat-icon matSuffix style="padding:0 5px;display: inline;"
                                             (click)="editRowId=-1">save</mat-icon>
                                     </mat-form-field>
@@ -86,6 +88,20 @@
                         <mat-label>Observação</mat-label>
                         <textarea matInput appearance="outline" rows="3" placeholder="Observação"
                             [(ngModel)]="obs"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="linha">
+                <div class="coluna coluna-isPhonePortrait">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Condição de pagamento</mat-label>
+                        <mat-select matInput placeholder="Condição de pagamento" [(ngModel)]="idCondPagto">
+                            <mat-option value="-1">[ Selecione a condição pagto - até {{ faixavl[idFaixaValor -1].Valor | currency }}]</mat-option>
+                            <mat-option *ngFor="let cp of obterCondPagto()" [value]="cp.Id">
+                                {{ cp.xNome }}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
             </div>

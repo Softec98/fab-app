@@ -1,7 +1,7 @@
-import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { ETheme } from '../app/Core/ENums/ETheme.enum';
 import { VendedorDB } from './Core/Entities/VendedorDB';
+import { MenuService } from './Core/Services/menu.service';
 import { LoginService } from './Core/Services/login.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
@@ -17,17 +17,23 @@ export class AppComponent {
   textTheme = ETheme.TEXT_MOON;
   hideSideMenu = false;
   saudacao!: string | undefined;
+  isAdmin!: boolean | undefined;
 
   constructor(private responsive: BreakpointObserver,
     public loginService: LoginService,
-    private router: Router) {
+    private menuService: MenuService) {
     loginService.obterNomeUsuario.subscribe(nome => this.mudarSaudacao(nome));
+    loginService.isAdmin.subscribe(isAdmin => this.mudarAdmin(isAdmin));
   }
 
   mudarSaudacao(nome: string) {
     this.saudacao = nome;
     if (nome !== undefined)
       this.saudacao = `Oi ${nome}!`;
+  }
+
+  mudarAdmin(isAdmin: boolean) {
+    this.isAdmin = isAdmin;
   }
 
   async ngOnInit() {
@@ -39,6 +45,11 @@ export class AppComponent {
         if (!result.matches)
           this.hideSideMenu = true;
       });
+    const vendedor = JSON.parse(localStorage.getItem('usuario')!) as VendedorDB;
+    if (vendedor) {
+      this.saudacao = `Oi ${vendedor.xContato.split(',')[0]}!`;
+      this.isAdmin = vendedor.IsAdmin;
+    }
   }
 
   public toggle() {
@@ -52,10 +63,6 @@ export class AppComponent {
   }
 
   menu(link: string): void {
-    const vendedor = JSON.parse(localStorage.getItem('usuario')!) as VendedorDB;
-    if (vendedor)
-      this.router.navigate([link]);
-    else
-      this.router.navigate(['login']);
+    this.menuService.menu(link);
   }
 }

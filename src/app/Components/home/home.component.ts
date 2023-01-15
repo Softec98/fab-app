@@ -1,7 +1,6 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { LogService } from '../../Core/Services/log.service';
-import { VendedorDB } from 'src/app/Core/Entities/VendedorDB';
+import { MenuService } from 'src/app/Core/Services/menu.service';
 import { DataService } from '../../Infrastructure/Services/data.service';
 
 @Component({
@@ -13,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   autenticado: boolean = false;
 
-  constructor(private dataService: DataService, private router: Router) { }
+  constructor(private dataService: DataService, private menuService: MenuService) { }
 
   async ngOnInit(): Promise<void> {
     const cfop = await this.dataService.obterCFOP();
@@ -24,10 +23,6 @@ export class HomeComponent implements OnInit {
   }
 
   menu(link: string): void {
-    const vendedor = JSON.parse(localStorage.getItem('usuario')!) as VendedorDB;
-    if (vendedor)
-      this.router.navigate([link]);
-    else
-      this.router.navigate(['login']);
+    this.menuService.menu(link);
   }
 }

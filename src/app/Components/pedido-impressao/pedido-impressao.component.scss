@@ -59,12 +59,12 @@
 }
 
 .h0 {
-    height: 792.060000px;
-}
-
-.w0 {
-    width: 720.0000px;
-}
+    height: 1070px; // 792.060000px;
+ }
+ 
+ .w0 {
+     width: 720px; // 720
+ }
 
 .sHeader {
     color: #9E9E9E;
@@ -264,7 +264,7 @@
 
     #outline {
         font-family: Georgia, Times, "Times New Roman", serif;
-        font-size: 13px;
+        font-size: 6px;
         margin: 2em 1em
     }
 
@@ -285,7 +285,7 @@
     #outline a:visited,
     #outline a:hover,
     #outline a:active {
-        line-height: 1.2;
+        line-height: 0.5;
         color: #e8e8e8;
         text-overflow: ellipsis;
         white-space: nowrap;

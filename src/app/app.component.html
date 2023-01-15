@@ -15,12 +15,16 @@
       </a>
       <a mat-list-item (click)="sidenav.toggle(); menu('/pedidos')">
         <mat-icon class="icon">view_cozy</mat-icon>
-        <span class="label">Histórico pedidos</span>
+        <span class="label">Histórico</span>
       </a>
       <a mat-list-item (click)="sidenav.toggle(); menu('/login')" *ngIf="saudacao === undefined;else logout0">
         <mat-icon class="icon">login</mat-icon>
         <span class="label">Login</span>
       </a>
+      <a mat-list-item (click)="sidenav.toggle(); menu('/vendedores')" *ngIf="isAdmin">
+        <mat-icon class="icon">face</mat-icon>
+        <span class="label">Vendedores</span>
+      </a>      
       <ng-template #logout0>
         <a mat-list-item (click)="sidenav.toggle(); loginService.logout()">
           <mat-icon class="icon">login</mat-icon>
@@ -53,23 +57,29 @@
             </a>
           </li>
           <li>
-            <a routerLink="/clientes">
+            <a (click)="menu('clientes')"> <!-- routerLink="/clientes" -->
               <mat-icon class="icon">face</mat-icon>
               <span class="label">Clientes</span>
             </a>
           </li>
           <li>
-            <a routerLink="/novo_pedido/0">
+            <a (click)="menu('novo_pedido/0')"> <!-- routerLink="/novo_pedido/0" -->
               <mat-icon class="icon">add_box</mat-icon>
               <span class="label">Novo pedido</span>
             </a>
           </li>
           <li>
-            <a routerLink="/pedidos">
+            <a (click)="menu('pedidos')"> <!-- routerLink="/pedidos" -->
               <mat-icon class="icon">view_cozy</mat-icon>
-              <span class="label">Histórico pedidos</span>
+              <span class="label">Histórico</span>
             </a>
           </li>
+          <li *ngIf="isAdmin">
+            <a (click)="menu('vendedores')"> <!-- routerLink="/pedidos" -->
+              <mat-icon class="icon">face</mat-icon>
+              <span class="label">Vendedores</span>
+            </a>
+          </li>          
           <li>
             &nbsp;
             <a routerLink="/login" *ngIf="saudacao === undefined;else logout">

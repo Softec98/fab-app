@@ -8,14 +8,17 @@ import { DataService } from 'src/app/Infrastructure/Services/data.service';
 })
 export class LoginService {
   @Output() obterNomeUsuario: EventEmitter<any> = new EventEmitter();
+  @Output() isAdmin: EventEmitter<any> = new EventEmitter();
 
   constructor(protected dataService: DataService, private router: Router) { }
 
   async login(login: string, senha: string): Promise<boolean> {
+    this.dataService.cadastrarVendedoresSeNenhum();
     const vendedor = await this.dataService.obterVendedorPelasCredenciais(login, senha);
     if (vendedor) {
       localStorage.setItem('usuario', JSON.stringify(vendedor));
       this.obterNomeUsuario.emit(vendedor.xContato.split(',')[0]);
+      this.isAdmin.emit(vendedor.IsAdmin);
       return true;
     } else {
       this.obterNomeUsuario.emit(undefined);

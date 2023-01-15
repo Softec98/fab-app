@@ -52,7 +52,8 @@
                                 <tr *ngIf="data.PedidosItensDto[i-1].IsSomar">
                                     <td class="center sem-borda"><strong>Total</strong></td>
                                     <td class="sem-borda"><strong>{{ data.PedidosItensDto[i-1].xEmbalagem }} {{
-                                            "-".repeat(qtdTracos - data.PedidosItensDto[i-1].xEmbalagem.length + 1) }}</strong>
+                                            "-".repeat(qtdTracos - data.PedidosItensDto[i-1].xEmbalagem.length + 1)
+                                            }}</strong>
                                     </td>
                                     <td class="cinza center"><strong>{{ data.PedidosItensDto[i-1].TotalItem }}</strong>
                                     </td>
@@ -63,9 +64,10 @@
                                     <td colspan=3 class="familia">{{ item.Familia }}</td>
                                 </tr>
                             </ng-container>
-                            <tr *ngIf="i <= qtdLinPg1">
+                            <tr *ngIf="i <= qtdLinPg1  && i <= qtdLinPg1">
                                 <td class="center" [ngClass]="{'cinza': i % 2 }">{{ item.cProd }}</td>
-                                <td class="ff3 preto" [ngClass]="{'cinza': i % 2 }" style="width: 330px">&nbsp;{{ item.xProd }}</td>
+                                <td class="ff3 preto" [ngClass]="{'cinza': i % 2 }" style="width: 330px">&nbsp;{{
+                                    item.xProd }}</td>
                                 <td class="center" [ngClass]="{'cinza': i % 2 }">{{ item.qProd }}</td>
                                 <td class="center" [ngClass]="{'cinza': i % 2 }"></td>
                             </tr>
@@ -95,189 +97,72 @@
                     </ng-container>
                 </div>
             </div>
-            <div id="pf2" class="pf w0 h0" data-page-no="2" *ngIf=" data.PedidosItensDto.length > qtdLinPg1">
-                <table>
-                    <tr class="familia">
-                        <td class="familia" colspan="4"></td>
-                    </tr>
-                    <tr class="familia">
-                        <td class="familia" colspan="4"></td>
-                    </tr>
-                    <tr>
-                        <th class="bege">CÓDIGO</th>
-                        <th class="left">&nbsp;PRODUTO</th>
-                        <th>QUANT.</th>
-                        <th>VISTO</th>
-                    </tr>
-                    <ng-container *ngFor="let item of data.PedidosItensDto; let i = index">
-                        <ng-container
-                            *ngIf="i > qtdLinPg1 && i <= qtdLinPg1 + qtdLinPgN && (i == qtdLinPg1 + 1 || data.PedidosItensDto[i-1].Familia !== item.Familia)">
-                            <tr *ngIf="i > qtdLinPg1 + 1">
-                                <td class="center sem-borda"><strong>Total</strong></td>
-                                <td class="sem-borda"><strong>{{ data.PedidosItensDto[i-1].xEmbalagem }} {{
-                                        "-".repeat(qtdTracos - data.PedidosItensDto[i-1].xEmbalagem.length + 1) }}</strong>
-                                </td>
-                                <td class="cinza center"><strong>{{ data.PedidosItensDto[i-1].TotalItem }}</strong></td>
-                                <td class="center sem-borda"></td>
-                            </tr>
-                            <tr class="familia">
-                                <td class="familia"></td>
-                                <td colspan=3 class="familia">{{ item.Familia }}</td>
-                            </tr>
-                        </ng-container>
-                        <tr *ngIf="i > qtdLinPg1 && i <= qtdLinPg1 + qtdLinPgN">
-                            <td class="center" [ngClass]="{'cinza': i % 2 }">{{ item.cProd }}</td>
-                            <td [ngClass]="{'cinza': i % 2 }" style="width: 330px">&nbsp;{{ item.xProd }}</td>
-                            <td class="center" [ngClass]="{'cinza': i % 2 }">{{ item.qProd }}</td>
-                            <td class="center" [ngClass]="{'cinza': i % 2 }"></td>
+            <ng-container *ngFor="let p of [].constructor(paginas + 1); let pagina = index">
+                <div id="pf{{pagina+1}}" class="pf w0 h0" data-page-no="0"
+                    *ngIf="data.PedidosItensDto.length > qtdLinPg1 + (qtdLinPgN * pagina)">
+                    <table>
+                        <tr class="familia">
+                            <td class="familia" colspan="4"></td>
                         </tr>
-                    </ng-container>
-                    <ng-container *ngIf="data.PedidosItensDto.length <= qtdLinPg1 + qtdLinPgN">
-                        <tr>
-                            <td class="center sem-borda"><strong>Total</strong></td>
-                            <td class="sem-borda"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
-                                    -1].xEmbalagem }} {{
-                                    "-".repeat(qtdTracos - data.PedidosItensDto[data.PedidosItensDto.length
-                                    -1].xEmbalagem.length + 1) }}</strong>
-                            </td>
-                            <td class="cinza center"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
-                                    -1].TotalItem }}</strong></td>
-                            <td class="center sem-borda"></td>
+                        <tr class="familia">
+                            <td class="familia" colspan="4"></td>
                         </tr>
                         <tr>
-                            <td class="bege center"><strong>Total Pedido</strong></td>
-                            <td class="sem-borda"></td>
-                            <td class="cinza center"><strong>{{ data.PedidosItensDto.length }}</strong></td>
-                            <td class="center sem-borda"></td>
+                            <th class="bege">CÓDIGO</th>
+                            <th class="left">&nbsp;PRODUTO</th>
+                            <th>QUANT.</th>
+                            <th>VISTO</th>
                         </tr>
-                    </ng-container>
-                </table>
-                <ng-container *ngIf="data.PedidosItensDto.length <= qtdLinPg1 + qtdLinPgN">
-                    <app-guia-expedicao-rodape></app-guia-expedicao-rodape>
-                </ng-container>
-            </div>
-            <div id="pf3" class="pf w0 h0" data-page-no="3" *ngIf=" data.PedidosItensDto.length > qtdLinPg1 + qtdLinPgN">
-                <table>
-                    <tr class="familia">
-                        <td class="familia" colspan="4"></td>
-                    </tr>
-                    <tr class="familia">
-                        <td class="familia" colspan="4"></td>
-                    </tr>
-                    <tr>
-                        <th class="bege">CÓDIGO</th>
-                        <th class="left">&nbsp;PRODUTO</th>
-                        <th>QUANT.</th>
-                        <th>VISTO</th>
-                    </tr>
-                    <ng-container *ngFor="let item of data.PedidosItensDto; let i = index">
-                        <ng-container
-                            *ngIf="i > qtdLinPg1 + qtdLinPgN && i <= qtdLinPg1 + qtdLinPgN * 2 &&  (i == qtdLinPg1 + qtdLinPgN + 1 || data.PedidosItensDto[i-1].Familia !== item.Familia)">
-                            <tr *ngIf="i > qtdLinPg1 + qtdLinPgN + 1">
-                                <td class="center sem-borda"><strong>Total</strong></td>
-                                <td class="sem-borda"><strong>{{ data.PedidosItensDto[i-1].xEmbalagem }} {{
-                                        "-".repeat(qtdTracos - data.PedidosItensDto[i-1].xEmbalagem.length + 1) }}</strong>
-                                </td>
-                                <td class="cinza center"><strong>{{ data.PedidosItensDto[i-1].TotalItem }}</strong></td>
-                                <td class="center sem-borda"></td>
-                            </tr>
-                            <tr class="familia">
-                                <td class="familia"></td>
-                                <td colspan=3 class="familia">{{ item.Familia }}</td>
+                        <ng-container *ngFor="let item of data.PedidosItensDto; let i = index">
+                            <ng-container
+                                *ngIf="i > qtdLinPg1 +  (qtdLinPgN * pagina) && i <= qtdLinPg1 +  (qtdLinPgN * (pagina + 1)) && (i == qtdLinPg1 +  (qtdLinPgN * pagina) + 1 || data.PedidosItensDto[i-1].Familia !== item.Familia)">
+                                <tr *ngIf="i > qtdLinPg1 +  (qtdLinPgN * pagina) + 1">
+                                    <td class="center sem-borda"><strong>Total</strong></td>
+                                    <td class="sem-borda"><strong>{{ data.PedidosItensDto[i-1].xEmbalagem }} {{
+                                            "-".repeat(qtdTracos - data.PedidosItensDto[i-1].xEmbalagem.length + 1)
+                                            }}</strong>
+                                    </td>
+                                    <td class="cinza center"><strong>{{ data.PedidosItensDto[i-1].TotalItem }}</strong>
+                                    </td>
+                                    <td class="center sem-borda"></td>
+                                </tr>
+                                <tr class="familia">
+                                    <td class="familia"></td>
+                                    <td colspan=3 class="familia">{{ item.Familia }}</td>
+                                </tr>
+                            </ng-container>
+                            <tr *ngIf="i > qtdLinPg1 +  (qtdLinPgN * pagina) && i <= qtdLinPg1 + (qtdLinPgN * (pagina + 1))">
+                                <td class="center" [ngClass]="{'cinza': i % 2 }">{{ item.cProd }}</td>
+                                <td [ngClass]="{'cinza': i % 2 }" style="width: 330px">&nbsp;{{ item.xProd }}</td>
+                                <td class="center" [ngClass]="{'cinza': i % 2 }">{{ item.qProd }}</td>
+                                <td class="center" [ngClass]="{'cinza': i % 2 }"></td>
                             </tr>
                         </ng-container>
-                        <tr *ngIf="i > qtdLinPg1 + qtdLinPgN && i <= qtdLinPg1 + qtdLinPgN * 2">
-                            <td class="center" [ngClass]="{'cinza': i % 2 }">{{ item.cProd }}</td>
-                            <td [ngClass]="{'cinza': i % 2 }" style="width: 330px">&nbsp;{{ item.xProd }}</td>
-                            <td class="center" [ngClass]="{'cinza': i % 2 }">{{ item.qProd }}</td>
-                            <td class="center" [ngClass]="{'cinza': i % 2 }"></td>
-                        </tr>
-                    </ng-container>
-                    <ng-container *ngIf="data.PedidosItensDto.length <= qtdLinPg1 + qtdLinPgN * 2">
-                        <tr>
-                            <td class="center sem-borda"><strong>Total</strong></td>
-                            <td class="sem-borda"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
-                                    -1].xEmbalagem }} {{
-                                    "-".repeat(qtdTracos - data.PedidosItensDto[data.PedidosItensDto.length
-                                    -1].xEmbalagem.length + 1) }}</strong>
-                            </td>
-                            <td class="cinza center"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
-                                    -1].TotalItem }}</strong></td>
-                            <td class="center sem-borda"></td>
-                        </tr>
-                        <tr>
-                            <td class="bege center"><strong>Total Pedido</strong></td>
-                            <td class="sem-borda"></td>
-                            <td class="cinza center"><strong>{{ data.PedidosItensDto.length }}</strong></td>
-                            <td class="center sem-borda"></td>
-                        </tr>
-                    </ng-container>
-                </table>
-                <ng-container *ngIf="data.PedidosItensDto.length < qtdLinPg1 + qtdLinPgN * 2">
-                    <app-guia-expedicao-rodape></app-guia-expedicao-rodape>
-                </ng-container>
-            </div>
-            <div id="pf4" class="pf w0 h0" data-page-no="4" *ngIf=" data.PedidosItensDto.length > qtdLinPg1 + qtdLinPgN * 2">
-                <table>
-                    <tr class="familia">
-                        <td class="familia" colspan="4"></td>
-                    </tr>
-                    <tr class="familia">
-                        <td class="familia" colspan="4"></td>
-                    </tr>
-                    <tr>
-                        <th class="bege">CÓDIGO</th>
-                        <th class="left">&nbsp;PRODUTO</th>
-                        <th>QUANT.</th>
-                        <th>VISTO</th>
-                    </tr>
-                    <ng-container *ngFor="let item of data.PedidosItensDto; let i = index">
-                        <ng-container
-                            *ngIf="i >= qtdLinPg1 + qtdLinPgN * 2 && (i == qtdLinPg1 + qtdLinPgN * 2 + 1 || data.PedidosItensDto[i-1].Familia !== item.Familia)">
-                            <tr *ngIf="i > qtdLinPg1 + qtdLinPgN * 2 + 1">
+                        <ng-container *ngIf="data.PedidosItensDto.length <= qtdLinPg1 + (qtdLinPgN * (pagina + 1))">
+                            <tr>
                                 <td class="center sem-borda"><strong>Total</strong></td>
-                                <td class="sem-borda"><strong>{{ data.PedidosItensDto[i-1].xEmbalagem }} {{
-                                        "-".repeat(qtdTracos - data.PedidosItensDto[i-1].xEmbalagem.length + 1) }}</strong>
+                                <td class="sem-borda"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
+                                        -1].xEmbalagem }} {{
+                                        "-".repeat(qtdTracos - data.PedidosItensDto[data.PedidosItensDto.length
+                                        -1].xEmbalagem.length + 1) }}</strong>
                                 </td>
-                                <td class="cinza center"><strong>{{ data.PedidosItensDto[i-1].TotalItem }}</strong></td>
+                                <td class="cinza center"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
+                                        -1].TotalItem }}</strong></td>
                                 <td class="center sem-borda"></td>
                             </tr>
-                            <tr class="familia">
-                                <td class="familia"></td>
-                                <td colspan=3 class="familia">{{ item.Familia }}</td>
+                            <tr>
+                                <td class="bege center"><strong>Total Pedido</strong></td>
+                                <td class="sem-borda"></td>
+                                <td class="cinza center"><strong>{{ data.PedidosItensDto.length }}</strong></td>
+                                <td class="center sem-borda"></td>
                             </tr>
                         </ng-container>
-                        <tr *ngIf="i >= qtdLinPg1 + qtdLinPgN * 2">
-                            <td class="center" [ngClass]="{'cinza': i % 2 }">{{ item.cProd }}</td>
-                            <td [ngClass]="{'cinza': i % 2 }" style="width: 330px">&nbsp;{{ item.xProd }}</td>
-                            <td class="center" [ngClass]="{'cinza': i % 2 }">{{ item.qProd }}</td>
-                            <td class="center" [ngClass]="{'cinza': i % 2 }"></td>
-                        </tr>
+                    </table>
+                    <ng-container *ngIf="data.PedidosItensDto.length < qtdLinPg1 + (qtdLinPgN * (pagina + 1))">
+                        <app-guia-expedicao-rodape></app-guia-expedicao-rodape>
                     </ng-container>
-                    <ng-container>
-                        <tr>
-                            <td class="center sem-borda"><strong>Total</strong></td>
-                            <td class="sem-borda"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
-                                    -1].xEmbalagem }} {{
-                                    "-".repeat(qtdTracos - data.PedidosItensDto[data.PedidosItensDto.length
-                                    -1].xEmbalagem.length + 1) }}</strong>
-                            </td>
-                            <td class="cinza center"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
-                                    -1].TotalItem }}</strong></td>
-                            <td class="center sem-borda"></td>
-                        </tr>
-                        <tr>
-                            <td class="bege center"><strong>Total Pedido</strong></td>
-                            <td class="sem-borda"></td>
-                            <td class="cinza center"><strong>{{ data.PedidosItensDto.length }}</strong></td>
-                            <td class="center sem-borda"></td>
-                        </tr>
-                    </ng-container>
-                </table>
-                <ng-container>
-                    <app-guia-expedicao-rodape></app-guia-expedicao-rodape>
-                </ng-container>
-            </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </mat-dialog-content>

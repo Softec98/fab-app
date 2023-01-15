@@ -6,17 +6,19 @@ import { PedidoDB } from '../../Core/Entities/PedidoDB';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutoDB } from '../../Core/Entities/ProdutoDB';
 import { ClienteDB } from '../../Core/Entities/ClienteDB';
-import { environment } from 'src/environments/environment';
 import { MatTableDataSource } from '@angular/material/table';
 import { PedidoListaDto } from '../../Core/Dto/PedidoListaDto'
 import { ncmJson } from 'src/app/Infrastructure/ApplicationDB';
 import { PedidoItemDB } from '../../Core/Entities/PedidoItemDB';
+import { CondPagtoDB } from 'src/app/Core/Entities/CondPagtoDB';
+import { FaixaValorDB } from 'src/app/Core/Entities/FaixaValorDB';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DataService } from '../../Infrastructure/Services/data.service';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
 import cliente_validation from '../../../assets/data/validation/cliente-validation.json'
 import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren, HostListener } from '@angular/core';
+import { MatSelect } from '@angular/material/select';
 
 export class Group {
   level = 0;
@@ -43,6 +45,8 @@ export class ListaPrecoComponent implements OnInit {
   _allGroup!: any[];
   expandedProduto: any[] = [];
   expandedSubProduto: PedidoListaDto[] = [];
+  condpg: CondPagtoDB[] = [];
+  faixavl: FaixaValorDB[] = [];
 
   edicao: boolean = false;
   edicaoQtde: boolean = false;
@@ -53,6 +57,9 @@ export class ListaPrecoComponent implements OnInit {
   idUltimoPedido!: number;
   editRowId: number = -1
   obs!: string;
+  idCondPagto!: number;
+  idFaixaValor: number = 1;
+  pedido!: PedidoDB;
 
   @ViewChildren(MatInput, { read: ElementRef }) inputs: QueryList<ElementRef> | undefined;
   @ViewChild(MatSort) sort!: MatSort;
@@ -91,7 +98,7 @@ export class ListaPrecoComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    let pedido!: PedidoDB;
+    //let pedido!: PedidoDB;
     this.responsive.observe([
       Breakpoints.HandsetPortrait,
     ]).subscribe(result => {
@@ -127,30 +134,40 @@ export class ListaPrecoComponent implements OnInit {
       fone2: ['', Validators.pattern(/^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4}|d{5})[-. ]?(\d{4})[-. ]?\s*$/)],
       pais: ['']
     });
-
     await this.ObterListaDePreco();
-
+    if (this.dataService.condpg.length == 0) {
+      await this.dataService.obterCondPagto();
+    }
+    this.condpg = await this.dataService.condpg;
+    if (this.dataService.faixavl.length == 0) {
+      await this.dataService.obterFaixaValores();
+    }
+    this.faixavl = await this.dataService.faixavl;
     this.idPedido = Number(this.activatedRoute.snapshot.params["id"]);
     if (this.idPedido > 0) {
-      pedido = <PedidoDB>(await this.dataService.obterPedidoPorId(this.idPedido));
-      if (pedido && pedido.obs) {
-        this.obs = pedido.obs;
+      this.pedido = <PedidoDB>(await this.dataService.obterPedidoPorId(this.idPedido));
+      if (this.pedido && this.pedido.obs) {
+        this.obs = this.pedido.obs;
       }
-      const cliente = await this.dataService.obterClientePorId(pedido?.Id_Cliente!)
+      if (this.pedido && this.pedido.Id_Cond_Pagto) {
+        this.idCondPagto = this.pedido.Id_Cond_Pagto;
+      }
+      const cliente = await this.dataService.obterClientePorId(this.pedido?.Id_Cliente!)
       if (cliente && cliente.CNPJ) {
         this.form.patchValue({
           cnpj: cliente.CNPJ,
         });
       }
       if (this.allData) {
-        if (pedido && pedido.PedidosItens) {
-          pedido.PedidosItens.forEach(item => {
+        if (this.pedido && this.pedido.PedidosItens) {
+          this.pedido.PedidosItens.forEach(item => {
             let index = this.allData.findIndex(x => x["Id"] == item.Id_Produto)
             if (index > -1) {
               this.allData[index].qProd = item.qProd;
               this.allData[index].vVenda = item.vProd;
             }
           });
+          this.RetornarFaixaValor();
         }
       }
     }
@@ -304,7 +321,9 @@ export class ListaPrecoComponent implements OnInit {
   AlgumProdutoComQtde(): boolean {
     if (this.allData)
       for (let row of this.allData) {
-        if (row.Id != 0 && row.qProd > 0) return true;
+        if (row.Id != 0 && row.qProd > 0) {
+          return true;
+        }
       }
     return false;
   }
@@ -361,6 +380,10 @@ export class ListaPrecoComponent implements OnInit {
   }
 
   async Salvar() { // Salvar Pedido
+    if (typeof this.idCondPagto == 'undefined' || this.idCondPagto == -1) {
+      alert("Por favor, selecione a condição de pagamento antes de salvar o pedido.");
+      return;
+    }
     this.spinner.show();
     const ncm: NCMDB[] = ncmJson;
     let idCliente = 0;
@@ -401,62 +424,65 @@ export class ListaPrecoComponent implements OnInit {
     }
 
     if (idCliente > 0) {
-      let condpg = await this.dataService.obterCondPagtoPorId(environment.Id_Cond_Pagto[0]);
+      let condpg = await this.dataService.obterCondPagtoPorId(this.idCondPagto); // environment.Id_Cond_Pagto[0]
       let pedido = new PedidoDB();
       if (this.idPedido && this.idPedido > 0) {
         pedido = <PedidoDB>(await this.dataService.obterPedidoPorId(this.idPedido)!);
       }
       else {
         salvarUltPedido = true;
-        pedido.Id_Cond_Pagto = environment.Id_Cond_Pagto[0];
-        pedido.Id_Cliente = idCliente;
         pedido.Id_Status = 1;
-        pedido.Frete = condpg?.Frete!
         pedido.Id_Pagto_Codigo = 1;
-        pedido.Parcelas = 1;
         pedido.datCadastro = new Date();
         pedido.datEmissao = new Date();
-        pedido.PedidosItens = [];
       }
+      pedido.PedidosItens = [];
+      pedido.Parcelas = condpg?.Dias09 != null ? 9 : condpg?.Dias08 != null ? 8 : condpg?.Dias07 != null ? 7 :
+        condpg?.Dias06 != null ? 6 : condpg?.Dias05 != null ? 5 : condpg?.Dias04 != null ? 4 :
+          condpg?.Dias03 != null ? 3 : condpg?.Dias02 != null ? 2 : condpg?.Dias01 != null ? 1 : 0;
       pedido.Id_Cliente = idCliente;
       pedido.obs = this.obs;
+      pedido.Frete = condpg?.Frete!
+      pedido.Id_Cond_Pagto = this.idCondPagto;
       if (this.allData) {
-        const itensQtd = this.allData.filter(function (x) { return x.qProd > 0 });
+        this.allData = this.allData.filter(function (x) { return x.qProd > 0 });
+        const itensQtd = this.allData;
         itensQtd.map(item => {
-          if (this.idPedido && this.idPedido > 0 && pedido.PedidosItens) {
-            let pedidoItem = pedido.PedidosItens.find(x => x.Id_Produto == item.Id);
-            if (pedidoItem) {
-              pedidoItem.qProd = item.qProd;
-              pedidoItem.vProd = item.vVenda;
-              pedidoItem.vMerc = pedidoItem.qProd * pedidoItem.vProd;
-            }
-            else {
-              let novoItem = new PedidoItemDB(item);
-              // @ts-expect-error Aqui vai ocorrer um erro, mas estou ignorando
-              delete novoItem['Id'];
-              novoItem.Id_Produto = item.Id;
-              novoItem.vProd = item.vVenda;
-              novoItem.vMerc = novoItem.qProd * novoItem.vProd;
-              pedido.PedidosItens.push(novoItem);
-            }
-          }
-          else {
-            let pedidoItem = new PedidoItemDB();
-            pedidoItem.Id_Produto = item.Id;
-            pedidoItem.NCM = ncm.find(x => item.Id_NCM == x.Id)?.NCM!;
-            pedidoItem.CFOP = uf == 'SP' ? 5101 : 6101;
-            pedidoItem.Unid = item.Unid;
-            pedidoItem.cProd = item.cProd;
-            pedidoItem.xProd = item.xProd;
-            pedidoItem.qProd = item.qProd;
-            pedidoItem.vProd = item.vVenda;
-            pedidoItem.vMerc = item.qProd * item.vVenda;
-            pedido.PedidosItens.push(pedidoItem);
-          }
+          // if (this.idPedido && this.idPedido > 0 && pedido.PedidosItens) {
+          //   let pedidoItem = pedido.PedidosItens.find(x => x.Id_Produto == item.Id);
+          //   if (pedidoItem) {
+          //     pedidoItem.qProd = item.qProd;
+          //     pedidoItem.vProd = item.vVenda;
+          //     pedidoItem.vMerc = pedidoItem.qProd * pedidoItem.vProd;
+          //   }
+          //   else {
+          //     let novoItem = new PedidoItemDB(item);
+          //     // @ts-expect-error Aqui vai ocorrer um erro, mas estou ignorando
+          //     delete novoItem['Id'];
+          //     novoItem.Id_Produto = item.Id;
+          //     novoItem.vProd = item.vVenda;
+          //     novoItem.vMerc = novoItem.qProd * novoItem.vProd;
+          //     pedido.PedidosItens.push(novoItem);
+          //   }
+          // }
+          // else {
+          let pedidoItem = new PedidoItemDB();
+          pedidoItem.Id_Produto = item.Id;
+          pedidoItem.NCM = ncm.find(x => item.Id_NCM == x.Id)?.NCM!;
+          pedidoItem.CFOP = uf == 'SP' ? 5101 : 6101;
+          pedidoItem.Unid = item.Unid;
+          pedidoItem.cProd = item.cProd;
+          pedidoItem.xProd = item.xProd;
+          pedidoItem.qProd = item.qProd;
+          pedidoItem.vProd = item.vVenda;
+          pedidoItem.vMerc = item.qProd * item.vVenda;
+          pedido.PedidosItens.push(pedidoItem);
+          //}
           pedido.Totalizar();
         });
       }
       const idPedido = await pedido.Salvar();
+      this.spinner.hide();
       if (salvarUltPedido && !this.idPedido) {
         let cliente = await this.dataService.obterClientePorId(idCliente);
         if (cliente !== null) {
@@ -469,5 +495,42 @@ export class ListaPrecoComponent implements OnInit {
     this.spinner.hide();
     alert("O pedido foi salvo com sucesso!");
     this.router.navigate(['/pedidos']);
+  }
+
+  RetornarFaixaValor() {
+    let idFaixaValor = this.idFaixaValor;
+    let valorTotal: Number = this.Totalizar();
+    if (valorTotal > 0) {
+      if (valorTotal < this.faixavl[0].Valor) {
+        idFaixaValor = 1;
+      }
+      else if (valorTotal > this.faixavl[this.faixavl.length - 1].Valor) {
+        idFaixaValor = this.faixavl.length;
+      }
+      else {
+        for (let i = 0; i < this.faixavl.length; i++) {
+          if (this.faixavl[i].Valor > valorTotal) {
+            idFaixaValor = this.faixavl[i].Id as number;
+            break;
+          }
+        }
+      }
+    }
+    this.idFaixaValor = idFaixaValor;
+  }
+
+  Totalizar(): Number {
+    let vMerc: Number = 0;
+    if (typeof (this.allData) != 'undefined') {
+      vMerc = this.allData.reduce<number>((soma, item) => { return soma + item.qProd * item.vVenda; }, 0);
+      this.pedido.valTotal = vMerc as number;
+    }
+    return vMerc;
+  }
+
+  obterCondPagto() {
+    let condpg = this.condpg.filter(x => x.Id_FaixaValor == this.idFaixaValor);
+    this.idCondPagto = condpg.find(x => x.Id == this.idCondPagto)?.Id ?? -1;
+    return condpg;
   }
 }

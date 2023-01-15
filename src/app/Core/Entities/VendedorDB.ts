@@ -16,6 +16,8 @@ export class VendedorDB extends BaseEntity {
     public DataNasc!: Date;
     public ManterConectado!: boolean;
     public UltimoAcesso!: Date;
+    public IsAdmin!: boolean;
+    public IdPai!: number;
 
     public constructor(init?: Partial<VendedorDB> ) {
         super(init as VendedorDB)

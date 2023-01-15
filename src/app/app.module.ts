@@ -28,6 +28,7 @@ import { ZeroEsquerdaPipe } from './Infrastructure/Pipes/zero-esquerda.pipe';
 import { GuiaExpedicaoComponent } from './Components/guia-expedicao/guia-expedicao.component';
 import { GuiaExpedicaoRodapeComponent } from './Components/guia-expedicao-rodape/guia-expedicao-rodape.component';
 import { LoginComponent } from './Components/login/login.component';
+import { PedidoImpressaoRodapeComponent } from './Components/pedido-impressao-rodape/pedido-impressao-rodape.component';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -51,7 +52,8 @@ registerLocaleData(ptBr);
     ZeroEsquerdaPipe,
     GuiaExpedicaoComponent,
     GuiaExpedicaoRodapeComponent,
-    LoginComponent
+    LoginComponent,
+    PedidoImpressaoRodapeComponent
   ],
   imports: [
     BrowserModule,

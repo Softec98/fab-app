@@ -6,6 +6,9 @@ import { HttpClient } from '@angular/common/http';
 import { ClienteDB } from '../../Core/Entities/ClienteDB';
 import { IAuxiliar } from '../../Core/Interfaces/IAuxiliar';
 import { CondPagtoDB } from '../../Core/Entities/CondPagtoDB';
+import { VendedorDB } from 'src/app/Core/Entities/VendedorDB';
+import vendedores from '../../../assets/data/Vendedores.json';
+import { FaixaValorDB } from 'src/app/Core/Entities/FaixaValorDB';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +21,7 @@ export class DataService {
   pessoas: IAuxiliar[] = [];
   estados: IAuxiliar[] = [];
   clientesIds: number[] = [];
+  faixavl: FaixaValorDB[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -69,6 +73,12 @@ export class DataService {
   async obterCondPagto(): Promise<void> {
     if (this.condpg.length == 0) {
       this.condpg = await db.CondPagto.toArray();
+    }
+  }
+
+  async obterFaixaValores(): Promise<void> {
+    if (this.faixavl.length == 0) {
+      this.faixavl = await db.FaixaValores.toArray();
     }
   }
 
@@ -142,5 +152,11 @@ export class DataService {
 
   async obterVendedorPelasCredenciais(login: string, acesso: string) {
     return await db.Vendedores.filter(x => x.Login == login && x.Acesso == acesso).first();
+  }
+
+  async cadastrarVendedoresSeNenhum() {
+    if ((await db.Vendedores.toArray()).length == 0) {
+      await db.Vendedores.bulkAdd(Utils.ObterLista<VendedorDB>(vendedores));
+    }
   }
 }

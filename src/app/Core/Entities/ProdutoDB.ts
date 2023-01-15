@@ -1,7 +1,7 @@
 import { EmbalagemDB } from "./EmbalagemDB";
-import { ProdutoFamiliaDB } from "./ProdutoFamiliaDB";
 import { ProdutoGrupoDB } from "./ProdutoGrupoDB";
 import { ProdutoPrecoDB } from "./ProdutoPrecoDB"
+import { ProdutoFamiliaDB } from "./ProdutoFamiliaDB";
 import { familiaJson, embalagemJson, grupoJson, precoJson, ProdutosSemListaDePreco } from "../../Infrastructure/ApplicationDB";
 
 export class ProdutoDB {

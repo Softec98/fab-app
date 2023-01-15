@@ -5,6 +5,7 @@ export class ProdutoPrecoDB {
     public Id_Produto_Familia!: number;
     public Id_Produto_Grupo!: number;
     public vPreco!: number;
+    public vPrecoMin!: number;
 
     public constructor(init?: Partial<ProdutoPrecoDB> ) {
         Object.assign(this, init);

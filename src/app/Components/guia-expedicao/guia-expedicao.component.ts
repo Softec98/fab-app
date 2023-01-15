@@ -15,12 +15,14 @@ export class GuiaExpedicaoComponent {
   documento!: string;
   qtdTracos: number = 73;
   qtdLinPg1: number = 24;
-  qtdLinPgN: number = 49;
+  qtdLinPgN: number = 48;
+  paginas: number = 0;
 
   constructor(public dialogRef: MatDialogRef<GuiaExpedicaoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   async ngOnInit(): Promise<void> {
+    this.paginas = Math.ceil((this.data.PedidosItensDto.length - this.qtdLinPg1) / this.qtdLinPgN);
     let cliente = await db.Clientes.get(this.data.Id_Cliente);
     if (cliente != null) {
       this.cidade = cliente.xMun;

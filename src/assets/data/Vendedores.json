@@ -12,7 +12,9 @@
         "Login": "Fab",
         "Acesso": "392568",
         "IdRegiao": 0,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": true,
+        "IdPai": null
     },
     {
         "Id": 2,
@@ -27,7 +29,9 @@
         "Login": "a2886",
         "Acesso": "209326",
         "IdRegiao": 20,
-        "DataNasc": "1973-04-16"
+        "DataNasc": "1973-04-16",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 3,
@@ -42,7 +46,9 @@
         "Login": "a177",
         "Acesso": "106217",
         "IdRegiao": 10,
-        "DataNasc": "1962-01-13"
+        "DataNasc": "1962-01-13",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 4,
@@ -57,7 +63,9 @@
         "Login": "a164",
         "Acesso": "228614",
         "IdRegiao": 22,
-        "DataNasc": "1959-06-25"
+        "DataNasc": "1959-06-25",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 5,
@@ -72,7 +80,9 @@
         "Login": "a7409",
         "Acesso": "331679",
         "IdRegiao": 33,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 6,
@@ -87,7 +97,9 @@
         "Login": "c2286",
         "Acesso": "331126",
         "IdRegiao": 33,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 7,
@@ -102,7 +114,9 @@
         "Login": "c2184",
         "Acesso": "092724",
         "IdRegiao": 9,
-        "DataNasc": "1974-09-23"
+        "DataNasc": "1974-09-23",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 8,
@@ -117,7 +131,9 @@
         "Login": "c3235",
         "Acesso": "039235",
         "IdRegiao": 3,
-        "DataNasc": "1974-10-03"
+        "DataNasc": "1974-10-03",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 9,
@@ -132,7 +148,9 @@
         "Login": "c3412",
         "Acesso": "068532",
         "IdRegiao": 6,
-        "DataNasc": "1979-11-04"
+        "DataNasc": "1979-11-04",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 10,
@@ -147,7 +165,9 @@
         "Login": "c145",
         "Acesso": "391615",
         "IdRegiao": 39,
-        "DataNasc": "1966-07-21"
+        "DataNasc": "1966-07-21",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 11,
@@ -162,7 +182,9 @@
         "Login": "c142",
         "Acesso": "361912",
         "IdRegiao": 36,
-        "DataNasc": "1974-04-22"
+        "DataNasc": "1974-04-22",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 12,
@@ -177,7 +199,9 @@
         "Login": "d3161",
         "Acesso": "401231",
         "IdRegiao": 40,
-        "DataNasc": "1954-12-15"
+        "DataNasc": "1954-12-15",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 13,
@@ -192,7 +216,9 @@
         "Login": "e2218",
         "Acesso": "143428",
         "IdRegiao": 14,
-        "DataNasc": "1976-11-03"
+        "DataNasc": "1976-11-03",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 14,
@@ -207,7 +233,9 @@
         "Login": "e2064",
         "Acesso": "381424",
         "IdRegiao": 38,
-        "DataNasc": "1962-03-04"
+        "DataNasc": "1962-03-04",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 15,
@@ -222,7 +250,9 @@
         "Login": "e191",
         "Acesso": "133111",
         "IdRegiao": 13,
-        "DataNasc": "1980-03-17"
+        "DataNasc": "1980-03-17",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 16,
@@ -237,7 +267,9 @@
         "Login": "e152",
         "Acesso": "218112",
         "IdRegiao": 21,
-        "DataNasc": "1963-01-01"
+        "DataNasc": "1963-01-01",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 17,
@@ -252,7 +284,9 @@
         "Login": "e1821",
         "Acesso": "262111",
         "IdRegiao": 26,
-        "DataNasc": "1974-06-03"
+        "DataNasc": "1974-06-03",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 18,
@@ -267,7 +301,9 @@
         "Login": "f3234",
         "Acesso": "113534",
         "IdRegiao": 11,
-        "DataNasc": "1981-06-26"
+        "DataNasc": "1981-06-26",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 19,
@@ -282,7 +318,9 @@
         "Login": "f181",
         "Acesso": "351911",
         "IdRegiao": 35,
-        "DataNasc": "1950-10-27"
+        "DataNasc": "1950-10-27",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 20,
@@ -297,7 +335,9 @@
         "Login": "g2650",
         "Acesso": "304720",
         "IdRegiao": 30,
-        "DataNasc": "1949-05-13"
+        "DataNasc": "1949-05-13",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 21,
@@ -312,7 +352,9 @@
         "Login": "g3545",
         "Acesso": "123135",
         "IdRegiao": 12,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 22,
@@ -327,7 +369,9 @@
         "Login": "g3159",
         "Acesso": "047139",
         "IdRegiao": 4,
-        "DataNasc": "1959-02-28"
+        "DataNasc": "1959-02-28",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 23,
@@ -342,7 +386,9 @@
         "Login": "h7706",
         "Acesso": "047376",
         "IdRegiao": 4,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 24,
@@ -357,7 +403,9 @@
         "Login": "i2167",
         "Acesso": "341127",
         "IdRegiao": 34,
-        "DataNasc": "1963-08-07"
+        "DataNasc": "1963-08-07",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 25,
@@ -372,7 +420,9 @@
         "Login": "j194",
         "Acesso": "078814",
         "IdRegiao": 7,
-        "DataNasc": "1974-04-18"
+        "DataNasc": "1974-04-18",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 26,
@@ -387,7 +437,9 @@
         "Login": "j7717",
         "Acesso": "331877",
         "IdRegiao": 33,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 27,
@@ -402,7 +454,9 @@
         "Login": "j6844",
         "Acesso": "262264",
         "IdRegiao": 26,
-        "DataNasc": "1973-03-03"
+        "DataNasc": "1973-03-03",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 28,
@@ -417,7 +471,9 @@
         "Login": "j7268",
         "Acesso": "331178",
         "IdRegiao": 33,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 29,
@@ -432,7 +488,9 @@
         "Login": "l186",
         "Acesso": "416316",
         "IdRegiao": 41,
-        "DataNasc": "1977-05-11"
+        "DataNasc": "1977-05-11",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 30,
@@ -447,7 +505,9 @@
         "Login": "l7153",
         "Acesso": "314173",
         "IdRegiao": 31,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 31,
@@ -462,7 +522,9 @@
         "Login": "l3679",
         "Acesso": "295139",
         "IdRegiao": 29,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 32,
@@ -477,7 +539,9 @@
         "Login": "m31",
         "Acesso": "016931",
         "IdRegiao": 1,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 33,
@@ -492,7 +556,9 @@
         "Login": "m7284",
         "Acesso": "331174",
         "IdRegiao": 33,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 34,
@@ -507,7 +573,9 @@
         "Login": "m5529",
         "Acesso": "289559",
         "IdRegiao": 28,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 35,
@@ -522,7 +590,9 @@
         "Login": "m169",
         "Acesso": "166519",
         "IdRegiao": 16,
-        "DataNasc": "1967-02-02"
+        "DataNasc": "1967-02-02",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 36,
@@ -537,7 +607,9 @@
         "Login": "p12",
         "Acesso": "331112",
         "IdRegiao": 33,
-        "DataNasc": "1990-12-11"
+        "DataNasc": "1990-12-11",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 37,
@@ -552,7 +624,9 @@
         "Login": "p3012",
         "Acesso": "254132",
         "IdRegiao": 25,
-        "DataNasc": "1965-05-25"
+        "DataNasc": "1965-05-25",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 38,
@@ -567,7 +641,9 @@
         "Login": "p2166",
         "Acesso": "262426",
         "IdRegiao": 26,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 39,
@@ -582,7 +658,9 @@
         "Login": "p187",
         "Acesso": "156717",
         "IdRegiao": 15,
-        "DataNasc": "1944-06-29"
+        "DataNasc": "1944-06-29",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 40,
@@ -597,7 +675,9 @@
         "Login": "p3125",
         "Acesso": "057735",
         "IdRegiao": 5,
-        "DataNasc": "1964-04-18"
+        "DataNasc": "1964-04-18",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 41,
@@ -612,7 +692,9 @@
         "Login": "r2090",
         "Acesso": "304820",
         "IdRegiao": 30,
-        "DataNasc": "1980-07-30"
+        "DataNasc": "1980-07-30",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 42,
@@ -627,7 +709,9 @@
         "Login": "r4953",
         "Acesso": "371143",
         "IdRegiao": 37,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 43,
@@ -642,7 +726,9 @@
         "Login": "r7640",
         "Acesso": "234170",
         "IdRegiao": 23,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 44,
@@ -657,7 +743,9 @@
         "Login": "r182",
         "Acesso": "327912",
         "IdRegiao": 32,
-        "DataNasc": "1970-02-07"
+        "DataNasc": "1970-02-07",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 45,
@@ -672,7 +760,9 @@
         "Login": "r165",
         "Acesso": "209115",
         "IdRegiao": 20,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 46,
@@ -687,7 +777,9 @@
         "Login": "s3160",
         "Acesso": "234530",
         "IdRegiao": 23,
-        "DataNasc": "1960-06-15"
+        "DataNasc": "1960-06-15",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 47,
@@ -702,7 +794,9 @@
         "Login": "t1867",
         "Acesso": "172217",
         "IdRegiao": 17,
-        "DataNasc": "1983-03-01"
+        "DataNasc": "1983-03-01",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 48,
@@ -717,7 +811,9 @@
         "Login": "v7641",
         "Acesso": "027971",
         "IdRegiao": 2,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 49,
@@ -732,7 +828,9 @@
         "Login": "w3988",
         "Acesso": "086138",
         "IdRegiao": 8,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 50,
@@ -747,7 +845,9 @@
         "Login": "w2825",
         "Acesso": "272125",
         "IdRegiao": 27,
-        "DataNasc": "1970-12-18"
+        "DataNasc": "1970-12-18",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 51,
@@ -762,7 +862,9 @@
         "Login": "w7705",
         "Acesso": "113875",
         "IdRegiao": 11,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 52,
@@ -777,7 +879,9 @@
         "Login": "f167",
         "Acesso": "028217",
         "IdRegiao": 2,
-        "DataNasc": "1975-11-07"
+        "DataNasc": "1975-11-07",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 53,
@@ -792,7 +896,9 @@
         "Login": "g4301",
         "Acesso": "331741",
         "IdRegiao": 33,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 54,
@@ -807,7 +913,9 @@
         "Login": "m162",
         "Acesso": "234412",
         "IdRegiao": 23,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 55,
@@ -822,7 +930,9 @@
         "Login": "r2055",
         "Acesso": "381125",
         "IdRegiao": 38,
-        "DataNasc": "1950-09-16"
+        "DataNasc": "1950-09-16",
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 56,
@@ -837,7 +947,9 @@
         "Login": "u4063",
         "Acesso": "016943",
         "IdRegiao": 1,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 57,
@@ -852,7 +964,9 @@
         "Login": "x2053",
         "Acesso": "262123",
         "IdRegiao": 26,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     },
     {
         "Id": 58,
@@ -867,6 +981,8 @@
         "Login": "w2432",
         "Acesso": "047322",
         "IdRegiao": 4,
-        "DataNasc": null
+        "DataNasc": null,
+        "IsAdmin": false,
+        "IdPai": null
     }
 ]
