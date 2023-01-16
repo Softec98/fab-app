@@ -51,9 +51,10 @@ export class ApplicationDB extends Dexie {
 
   clientes_Pedidos: IAuxiliar[] = [];
   clientes: IAuxiliar[] = [];
+  vendedores_aux: IAuxiliar[] = [];
   fretes: IAuxiliar[] = [];
   status: IAuxiliar[] = [];
-  
+
   constructor() {
     super('FabAppDB');
     this.version(1).stores({
@@ -87,20 +88,28 @@ export class ApplicationDB extends Dexie {
     this.ProdutoGrupo.mapToClass(ProdutoGrupoDB);
     this.ProdutoPreco.mapToClass(ProdutoPrecoDB);
     this.ProdutoFamilia.mapToClass(ProdutoFamiliaDB);
-    
+
     this.on('populate', () => this.populate());
     this.on('ready', () => this.pronto())
   }
 
   async pronto() {
     if (await db.Produtos.count() > 0) {
-        console.log("Banco de dados pronto para uso!");
+      console.log("Banco de dados pronto para uso!");
     }
 
     if (await db.Clientes.count() > 0) {
       if (this.clientes.length == 0) {
         (await db.Clientes.toArray()).forEach(cliente => {
           this.clientes.push({ key: cliente.Id, value: cliente.xNome })
+        });
+      }
+    }
+
+    if (await db.Vendedores.count() > 0) {
+      if (this.vendedores_aux.length == 0) {
+        (await db.Vendedores.orderBy('xNome').toArray()).forEach(vendedor => {
+          this.vendedores_aux.push({ key: vendedor.Id, value: '[' + vendedor.Id.toString().padStart(5, "0") + '] - ' + vendedor.xNome })
         });
       }
     }
@@ -119,9 +128,9 @@ export class ApplicationDB extends Dexie {
 
     if (await db.Pedidos.count() > 0) {
       let filter: number[] = [];
-      await db.Pedidos.orderBy('Id_Cliente').eachUniqueKey((x) => { filter.push(Number(x)); });      
-      this.clientes_Pedidos = [...await db.Clientes.orderBy('xNome').filter(x => 
-        filter.includes(x.Id)).toArray()].map(cliente => <IAuxiliar> 
+      await db.Pedidos.orderBy('Id_Cliente').eachUniqueKey((x) => { filter.push(Number(x)); });
+      this.clientes_Pedidos = [...await db.Clientes.orderBy('xNome').filter(x =>
+        filter.includes(x.Id)).toArray()].map(cliente => <IAuxiliar>
           { key: cliente.Id, value: cliente.xNome });
     }
   }
@@ -157,6 +166,7 @@ export const status = db.status;
 export const fretes = db.fretes;
 export const clientes = db.clientes;
 export const produtoJson = produtos;
+export const vendedores_aux = db.vendedores_aux;
 
 export class DynamicClass {
   constructor(className: string, opts: any) {
@@ -188,7 +198,7 @@ export class ProdutosSemListaDePreco {
   public cProd!: string;
   public xProd!: string;
 
-  public constructor(init?: Partial<ProdutosSemListaDePreco> ) {
+  public constructor(init?: Partial<ProdutosSemListaDePreco>) {
     Object.assign(this, init);
   }
 

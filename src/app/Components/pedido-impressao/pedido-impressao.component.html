@@ -67,7 +67,16 @@
                                 <td class="sFooter2" colspan="8"
                                     style="text-align: left;max-height: 18px; height: 18px; width: 717px; max-width: 717px;">
                                     Condição de pagto: {{ data.Id_Cond_Pagto | zeroEsquerda: 6 }}-{{ condpagto }}</td>
-                            </tr>                            
+                            </tr>
+                            <tr style="height:19px;">
+                                <td class="sFooter" colspan="5"
+                                    style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
+                                    Vendedor: {{ data.Id_Vendedor | zeroEsquerda: 6 }}-{{ vendedor.substring(0, 40) }}
+                                </td>
+                                <td class="sFooter" colspan="3"
+                                    style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
+                                    Telefone: {{ telvendedor | fone }}</td>
+                            </tr>
                             <tr style="height:19px;" *ngIf="!(data.obs == null || data.obs == '')">
                                 <td class="sFooter" colspan="8"
                                     style="text-align: left;max-height: 18px; height: 18px; width: 717px; max-width: 717px;">

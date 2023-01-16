@@ -4,6 +4,7 @@ import { db, fretes, status } from '../../Infrastructure/ApplicationDB';
 
 export class PedidoDto extends PedidoDB {
   public NomeCliente!: string;
+  public NomeVendedor!: string;
   public NomeFrete!: string;
   public NomeStatus!: string;
   public action!: string;
@@ -19,6 +20,8 @@ export class PedidoDto extends PedidoDB {
     super(init);
     this.NomeCliente = typeof (this.Id_Cliente) == 'undefined' ? "N/Consta" :
       db.clientes_Pedidos.find(x => x.key == this.Id_Cliente)?.value!;
+    this.NomeVendedor = typeof (this.Id_Vendedor) == 'undefined' ? "N/Consta" :
+      db.vendedores_aux.find(x => x.key == this.Id_Vendedor)?.value!;
     this.NomeFrete = typeof (this.Frete) == 'undefined' ? "N/Consta" :
       fretes.find(x => x.key == this.Frete)?.value!;
     this.NomeStatus = typeof (this.Id_Status) == 'undefined' ? "N/Consta" :

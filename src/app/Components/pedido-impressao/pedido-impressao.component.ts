@@ -14,7 +14,9 @@ export class PedidoImpressaoComponent {
   cidade!: string;
   cep!: string;
   telefone!: string;
+  telvendedor!: string;
   condpagto: string = '';
+  vendedor: string = '';
   obs!: string;
   qtdLinPg1: number = 24;
   qtdLinPgN: number = 48;
@@ -40,6 +42,11 @@ export class PedidoImpressaoComponent {
       if (cp) {
         let fv = await db.FaixaValores.get(cp?.Id_FaixaValor!);
         this.condpagto = cp?.xNome + ' ( até R$ ' + fv?.Valor.toString() + ' )';
+      }
+      let vendedor = await db.Vendedores.get(this.data.Id_Vendedor);
+      if (vendedor) {
+        this.vendedor = vendedor.xNome.trim() + ' (' + vendedor.xContato.split(',')[0].trim() + ')'
+        this.telvendedor = vendedor.fone;
       }
     }
   }

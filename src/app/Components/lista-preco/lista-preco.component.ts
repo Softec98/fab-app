@@ -3,6 +3,7 @@ import { MatSort } from '@angular/material/sort';
 import { NCMDB } from '../../Core/Entities/NCMDB';
 import { MatInput } from '@angular/material/input';
 import { PedidoDB } from '../../Core/Entities/PedidoDB';
+import { db } from '../../Infrastructure/ApplicationDB';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutoDB } from '../../Core/Entities/ProdutoDB';
 import { ClienteDB } from '../../Core/Entities/ClienteDB';
@@ -12,13 +13,13 @@ import { ncmJson } from 'src/app/Infrastructure/ApplicationDB';
 import { PedidoItemDB } from '../../Core/Entities/PedidoItemDB';
 import { CondPagtoDB } from 'src/app/Core/Entities/CondPagtoDB';
 import { FaixaValorDB } from 'src/app/Core/Entities/FaixaValorDB';
+import { LoginService } from 'src/app/Core/Services/login.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DataService } from '../../Infrastructure/Services/data.service';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
 import cliente_validation from '../../../assets/data/validation/cliente-validation.json'
 import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren, HostListener } from '@angular/core';
-import { MatSelect } from '@angular/material/select';
 
 export class Group {
   level = 0;
@@ -58,6 +59,7 @@ export class ListaPrecoComponent implements OnInit {
   editRowId: number = -1
   obs!: string;
   idCondPagto!: number;
+  idVendedor!: number;
   idFaixaValor: number = 1;
   pedido!: PedidoDB;
 
@@ -67,12 +69,13 @@ export class ListaPrecoComponent implements OnInit {
   public form!: FormGroup;
 
   constructor(
+    protected loginService: LoginService,
     protected dataService: DataService,
     private formBuilder: FormBuilder,
     private router: Router,
     private responsive: BreakpointObserver,
     private activatedRoute: ActivatedRoute,
-    private readonly spinner: SpinnerOverlayService,
+    private spinner: SpinnerOverlayService,
   ) {
     this.columns = [
       {
@@ -151,6 +154,9 @@ export class ListaPrecoComponent implements OnInit {
       }
       if (this.pedido && this.pedido.Id_Cond_Pagto) {
         this.idCondPagto = this.pedido.Id_Cond_Pagto;
+      }
+      if (this.pedido && this.pedido.Id_Vendedor) {
+        this.idVendedor = this.pedido.Id_Vendedor;
       }
       const cliente = await this.dataService.obterClientePorId(this.pedido?.Id_Cliente!)
       if (cliente && cliente.CNPJ) {
@@ -444,6 +450,7 @@ export class ListaPrecoComponent implements OnInit {
       pedido.obs = this.obs;
       pedido.Frete = condpg?.Frete!
       pedido.Id_Cond_Pagto = this.idCondPagto;
+      pedido.Id_Vendedor = this.loginService.IsAdministrador() ? this.idVendedor : this.loginService.ObterIdUsuario();
       if (this.allData) {
         this.allData = this.allData.filter(function (x) { return x.qProd > 0 });
         const itensQtd = this.allData;
@@ -532,5 +539,9 @@ export class ListaPrecoComponent implements OnInit {
     let condpg = this.condpg.filter(x => x.Id_FaixaValor == this.idFaixaValor);
     this.idCondPagto = condpg.find(x => x.Id == this.idCondPagto)?.Id ?? -1;
     return condpg;
+  }
+
+  obterVendedores() {
+    return db.vendedores_aux;
   }
 }

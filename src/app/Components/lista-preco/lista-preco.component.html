@@ -106,6 +106,20 @@
                 </div>
             </div>
 
+            <div class="linha" *ngIf="loginService.IsAdministrador()">
+                <div class="coluna coluna-isPhonePortrait">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Representante</mat-label>
+                        <mat-select matInput placeholder="Representante" [(ngModel)]="idVendedor">
+                            <mat-option value="-1">[ Selecione o representante]</mat-option>
+                            <mat-option *ngFor="let vendedor of obterVendedores()" [value]="vendedor.key">
+                                {{ vendedor.value }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>            
+
             <div class="linha">
                 <div class="coluna coluna25" [ngClass]="{'coluna50': !isPhonePortrait}">
                     <button type="button" mat-raised-button color="primary" style="float:inline-end;margin-top: 10px"

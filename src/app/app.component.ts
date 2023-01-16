@@ -23,7 +23,7 @@ export class AppComponent {
     public loginService: LoginService,
     private menuService: MenuService) {
     loginService.obterNomeUsuario.subscribe(nome => this.mudarSaudacao(nome));
-    loginService.isAdmin.subscribe(isAdmin => this.mudarAdmin(isAdmin));
+    loginService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin); // this.mudarAdmin(isAdmin)
   }
 
   mudarSaudacao(nome: string) {
@@ -32,9 +32,9 @@ export class AppComponent {
       this.saudacao = `Oi ${nome}!`;
   }
 
-  mudarAdmin(isAdmin: boolean) {
-    this.isAdmin = isAdmin;
-  }
+  // mudarAdmin(isAdmin: boolean) {
+  //   this.isAdmin = isAdmin;
+  // }
 
   async ngOnInit() {
     this.responsive.observe([
