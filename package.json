@@ -24,7 +24,7 @@
     "dexie": "^3.2.2",
     "html-to-pdfmake": "^2.4.9",
     "jspdf": "^2.5.1",
-    "pdfmake": "^0.2.6",
+    "pdfmake": "^0.2.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "vanilla-text-mask": "^5.1.1",
