@@ -15,18 +15,18 @@
                         FESTAS {{ "&nbsp;".repeat(45) }} VOLUMES</div>
                     <div class="nf calibri-bold espaco5">PRESENTES NA NOTA FISCAL ELETRÔNICA: </div>
                     <div class="cliente calibri-bold espaco5">DO CLIENTE:</div>
-                    <div class="cliente2 ff3">{{ "&nbsp;".repeat(13) }} {{ data.Id_Cliente | zeroEsquerda: 6 }}-{{
-                        data.NomeCliente }}</div>
+                    <div class="cliente2 ff3">{{ "&nbsp;".repeat(13) }} {{ data.Dados.Id_Cliente | zeroEsquerda: 6 }}-{{
+                        data.Dados.NomeCliente }}</div>
                     <div class="comprov calibri-bold espaco5">COMPROVANTE DE<br>ENTREGA</div>
                     <div class="recebedor calibri-bold espaco5">RECEBEDOR:</div>
                     <div class="assinatura calibri-bold espaco5">{{ "_".repeat(40) }}<br>ASSINATURA</div>
                     <div class="rg calibri-bold espaco5">RG:</div>
                     <div class="pedido calibri"><strong>Pedido Nº</strong></div>
                     <div class="emissao calibri-bold vermelho">DATA DE EMISSÃO</div>
-                    <div class="emissao2 ff3 preto">{{ data.datEmissao | date: 'dd/MM/y':'utc' }}</div>
+                    <div class="emissao2 ff3 preto">{{ data.Dados.datEmissao | date: 'dd/MM/y':'utc' }}</div>
                     <div class="razaoSocial calibri vermelho"><strong>Razão Social</strong></div>
-                    <div class="cliente2 ff3" style="top: 350px">{{ "&nbsp;".repeat(13) }} {{ data.Id_Cliente |
-                        zeroEsquerda: 6 }}-{{ data.NomeCliente }}</div>
+                    <div class="cliente2 ff3" style="top: 350px">{{ "&nbsp;".repeat(13) }} {{ data.Dados.Id_Cliente |
+                        zeroEsquerda: 6 }}-{{ data.Dados.NomeCliente }}</div>
                     <div class="cidade calibri vermelho"><strong>Cidade</strong></div>
                     <div class="cidade2 ff3">{{ cidade }}</div>
                     <div class="estado ff3">Estado:</div>
@@ -38,7 +38,7 @@
                     <div class="transp2 calibri vermelho"><strong>Transportadora</strong></div>
                     <div class="nomus calibri"><strong>Nomus</strong></div>
                     <div class="obs calibri"><strong>OBSERVAÇÕES:</strong></div>
-                    <div class="obs2 ff3">{{ data.obs }}</div>
+                    <div class="obs2 ff3">{{ data.Dados.obs }}</div>
                     <table>
                         <tr>
                             <th class="bege">CÓDIGO</th>
@@ -46,16 +46,16 @@
                             <th>QUANT.</th>
                             <th>VISTO</th>
                         </tr>
-                        <ng-container *ngFor="let item of data.PedidosItensDto; let i = index">
+                        <ng-container *ngFor="let item of data.Dados.PedidosItensDto; let i = index">
                             <ng-container
-                                *ngIf="i <= qtdLinPg1 && i-1 > 0 && data.PedidosItensDto[i-1].Familia !== item.Familia">
-                                <tr *ngIf="data.PedidosItensDto[i-1].IsSomar">
+                                *ngIf="i <= qtdLinPg1 && i-1 > 0 && data.Dados.PedidosItensDto[i-1].Familia !== item.Familia">
+                                <tr *ngIf="data.Dados.PedidosItensDto[i-1].IsSomar">
                                     <td class="center sem-borda"><strong>Total</strong></td>
-                                    <td class="sem-borda"><strong>{{ data.PedidosItensDto[i-1].xEmbalagem }} {{
-                                            "-".repeat(qtdTracos - data.PedidosItensDto[i-1].xEmbalagem.length + 1)
+                                    <td class="sem-borda"><strong>{{ data.Dados.PedidosItensDto[i-1].xEmbalagem }} {{
+                                            "-".repeat(qtdTracos - data.Dados.PedidosItensDto[i-1].xEmbalagem.length + 1)
                                             }}</strong>
                                     </td>
-                                    <td class="cinza center"><strong>{{ data.PedidosItensDto[i-1].TotalItem }}</strong>
+                                    <td class="cinza center"><strong>{{ data.Dados.PedidosItensDto[i-1].TotalItem }}</strong>
                                     </td>
                                     <td class="center sem-borda"></td>
                                 </tr>
@@ -72,34 +72,34 @@
                                 <td class="center" [ngClass]="{'cinza': i % 2 }"></td>
                             </tr>
                         </ng-container>
-                        <ng-container *ngIf="data.PedidosItensDto.length <= qtdLinPg1">
+                        <ng-container *ngIf="data.Dados.PedidosItensDto.length <= qtdLinPg1">
                             <tr>
                                 <td class="center sem-borda"><strong>Total</strong></td>
-                                <td class="sem-borda"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
+                                <td class="sem-borda"><strong>{{ data.Dados.PedidosItensDto[data.Dados.PedidosItensDto.length
                                         -1].xEmbalagem }} {{
-                                        "-".repeat(qtdTracos - data.PedidosItensDto[data.PedidosItensDto.length
+                                        "-".repeat(qtdTracos - data.Dados.PedidosItensDto[data.Dados.PedidosItensDto.length
                                         -1].xEmbalagem.length + 1) }}</strong>
                                 </td>
-                                <td class="cinza center"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
+                                <td class="cinza center"><strong>{{ data.Dados.PedidosItensDto[data.Dados.PedidosItensDto.length
                                         -1].TotalItem }}</strong></td>
                                 <td class="center sem-borda"></td>
                             </tr>
                             <tr>
                                 <td class="bege center"><strong>Total Pedido</strong></td>
                                 <td class="sem-borda"></td>
-                                <td class="cinza center"><strong>{{ data.PedidosItensDto.length }}</strong></td>
+                                <td class="cinza center"><strong>{{ data.Dados.PedidosItensDto.length }}</strong></td>
                                 <td class="center sem-borda"></td>
                             </tr>
                         </ng-container>
                     </table>
-                    <ng-container *ngIf="data.PedidosItensDto.length <= qtdLinPg1">
+                    <ng-container *ngIf="data.Dados.PedidosItensDto.length <= qtdLinPg1">
                         <app-guia-expedicao-rodape></app-guia-expedicao-rodape>
                     </ng-container>
                 </div>
             </div>
             <ng-container *ngFor="let p of [].constructor(paginas + 1); let pagina = index">
                 <div id="pf{{pagina+1}}" class="pf w0 h0" data-page-no="0"
-                    *ngIf="data.PedidosItensDto.length > qtdLinPg1 + (qtdLinPgN * pagina)">
+                    *ngIf="data.Dados.PedidosItensDto.length > qtdLinPg1 + (qtdLinPgN * pagina)">
                     <table>
                         <tr class="familia">
                             <td class="familia" colspan="4"></td>
@@ -113,16 +113,16 @@
                             <th>QUANT.</th>
                             <th>VISTO</th>
                         </tr>
-                        <ng-container *ngFor="let item of data.PedidosItensDto; let i = index">
+                        <ng-container *ngFor="let item of data.Dados.PedidosItensDto; let i = index">
                             <ng-container
-                                *ngIf="i > qtdLinPg1 +  (qtdLinPgN * pagina) && i <= qtdLinPg1 +  (qtdLinPgN * (pagina + 1)) && (i == qtdLinPg1 +  (qtdLinPgN * pagina) + 1 || data.PedidosItensDto[i-1].Familia !== item.Familia)">
+                                *ngIf="i > qtdLinPg1 +  (qtdLinPgN * pagina) && i <= qtdLinPg1 +  (qtdLinPgN * (pagina + 1)) && (i == qtdLinPg1 +  (qtdLinPgN * pagina) + 1 || data.Dados.PedidosItensDto[i-1].Familia !== item.Familia)">
                                 <tr *ngIf="i > qtdLinPg1 +  (qtdLinPgN * pagina) + 1">
                                     <td class="center sem-borda"><strong>Total</strong></td>
-                                    <td class="sem-borda"><strong>{{ data.PedidosItensDto[i-1].xEmbalagem }} {{
-                                            "-".repeat(qtdTracos - data.PedidosItensDto[i-1].xEmbalagem.length + 1)
+                                    <td class="sem-borda"><strong>{{ data.Dados.PedidosItensDto[i-1].xEmbalagem }} {{
+                                            "-".repeat(qtdTracos - data.Dados.PedidosItensDto[i-1].xEmbalagem.length + 1)
                                             }}</strong>
                                     </td>
-                                    <td class="cinza center"><strong>{{ data.PedidosItensDto[i-1].TotalItem }}</strong>
+                                    <td class="cinza center"><strong>{{ data.Dados.PedidosItensDto[i-1].TotalItem }}</strong>
                                     </td>
                                     <td class="center sem-borda"></td>
                                 </tr>
@@ -138,27 +138,27 @@
                                 <td class="center" [ngClass]="{'cinza': i % 2 }"></td>
                             </tr>
                         </ng-container>
-                        <ng-container *ngIf="data.PedidosItensDto.length <= qtdLinPg1 + (qtdLinPgN * (pagina + 1))">
+                        <ng-container *ngIf="data.Dados.PedidosItensDto.length <= qtdLinPg1 + (qtdLinPgN * (pagina + 1))">
                             <tr>
                                 <td class="center sem-borda"><strong>Total</strong></td>
-                                <td class="sem-borda"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
+                                <td class="sem-borda"><strong>{{ data.Dados.PedidosItensDto[data.Dados.PedidosItensDto.length
                                         -1].xEmbalagem }} {{
-                                        "-".repeat(qtdTracos - data.PedidosItensDto[data.PedidosItensDto.length
+                                        "-".repeat(qtdTracos - data.Dados.PedidosItensDto[data.Dados.PedidosItensDto.length
                                         -1].xEmbalagem.length + 1) }}</strong>
                                 </td>
-                                <td class="cinza center"><strong>{{ data.PedidosItensDto[data.PedidosItensDto.length
+                                <td class="cinza center"><strong>{{ data.Dados.PedidosItensDto[data.Dados.PedidosItensDto.length
                                         -1].TotalItem }}</strong></td>
                                 <td class="center sem-borda"></td>
                             </tr>
                             <tr>
                                 <td class="bege center"><strong>Total Pedido</strong></td>
                                 <td class="sem-borda"></td>
-                                <td class="cinza center"><strong>{{ data.PedidosItensDto.length }}</strong></td>
+                                <td class="cinza center"><strong>{{ data.Dados.PedidosItensDto.length }}</strong></td>
                                 <td class="center sem-borda"></td>
                             </tr>
                         </ng-container>
                     </table>
-                    <ng-container *ngIf="data.PedidosItensDto.length < qtdLinPg1 + (qtdLinPgN * (pagina + 1))">
+                    <ng-container *ngIf="data.Dados.PedidosItensDto.length < qtdLinPg1 + (qtdLinPgN * (pagina + 1))">
                         <app-guia-expedicao-rodape></app-guia-expedicao-rodape>
                     </ng-container>
                 </div>

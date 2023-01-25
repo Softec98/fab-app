@@ -406,6 +406,9 @@ export class ListaPrecoComponent implements OnInit {
           salvarUltPedido = false;
         }
       }
+      else {
+        cliente.Id_Vendedor = this.loginService.ObterIdUsuario();
+      }
       cliente.CNPJ = cnpj;
       cliente.IE = this.form.controls['IE'].value;
       cliente.xNome = this.form.controls['nome'].value;

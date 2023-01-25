@@ -1,0 +1,10 @@
+<mat-form-field appearance="outline">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput type="date" [formControl]="date" [matDatepicker]="picker" (dateChange)="onChange($event.value)"
+        placeholder="Data">
+    <button matSuffix mat-button *ngIf="hoje == 'true'" (click)="preencherHoje()">
+        <mat-icon>short_text</mat-icon>
+    </button>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>

@@ -14,8 +14,8 @@
                                 </td>
                                 <td class="sHeader" colspan="3"
                                     style="text-align:right;max-height: 38px; height: 38px; width: 270px; max-width: 270px;">
-                                    Pedido Nº {{ data.Id | zeroEsquerda: 6 }}<br><small><small>Emissão: {{
-                                            data.datEmissao |
+                                    Pedido Nº {{ data.Dados.Id | zeroEsquerda: 6 }}<br><small><small>Emissão: {{
+                                            data.Dados.datEmissao |
                                             date: 'dd/MM/y':'utc' }}</small></small></td>
                             </tr>
                             <tr style="height:19px;">
@@ -49,7 +49,7 @@
                             <tr style="height:19px;">
                                 <td class="sFooter" colspan="5"
                                     style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
-                                    <b>Cliente: {{ data.Id_Cliente | zeroEsquerda: 6 }}-{{ data.NomeCliente }}</b>
+                                    <b>Cliente: {{ data.Dados.Id_Cliente | zeroEsquerda: 6 }}-{{ data.Dados.NomeCliente }}</b>
                                 </td>
                                 <td class="sFooter" colspan="3"
                                     style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
@@ -66,24 +66,24 @@
                             <tr style="height:19px;">
                                 <td class="sFooter2" colspan="8"
                                     style="text-align: left;max-height: 18px; height: 18px; width: 717px; max-width: 717px;">
-                                    Condição de pagto: {{ data.Id_Cond_Pagto | zeroEsquerda: 6 }}-{{ condpagto }}</td>
+                                    Condição de pagto: {{ data.Dados.Id_Cond_Pagto | zeroEsquerda: 6 }}-{{ condpagto }}</td>
                             </tr>
                             <tr style="height:19px;">
                                 <td class="sFooter" colspan="5"
                                     style="text-align: left;max-height: 18px; height: 18px; width: 447px; max-width: 447px;">
-                                    Vendedor: {{ data.Id_Vendedor | zeroEsquerda: 6 }}-{{ vendedor.substring(0, 40) }}
+                                    Vendedor: {{ data.Dados.Id_Vendedor | zeroEsquerda: 6 }}-{{ vendedor.substring(0, 40) }}
                                 </td>
                                 <td class="sFooter" colspan="3"
                                     style="text-align:right;max-height: 18px; height: 18px; width: 270px; max-width: 270px;">
                                     Telefone: {{ telvendedor | fone }}</td>
                             </tr>
-                            <tr style="height:19px;" *ngIf="!(data.obs == null || data.obs == '')">
+                            <tr style="height:19px;" *ngIf="!(data.Dados.obs == null || data.Dados.obs == '')">
                                 <td class="sFooter" colspan="8"
                                     style="text-align: left;max-height: 18px; height: 18px; width: 717px; max-width: 717px;">
                                     <b>Observação:</b>
                                 </td>
                             </tr>
-                            <tr style="height:19px;" *ngIf="!(data.obs == null || data.obs == '')">
+                            <tr style="height:19px;" *ngIf="!(data.Dados.obs == null || data.Dados.obs == '')">
                                 <td class="sFooter2" colspan="8"
                                     style="text-align:justify;max-height: 18px; height: 18px; width: 717px; max-width: 717px;">
                                     {{ obs }}</td>
@@ -105,7 +105,7 @@
                                     style="max-height:30px;height:30px;width:150px;max-width:150px;">Valor total
                                 </td>
                             </tr>
-                            <ng-container *ngFor="let item of data.PedidosItensDto; let i = index">
+                            <ng-container *ngFor="let item of data.Dados.PedidosItensDto; let i = index">
                                 <ng-container *ngIf="i <= qtdLinPg1">
                                     <tr style="height:13px;">
                                         <td [ngClass]="{'sData2': i % 2 }" class="sData1"
@@ -128,8 +128,8 @@
                                 </ng-container>
                             </ng-container>
                         </table>
-                        <ng-container *ngIf="data.PedidosItensDto.length <= qtdLinPg1">
-                            <app-pedido-impressao-rodape [valTotal]="data.valTotal"></app-pedido-impressao-rodape>
+                        <ng-container *ngIf="data.Dados.PedidosItensDto.length <= qtdLinPg1">
+                            <app-pedido-impressao-rodape [valTotal]="data.Dados.valTotal"></app-pedido-impressao-rodape>
                         </ng-container>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
 
             <ng-container *ngFor="let p of [].constructor(paginas + 1); let pagina = index">
                 <div id="pf{{pagina+1}}" class="pf w0 h0" data-page-no="0"
-                    *ngIf="data.PedidosItensDto.length > qtdLinPg1 + (qtdLinPgN * pagina)">
+                    *ngIf="data.Dados.PedidosItensDto.length > qtdLinPg1 + (qtdLinPgN * pagina)">
                     <div class="pc pc1 w0 h0">
                         <div class="pagemargins">
                             <table cellspacing="0" cellpadding="0"
@@ -159,7 +159,7 @@
                                         style="max-height:30px;height:30px;width:150px;max-width:150px;">Valor total
                                     </td>
                                 </tr>
-                                <ng-container *ngFor="let item of data.PedidosItensDto; let i = index">
+                                <ng-container *ngFor="let item of data.Dados.PedidosItensDto; let i = index">
                                     <ng-container
                                         *ngIf="i > qtdLinPg1 +  (qtdLinPgN * pagina) && i <= qtdLinPg1 +  (qtdLinPgN * (pagina + 1))">
                                         <tr style="height:13px;">
@@ -183,8 +183,8 @@
                                     </ng-container>
                                 </ng-container>
                             </table>
-                            <ng-container *ngIf="data.PedidosItensDto.length < qtdLinPg1 + (qtdLinPgN * (pagina + 1))">
-                                <app-pedido-impressao-rodape [valTotal]="data.valTotal"></app-pedido-impressao-rodape>
+                            <ng-container *ngIf="data.Dados.PedidosItensDto.length < qtdLinPg1 + (qtdLinPgN * (pagina + 1))">
+                                <app-pedido-impressao-rodape [valTotal]="data.Dados.valTotal"></app-pedido-impressao-rodape>
                             </ng-container>
                         </div>
                     </div>

@@ -15,17 +15,19 @@ export class ImpressaoDialogComponent {
 
   @ViewChild('impressao') impressao!: ElementRef
   @ViewChild('tabGroup') tabGroup!: any;
-  tabName: string = "pedido";
+  tabName: string = this.data.Tabs[0].NomeTab;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
-    private readonly spinner: SpinnerOverlayService) { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private readonly spinner: SpinnerOverlayService
+  ) { }
 
   tabChanged(tabChangeEvent: MatTabChangeEvent): void {
-    this.tabName = tabChangeEvent.tab.textLabel.toLowerCase().indexOf("pedido") > -1 ? "pedido" : "guia";
+    this.tabName = this.data.Tabs[tabChangeEvent.index].NomeTab;
     console.log(this.tabName);
   }
 
-  print(acao: string = 'print'): void {
+  print(id: number = 0, acao: string = 'print'): void {
     this.spinner.show();
     const data: any = document.getElementById(this.tabName);
     html2canvas(data).then((canvas: any) => {
@@ -45,11 +47,37 @@ export class ImpressaoDialogComponent {
       }
       this.spinner.hide();
       if (acao == 'download') {
-        doc.save(`${this.tabName}-fab-${this.data.Id}.pdf`);
+        if (id == 0)
+          doc.save(`${this.tabName}-fab.pdf`);
+        else
+          doc.save(`${this.tabName}-fab-${id}.pdf`);
       }
-      else {
-        window.open(URL.createObjectURL(doc.output("blob")), '_blank');
-      }
+      else
+        window.open(window.URL.createObjectURL(doc.output("blob")), '_blank');
     });
+  }
+
+  downloadCSV() {
+    const data: string = this.data.Dados.datEmissao.toLocaleDateString();
+    const pedido = this.data.Dados.Id;
+    let texto = "Pedido;Cliente;Empresa;Data de emissão;observações;item;Código do produto;Descrição do produto;Tipo de produto;Método de ressuprimento;U.M.;Qtde;Preço unitário;Data de entrega\n\n";
+    let index = 1;
+    this.data.Dados.PedidosItensDto.forEach(function (item: any) {
+      let indice = index.toString().padStart(3, '0');
+      let preco = item.vProd.toString().replace('.', ',');
+      texto += `PI ${pedido};FAB CONF;FAB IND;${data};cnpj 28.644.999/0003-92;${indice};${item?.cProd};${item?.xProd};Produto Acabado;Como padrÃ£o fabricado;Caixa;${item?.qProd};${preco};${data}\n\n`;
+      index++;
+    });
+    const blob = new Blob([texto], { type: 'text/csv' });
+    this.forcarDownload(window.URL.createObjectURL(blob), `pedido-fab-${pedido}.csv`)
+  }
+
+  private forcarDownload(blob: any, filename: string) {
+    var a = document.createElement('a');
+    a.download = filename;
+    a.href = blob;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
   }
 }

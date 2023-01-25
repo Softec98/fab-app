@@ -8,11 +8,11 @@ export class VendedorDB extends BaseEntity {
     public fone!: string;
     public fone2!: string;
     public Celular!: string;
-    public email!: string;
+    public Email!: string;
     public Documento!: string;
     public Login!: string;
     public Acesso!: string;
-    public Id_Regiao!: number;
+    public IdRegiao!: number;
     public DataNasc!: Date;
     public ManterConectado!: boolean;
     public UltimoAcesso!: Date;

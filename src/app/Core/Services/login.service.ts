@@ -13,12 +13,14 @@ export class LoginService {
   private IsAdmin: boolean = false;
   private IdUsuario: number = 0;
 
-  constructor(protected dataService: DataService, private router: Router) {
+  constructor(
+    protected dataService: DataService,
+    private router: Router) {
+    this.dataService.cadastrarVendedoresSeNenhum();
     this.InicializarVendedor();
   }
 
   async login(login: string, senha: string): Promise<boolean> {
-    this.dataService.cadastrarVendedoresSeNenhum();
     const vendedor = await this.dataService.obterVendedorPelasCredenciais(login, senha);
     if (vendedor) {
       localStorage.setItem('usuario', JSON.stringify(vendedor));

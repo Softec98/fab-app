@@ -29,7 +29,27 @@ import { GuiaExpedicaoComponent } from './Components/guia-expedicao/guia-expedic
 import { GuiaExpedicaoRodapeComponent } from './Components/guia-expedicao-rodape/guia-expedicao-rodape.component';
 import { LoginComponent } from './Components/login/login.component';
 import { PedidoImpressaoRodapeComponent } from './Components/pedido-impressao-rodape/pedido-impressao-rodape.component';
+import { VendedoresComponent } from './Components/vendedores/vendedores.component';
+import { VendedorImpressaoComponent } from './Components/vendedor-impressao/vendedor-impressao.component';
+import { VendedorComponent } from './Components/vendedor/vendedor.component';
+import { DatePickerComponent } from './Components/date-picker/date-picker.component';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+
 registerLocaleData(ptBr);
+
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'yyyy-MM-DD'
+  },
+  display: {
+    dateInput: 'yyyy-MM-DD',
+    monthYearLabel: 'YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY'
+  }
+};
 
 @NgModule({
   declarations: [
@@ -53,16 +73,27 @@ registerLocaleData(ptBr);
     GuiaExpedicaoComponent,
     GuiaExpedicaoRodapeComponent,
     LoginComponent,
-    PedidoImpressaoRodapeComponent
+    PedidoImpressaoRodapeComponent,
+    VendedoresComponent,
+    VendedorImpressaoComponent,
+    VendedorComponent,
+    DatePickerComponent
   ],
   imports: [
     BrowserModule,
     MaterialModule,
     AppRoutingModule
   ],
+
   providers: [
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { floatLabel: 'always' } },    
+    { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } },    
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
     { provide: LOCALE_ID, useValue: 'pt' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
   ],
   bootstrap: [AppComponent]
 })

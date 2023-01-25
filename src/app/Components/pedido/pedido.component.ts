@@ -8,11 +8,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { IAuxiliar } from '../../Core/Interfaces/IAuxiliar';
 import { MatFormField } from '@angular/material/form-field';
 import { MatTableDataSource } from '@angular/material/table'
+import { LoginService } from 'src/app/Core/Services/login.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DataService } from '../../Infrastructure/Services/data.service';
 import { SpinnerOverlayService } from '../../Core/Services/spinner-overlay.service';
 import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ImpressaoDialogComponent } from '../impressao-dialog/impressao-dialog.component';
+import { ICadastroImpressao, ICadastroTabImpressao } from 'src/app/Core/Interfaces/ICadastroImpressao';
 
 @Component({
   selector: 'app-pedido',
@@ -27,7 +29,9 @@ export class PedidoComponent implements OnInit {
   form!: FormGroup;
   isPhonePortrait: boolean = false;
 
-  constructor(protected dataService: DataService,
+  constructor(
+    protected loginService: LoginService,
+    protected dataService: DataService,
     //private changeDetectorRef: ChangeDetectorRef,
     private formBuilder: FormBuilder,
     private readonly spinner: SpinnerOverlayService,
@@ -86,7 +90,7 @@ export class PedidoComponent implements OnInit {
     });
 
     this.carregarSeletores();
-    let pedidos = [...await this.dataService.obterPedidos()].map(pedido => new PedidoDto(pedido));
+    let pedidos = [...await this.dataService.obterPedidos(this.loginService.ObterIdUsuario())].map(pedido => new PedidoDto(pedido));
     this.dataSource = new MatTableDataSource(pedidos);
     if (pedidos.length > 0 && typeof pedidos[0].NomeCliente == 'undefined') {
       pedidos[0].NomeCliente = (await this.dataService.obterClientePorId(pedidos[0].Id_Cliente))?.xNome!
@@ -137,7 +141,10 @@ export class PedidoComponent implements OnInit {
       this.spinner.show();
       let pedido = new PedidoDto(await this.dataService.obterPedidoPorId(id)!);
       pedido.action = action;
-      this.dialog.open(ImpressaoDialogComponent, { data: pedido, width: '800px' });
+      let tabs = [{ NomeTab: "pedido", DescricaoTab: "Visualização pedido" },
+                  { NomeTab: "guia", DescricaoTab: "Guia de expedição" }] as ICadastroTabImpressao[];
+      let cadastroImpressao = { Cadastro: "Pedido", Dados: pedido, Tabs: tabs } as ICadastroImpressao;
+      this.dialog.open(ImpressaoDialogComponent, { data: cadastroImpressao, width: '800px' });
       this.spinner.hide();
     }
   }

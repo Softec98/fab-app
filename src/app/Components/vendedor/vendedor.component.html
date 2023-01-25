@@ -1,0 +1,190 @@
+<div class="container" style="margin-top: 50px">
+    <div class="container">
+        <mat-card class="card" style="margin: 15px 0 15px 0; padding-left: 10px;">
+            <h2>Preencha os dados do vendedor</h2>
+            <div class="form-wrapper">
+                <ng-container [formGroup]="formVendedor" *ngIf="formVendedor">
+                    <input matInput formControlName="id" [hidden]="true">
+                    <div class="linha">
+                        <div class="coluna coluna25" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Código</mat-label>
+                                <input matInput placeholder="Login" formControlName="codigo">
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna50" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>CPF ou CNPJ</mat-label>
+                                <input matInput placeholder="Buscar vendedor" [textMask]="documentoMask"
+                                    (keyup)="BuscarEmpresa($event)" #inputVendedor formControlName="documento"
+                                    autofocus>
+                                <button matSuffix mat-button type="button"
+                                    (click)="BuscarEmpresaIcon(inputVendedor.value)">
+                                    <mat-icon>search</mat-icon>
+                                </button>
+                                <mat-error *ngFor="let validation of validation_messages.cnpj">
+                                    <mat-error class="error-message"
+                                        *ngIf="formVendedor.controls['documento'].errors?.[validation.type] && (formVendedor.controls['documento'].dirty || formVendedor.controls['documento'].touched)">
+                                        {{validation.message}}
+                                    </mat-error>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna25" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <app-date-picker label="Nascimento" formControlName="nasc"></app-date-picker>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="coluna coluna50" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Nome</mat-label>
+                                <input matInput placeholder="Nome do cliente" formControlName="nome" #inputNome>
+                                <mat-error *ngFor="let validation of validation_messages.nome">
+                                    <mat-error class="error-message"
+                                        *ngIf="formVendedor.controls['nome'].errors?.[validation.type] && (formVendedor.controls['nome'].dirty || formVendedor.controls['nome'].touched)">
+                                        {{validation.message}}</mat-error>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna50" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Contato</mat-label>
+                                <input matInput placeholder="Contato" formControlName="contato">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="coluna coluna33" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Login</mat-label>
+                                <input matInput placeholder="Login" formControlName="login">
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna33" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Acesso</mat-label>
+                                <input matInput placeholder="Código de acesso" formControlName="acesso">
+                                <button matSuffix mat-button type="button" (click)="senhaPadrao()">
+                                    <mat-icon>short_text</mat-icon>
+                                </button>
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna33" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Região</mat-label>
+                                <mat-select matInput placeholder="Região" formControlName="idRegiao">
+                                    <mat-option value="-1">[ Selecione a região ]</mat-option>
+                                    <mat-option *ngFor="let rg of Regioes" [value]="rg.Id">
+                                        {{ rg.Id }}-{{ rg.xNome }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="coluna coluna50" *ngIf="!isPhonePortrait">
+                            <label class="form-check-label" for="indMe">Administrador?
+                                <input type="checkbox" formControlName="isAdmin" id="isAdmin" class="form-check-input">
+                            </label>
+                        </div>
+                        <div class="coluna coluna50" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>E-mail</mat-label>
+                                <mat-icon matPrefix>email</mat-icon>
+                                <span matPrefix></span>
+                                <input formControlName="email" matInput placeholder="E-mail" maxlength="100"
+                                    type="email">
+                                <mat-error *ngFor="let validation of validation_messages.email">
+                                    <mat-error class="error-message"
+                                        *ngIf="formVendedor.controls['email'].errors?.[validation.type] && (formVendedor.controls['email'].dirty || formVendedor.controls['email'].touched)">
+                                        {{validation.message}}
+                                    </mat-error>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna25" *ngIf="isPhonePortrait">
+                            <label class="form-check-label" for="indMe">Administrador?
+                                <input type="checkbox" formControlName="isAdmin" id="isAdmin" class="form-check-input">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="coluna coluna10" [ngClass]="{'coluna33': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>DDD</mat-label>
+                                <input matInput placeholder="DDD" formControlName="ddd" maxlength="2" appSelectOnFocus>
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna40" [ngClass]="{'coluna66': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>1º Telefone</mat-label>
+                                <span matPrefix></span>
+                                <mat-icon matPrefix>phone</mat-icon>
+                                <input matInput placeholder="1º telefone" formControlName="fone" [textMask]="foneMask"
+                                    appSelectOnFocus>
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna10" [ngClass]="{'coluna33': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>DDD</mat-label>
+                                <input matInput placeholder="DDD" formControlName="ddd2" maxlength="2" appSelectOnFocus>
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna40" [ngClass]="{'coluna66': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>2º Telefone</mat-label>
+                                <span matPrefix></span>
+                                <mat-icon matPrefix>phone</mat-icon>
+                                <input matInput placeholder="2º telefone" formControlName="fone2" [textMask]="foneMask"
+                                    appSelectOnFocus>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="linha">
+                        <div class="coluna coluna10" [ngClass]="{'coluna33': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>DDD</mat-label>
+                                <input matInput placeholder="DDD" formControlName="ddd3" maxlength="2" appSelectOnFocus>
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna40" [ngClass]="{'coluna66': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Celular</mat-label>
+                                <span matPrefix></span>
+                                <mat-icon matPrefix>phone</mat-icon>
+                                <input matInput placeholder="Celular" formControlName="celular" [textMask]="foneMask"
+                                    appSelectOnFocus>
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna25" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Representante pai</mat-label>
+                                <mat-select matInput placeholder="Representante" formControlName="idPai">
+                                    <mat-option value="-1">[ Selecione o pai]</mat-option>
+                                    <mat-option *ngFor="let vendedor of obterVendedores()" [value]="vendedor.key">
+                                        {{ vendedor.value }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="coluna coluna25" [ngClass]="{'coluna-isPhonePortrait': !isPhonePortrait}">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Último acesso</mat-label>
+                                <input matInput type="datetime-local" formControlName="ultAcesso">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="coluna coluna25" [ngClass]="{'coluna50': !isPhonePortrait}">
+                            <button type="button" mat-raised-button color="primary"
+                                style="float:inline-end;margin-top: 10px" (click)="Salvar()"
+                                [disabled]="formVendedor.controls['nome'].value == ''">Salvar Vendedor</button>
+                        </div>
+                    </div>
+                    <br>
+                </ng-container>
+            </div>
+        </mat-card>
+    </div>
+</div>

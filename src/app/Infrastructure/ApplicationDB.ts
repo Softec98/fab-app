@@ -25,12 +25,14 @@ import prodGrupo from '../../assets/data/ProdGrupo.json'
 import condPagto from '../../assets/data/CondPagto.json'
 import prodPreco from '../../assets/data/ProdPreco.json'
 import embalagem from '../../assets/data/Embalagem.json';
-import vendedores from '../../assets/data/Vendedores.json'
+import vendedores from '../../assets/data/Vendedores_cripto.json'
 import faixaValor from '../../assets/data/FaixaValor.json';
 import prodFamilia from '../../assets/data/ProdFamilia.json'
 
 import { Utils } from '../Utils/Utils';
 import { IAuxiliar } from '../Core/Interfaces/IAuxiliar';
+import { IVendedor_aux } from '../Core/Interfaces/IVendedor_aux';
+import { CriptografiaService } from '../Core/Services/criptografia.service';
 
 export class ApplicationDB extends Dexie {
 
@@ -49,13 +51,13 @@ export class ApplicationDB extends Dexie {
   Regioes!: Table<RegiaoDB, number>;
   FaixaValores!: Table<FaixaValorDB, number>;
 
-  clientes_Pedidos: IAuxiliar[] = [];
-  clientes: IAuxiliar[] = [];
-  vendedores_aux: IAuxiliar[] = [];
   fretes: IAuxiliar[] = [];
   status: IAuxiliar[] = [];
+  clientes: IAuxiliar[] = [];
+  clientes_Pedidos: IAuxiliar[] = [];
+  vendedores_aux: IVendedor_aux[] = [];
 
-  constructor() {
+  constructor(protected cripto: CriptografiaService) {
     super('FabAppDB');
     this.version(1).stores({
       CFOP: '++Id',
@@ -109,7 +111,11 @@ export class ApplicationDB extends Dexie {
     if (await db.Vendedores.count() > 0) {
       if (this.vendedores_aux.length == 0) {
         (await db.Vendedores.orderBy('xNome').toArray()).forEach(vendedor => {
-          this.vendedores_aux.push({ key: vendedor.Id, value: '[' + vendedor.Id.toString().padStart(5, "0") + '] - ' + vendedor.xNome })
+          this.vendedores_aux.push({
+            key: vendedor.Id,
+            value: '[' + vendedor.Codigo.toString().padStart(5, "0") + '] - ' + vendedor.xNome,
+            secret: this.cripto.decryptData(vendedor.Acesso)
+          });
         });
       }
     }
@@ -136,6 +142,12 @@ export class ApplicationDB extends Dexie {
   }
 
   async populate() {
+
+    // vendedores.map(vendedor => {
+    //   if (/^\d+$/.test(vendedor.Acesso))
+    //     vendedor.Acesso = this.cripto.encryptData(vendedor.Acesso);
+    // });
+
     await Promise.all([
       db.NCM.bulkAdd(Utils.ObterLista<NCMDB>(ncm)),
       db.CFOP.bulkAdd(Utils.ObterLista<CFOPDB>(cfop)),
@@ -156,7 +168,7 @@ export class ApplicationDB extends Dexie {
   }
 }
 
-export const db = new ApplicationDB();
+export const db = new ApplicationDB(new CriptografiaService());
 export const familiaJson = prodFamilia;
 export const embalagemJson = embalagem;
 export const grupoJson = prodGrupo;

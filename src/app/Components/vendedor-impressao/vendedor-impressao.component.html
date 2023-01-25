@@ -1,0 +1,68 @@
+<h2 mat-dialog-title>Relação de vendedores</h2>
+<mat-dialog-content class="mat-typography">
+    <div id="page-container">
+        <div id="vendedor">
+            <ng-container *ngFor="let p of [].constructor(paginas + 1); let pagina = index">
+                <div id="pf{{pagina+1}}" class="pf w0 h0" data-page-no="0"
+                    *ngIf="data.Dados.length >= (qtdLinPgN * pagina)">
+                    <div class="pc pc1 w0 h0">
+                        <div class="pagemargins">
+                            <table cellspacing="0" cellpadding="0"
+                                style="border-width:0px;width:719px;border-collapse:collapse;white-space:normal;">
+                                <tr style="height:30px;">
+                                    <td class="sHeader"
+                                        style="text-align: left; max-height: 30px; height: 30px;">
+                                        <img src="../../../assets/images/android/android-launchericon-96-96.png" />
+                                    </td>
+                                    <td class="sHeader"
+                                        style="text-align:center;max-height: 30px; height: 30px; width: 400px; max-width: 400px;">
+                                        Relação de vendedores</td>
+                                    <td class="sHeader" colspan="2"
+                                        style="text-align:right;max-height: 30px; height: 30px; width: 210px; max-width: 210px;">
+                                        <br><small><small><small>Emissão: {{ hoje | date: 'dd/MM/y':'utc' }}</small></small></small></td>
+                                </tr>
+                                <tr style="height:30px;">
+                                    <td class="s9687a88e" style="max-height: 30px; height: 30px;">
+                                        &nbsp;Código
+                                    </td>
+                                    <td class="s9687a88e"
+                                        style="max-height: 30px; height: 30px; width: 400px; max-width: 400px;">
+                                        &nbsp;Razão Social
+                                    </td>
+                                    <td class="sHeader3"
+                                        style="max-height:30px;height:30px;width:105px;max-width:105px;">Login
+                                    </td>
+                                    <td class="s9687a88e"
+                                        style="max-height:30px;height:30px;width:105px;max-width:105px;">Acesso
+                                    </td>
+                                </tr>
+                                <ng-container *ngFor="let item of data.Dados; let i = index">
+                                    <ng-container *ngIf="i >= (qtdLinPgN * pagina) && i <= (qtdLinPgN * (pagina + 1))">
+                                        <tr style="height:13px;">
+                                            <td [ngClass]="{'sData2': i % 2 }" class="sData1"
+                                                style="text-align: right;height:13px; padding: 0px 1px 1px 0px;">
+                                                {{ item.Codigo }}&nbsp;</td>
+                                            <td [ngClass]="{'sData2': i % 2 }" class="sData1"
+                                                style="text-align: left;max-height: 13px; height: 11px; width: 400px; max-width: 400px; padding: 0px 1px 1px 0px;">
+                                                {{ item.xNome }}</td>
+                                            <td [ngClass]="{'sData2': i % 2 }" class="sData1"
+                                                style="text-align: center; max-height: 13px; height: 11px; width: 105px; max-width: 105px; padding: 0px 1px 1px 0px;">
+                                                {{ item.Login }}</td>
+                                            <td [ngClass]="{'sData2': i % 2 }" class="sData1"
+                                                style="text-align: center; max-height: 13px; height: 11px; width: 105px; max-width: 105px; padding: 0px 1px 1px 0px;">
+                                                {{ item.Acesso }}</td>
+                                        </tr>
+                                    </ng-container>
+                                </ng-container>
+                            </table>
+                            <hr>
+                            <ng-container *ngIf="data.Dados.length < (qtdLinPgN * (pagina + 1))">
+                                <p align="right">Total vendedores: {{ data.Dados.length.toString() }}&nbsp;</p>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</mat-dialog-content>

@@ -55,7 +55,6 @@ export class PedidoDB extends BaseEntity {
                     return Id;
                 });
         });
-
         return this.Id;
     }
 

@@ -26,24 +26,24 @@ export class PedidoImpressaoComponent {
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   async ngOnInit(): Promise<void> {
-    this.paginas = Math.ceil((this.data.PedidosItensDto.length - this.qtdLinPg1) / this.qtdLinPgN);
-    let cliente = await db.Clientes.get(this.data.Id_Cliente);
+    this.paginas = Math.ceil((this.data.Dados.PedidosItensDto.length - this.qtdLinPg1) / this.qtdLinPgN);
+    let cliente = await db.Clientes.get(this.data.Dados.Id_Cliente);
     if (cliente != null) {
       this.endereco = 'Endereço: ' + cliente.xLgr + ' ' +
         (cliente.xComplemento == null ? '' : cliente.xComplemento).trim() +
         ', ' + cliente.nro.toString() + ' - ' + cliente.cBairro;
       this.cidade = cliente.xMun + ' - ' + cliente.UF + ', ';
       this.cep = cliente.CEP;
-      this.telefone = cliente.fone;
-      if (this.data.obs) {
-        this.obs = this.data.obs.toString().split('\n').join("<br />");
+      this.telefone = cliente.fone == '' ? cliente.fone2 : cliente.fone;
+      if (this.data.Dados.obs) {
+        this.obs = this.data.Dados.obs.toString().split('\n').join("<br />");
       }
-      let cp = await db.CondPagto.get(this.data.Id_Cond_Pagto);
+      let cp = await db.CondPagto.get(this.data.Dados.Id_Cond_Pagto);
       if (cp) {
         let fv = await db.FaixaValores.get(cp?.Id_FaixaValor!);
         this.condpagto = cp?.xNome + ' ( até R$ ' + fv?.Valor.toString() + ' )';
       }
-      let vendedor = await db.Vendedores.get(this.data.Id_Vendedor);
+      let vendedor = await db.Vendedores.get(this.data.Dados.Id_Vendedor);
       if (vendedor) {
         this.vendedor = vendedor.xNome.trim() + ' (' + vendedor.xContato.split(',')[0].trim() + ')'
         this.telvendedor = vendedor.fone;

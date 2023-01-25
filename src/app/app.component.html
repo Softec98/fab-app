@@ -21,7 +21,7 @@
         <mat-icon class="icon">login</mat-icon>
         <span class="label">Login</span>
       </a>
-      <a mat-list-item (click)="sidenav.toggle(); menu('/vendedores')" *ngIf="isAdmin">
+      <a mat-list-item (click)="sidenav.toggle(); menu('/vendedores')"> <!--  *ngIf="isAdmin" -->
         <mat-icon class="icon">face</mat-icon>
         <span class="label">Vendedores</span>
       </a>      
@@ -74,7 +74,7 @@
               <span class="label">Histórico</span>
             </a>
           </li>
-          <li *ngIf="isAdmin">
+          <li> <!-- *ngIf="isAdmin" -->
             <a (click)="menu('vendedores')"> <!-- routerLink="/pedidos" -->
               <mat-icon class="icon">face</mat-icon>
               <span class="label">Vendedores</span>

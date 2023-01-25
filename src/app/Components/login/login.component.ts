@@ -9,11 +9,14 @@ import { LoginService } from 'src/app/Core/Services/login.service';
 })
 export class LoginComponent {
 
-  constructor(protected loginService: LoginService, private router: Router) { }
+  constructor(
+    protected loginService: LoginService,
+    private router: Router) { }
 
   async login(login: string, senha: string): Promise<void> {
-    if (await this.loginService.login(login, senha))
+    if (await this.loginService.login(login, senha)) {
       this.router.navigate(['/home']);
+    }
     else
       alert('Desculpe, credencial inválida! Por favor, tente novamente.');
   }
