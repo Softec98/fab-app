@@ -1,0 +1,154 @@
+[
+    {
+        "Id": 1,
+        "xNome": "AC/RO"
+    },
+    {
+        "Id": 2,
+        "xNome": "AL"
+    },
+    {
+        "Id": 3,
+        "xNome": "AM"
+    },
+    {
+        "Id": 4,
+        "xNome": "BA"
+    },
+    {
+        "Id": 5,
+        "xNome": "BA (Oeste)"
+    },
+    {
+        "Id": 6,
+        "xNome": "CE"
+    },
+    {
+        "Id": 7,
+        "xNome": "CE (Interior)"
+    },
+    {
+        "Id": 8,
+        "xNome": "DF"
+    },
+    {
+        "Id": 9,
+        "xNome": "ES"
+    },
+    {
+        "Id": 10,
+        "xNome": "GO"
+    },
+    {
+        "Id": 11,
+        "xNome": "MG"
+    },
+    {
+        "Id": 12,
+        "xNome": "MG (Norte)"
+    },
+    {
+        "Id": 13,
+        "xNome": "MG (Belo Horizonte)"
+    },
+    {
+        "Id": 14,
+        "xNome": "MG / GO"
+    },
+    {
+        "Id": 15,
+        "xNome": "MS"
+    },
+    {
+        "Id": 16,
+        "xNome": "MT"
+    },
+    {
+        "Id": 20,
+        "xNome": "PA"
+    },
+    {
+        "Id": 21,
+        "xNome": "PB / PE / RN"
+    },
+    {
+        "Id": 22,
+        "xNome": "PI / MA"
+    },
+    {
+        "Id": 23,
+        "xNome": "PR"
+    },
+    {
+        "Id": 25,
+        "xNome": "PR (Leste)"
+    },
+    {
+        "Id": 26,
+        "xNome": "RJ"
+    },
+    {
+        "Id": 27,
+        "xNome": "RJ (Grande Rio)"
+    },
+    {
+        "Id": 17,
+        "xNome": "RJ (Norte)"
+    },
+    {
+        "Id": 28,
+        "xNome": "RR"
+    },
+    {
+        "Id": 29,
+        "xNome": "RS"
+    },
+    {
+        "Id": 30,
+        "xNome": "SC"
+    },
+    {
+        "Id": 31,
+        "xNome": "SC (Oeste)"
+    },
+    {
+        "Id": 32,
+        "xNome": "SE"
+    },
+    {
+        "Id": 33,
+        "xNome": "SP"
+    },
+    {
+        "Id": 34,
+        "xNome": "SP (Grande SP)"
+    },
+    {
+        "Id": 35,
+        "xNome": "SP (Araras)"
+    },
+    {
+        "Id": 36,
+        "xNome": "SP (Campinas)"
+    },
+    {
+        "Id": 37,
+        "xNome": "SP (Litoral)"
+    },
+    {
+        "Id": 38,
+        "xNome": "SP (Oeste)"
+    },
+    {
+        "Id": 39,
+        "xNome": "SP (Ribeirão Preto)"
+    },
+    {
+        "Id": 40,
+        "xNome": "SP (Vale)"
+    },
+    {
+        "Id": 41,
+        "xNome": "TO"
+    }
+]
