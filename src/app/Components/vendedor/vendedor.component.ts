@@ -45,7 +45,7 @@ export class VendedorComponent implements OnInit, AfterViewChecked {
     let vendedor!: VendedorDB;
     this.responsive.observe([
       Breakpoints.HandsetPortrait,
-    ]).subscribe(result => {
+    ]).subscribe((result: { matches: any; }) => {
       this.isPhonePortrait = false;
       if (!result.matches) {
         this.isPhonePortrait = true;
