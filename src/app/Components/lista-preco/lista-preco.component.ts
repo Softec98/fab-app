@@ -407,7 +407,7 @@ export class ListaPrecoComponent implements OnInit {
         }
       }
       else {
-        cliente.Id_Vendedor = this.loginService.ObterIdUsuario();
+        cliente.Id_Vendedor = this.loginService.ObterIdUsuarioPai();
       }
       cliente.CNPJ = cnpj;
       cliente.IE = this.form.controls['IE'].value;
@@ -509,7 +509,7 @@ export class ListaPrecoComponent implements OnInit {
 
   RetornarFaixaValor() {
     let idFaixaValor = this.idFaixaValor;
-    let valorTotal: Number = this.Totalizar();
+    let valorTotal: number = this.Totalizar();
     if (valorTotal > 0) {
       if (valorTotal < this.faixavl[0].Valor) {
         idFaixaValor = 1;
@@ -527,13 +527,13 @@ export class ListaPrecoComponent implements OnInit {
       }
     }
     this.idFaixaValor = idFaixaValor;
+    //this.condpg = this.obterCondPagto();
   }
 
-  Totalizar(): Number {
-    let vMerc: Number = 0;
+  Totalizar(): number {
+    let vMerc: number = 0;
     if (typeof (this.allData) != 'undefined') {
       vMerc = this.allData.reduce<number>((soma, item) => { return soma + item.qProd * item.vVenda; }, 0);
-      this.pedido.valTotal = vMerc as number;
     }
     return vMerc;
   }

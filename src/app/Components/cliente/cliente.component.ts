@@ -58,8 +58,8 @@ export class ClienteComponent implements OnInit, AfterViewChecked {
 	}
 
 	async ngAfterViewInit(): Promise<void> {
-		this.inputClienteField.nativeElement.select();
-		this.inputClienteField.nativeElement.focus();
+		// this.inputClienteField.nativeElement.select();
+		// this.inputClienteField.nativeElement.focus();
 	}
 
 	ngAfterViewChecked(): void {

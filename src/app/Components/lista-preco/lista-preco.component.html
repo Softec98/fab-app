@@ -98,7 +98,8 @@
                         <mat-label>Condição de pagamento</mat-label>
                         <mat-select matInput placeholder="Condição de pagamento" [(ngModel)]="idCondPagto">
                             <mat-option value="-1">[ Selecione a condição pagto - até {{ faixavl[idFaixaValor -1].Valor | currency }}]</mat-option>
-                            <mat-option *ngFor="let cp of obterCondPagto()" [value]="cp.Id">
+                            <mat-option *ngFor="let cp of condpg" [value]="cp.Id"
+                                [ngStyle]="{ display : cp.Id_FaixaValor !== idFaixaValor ? 'none' : 'block' }">
                                 {{ cp.xNome }}
                             </mat-option>
                         </mat-select>

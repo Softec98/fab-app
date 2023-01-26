@@ -12,6 +12,7 @@ export class LoginService {
   private NomeUsuario: string = '';
   private IsAdmin: boolean = false;
   private IdUsuario: number = 0;
+  private IdUsuarioPai: number = 0;
 
   constructor(
     protected dataService: DataService,
@@ -58,15 +59,21 @@ export class LoginService {
     return this.IdUsuario;
   }
 
+  ObterIdUsuarioPai(): number {
+    return this.IdUsuarioPai > 0 ? this.IdUsuarioPai : this.IdUsuario;
+  }
+
   private InicializarVendedor(): void {
     this.NomeUsuario = '';
     this.IsAdmin = false;
     this.IdUsuario = 0;
+    this.IdUsuarioPai = 0;
     const vendedor = JSON.parse(localStorage.getItem('usuario')!) as VendedorDB;
     if (vendedor) {
       this.NomeUsuario = vendedor.xNome;
       this.IsAdmin = vendedor.IsAdmin;
       this.IdUsuario = vendedor.Id;
+      this.IdUsuarioPai = vendedor.IdPai ?? 0;
     }
   }
 }

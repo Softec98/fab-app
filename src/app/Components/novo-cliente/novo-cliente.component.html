@@ -3,6 +3,8 @@
         <mat-card class="card" style="margin: 15px 0 15px 0; padding-left: 10px;">
 
             <ng-container [formGroup]="form" *ngIf="form">
+                <input matInput formControlName="id" [hidden]="true">
+                <input matInput formControlName="idPedidoUltimo" [hidden]="true">                
                 <app-cliente cnpj="{{ form.controls['cnpj'].value }}"></app-cliente>
             </ng-container>
 
