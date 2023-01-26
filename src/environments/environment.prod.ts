@@ -17,5 +17,6 @@ export const environment = {
   Id_Cond_Pagto: [
     1
   ],
-  encryptSecretKey: 'Fab@2023@Softec98#&$!'
+  encryptSecretKey: 'Fab@2023@Softec98#&$!',
+  pageSizeOptions: [5, 10, 25, 100]
 };
