@@ -1,0 +1,137 @@
+[
+    {
+        "key": "AC",
+        "value": "Acre",
+        "capitalValue": "Rio Branco"
+    },
+    {
+        "key": "AL",
+        "value": "Alagoas",
+        "capitalValue": "Maceió"
+    },
+    {
+        "key": "AP",
+        "value": "Amapá",
+        "capitalValue": "Macapá"
+    },
+    {
+        "key": "AM",
+        "value": "Amazonas",
+        "capitalValue": "Manaus"
+    },
+    {
+        "key": "BA",
+        "value": "Bahia",
+        "capitalValue": "Salvador"
+    },
+    {
+        "key": "CE",
+        "value": "Ceará",
+        "capitalValue": "Fortaleza"
+    },
+    {
+        "key": "DF",
+        "value": "Distrito Federal",
+        "capitalValue": "Distrito Federal"
+    },
+    {
+        "key": "ES",
+        "value": "Espírito Santo",
+        "capitalValue": "Vitória"
+    },
+    {
+        "key": "GO",
+        "value": "Goiás",
+        "capitalValue": "Goiânia"
+    },
+    {
+        "key": "MA",
+        "value": "Maranhão",
+        "capitalValue": "São Luiz"
+    },
+    {
+        "key": "MT",
+        "value": "Mato Grosso",
+        "capitalValue": "Cuiabá"
+    },
+    {
+        "key": "MS",
+        "value": "Mato Grosso do Sul",
+        "capitalValue": "Campo Grande"
+    },
+    {
+        "key": "MG",
+        "value": "Minas Gerais",
+        "capitalValue": "Belo Horizonte"
+    },
+    {
+        "key": "PA",
+        "value": "Pará",
+        "capitalValue": "Belém"
+    },
+    {
+        "key": "PB",
+        "value": "Paraíba",
+        "capitalValue": "João Pessoa"
+    },
+    {
+        "key": "PR",
+        "value": "Paraná",
+        "capitalValue": "Curitiba"
+    },
+    {
+        "key": "PE",
+        "value": "Pernambuco",
+        "capitalValue": "Recife"
+    },
+    {
+        "key": "PI",
+        "value": "Piauí",
+        "capitalValue": "Teresina"
+    },
+    {
+        "key": "RJ",
+        "value": "Rio de Janeiro",
+        "capitalValue": "Rio de Janeiro"
+    },
+    {
+        "key": "RN",
+        "value": "Rio Grande do Norte",
+        "capitalValue": "Natal"
+    },
+    {
+        "key": "RO",
+        "value": "Rondônia",
+        "capitalValue": "Porto Velho"
+    },
+    {
+        "key": "RR",
+        "value": "Roraima",
+        "capitalValue": "Boa Vista"
+    },
+    {
+        "key": "RS",
+        "value": "Rio Grande do Sul",
+        "capitalValue": "Porto Alegre"
+    },
+    {
+        "key": "SC",
+        "value": "Santa Catarina",
+        "capitalValue": "Florianópolis"
+    },
+    {
+        "key": "SP",
+        "value": "São Paulo",
+        "capitalValue": "São Paulo"
+    },
+    {
+        "key": "SE",
+        "value": "Sergipe",
+        "capitalValue": "Aracaju"
+    },
+    {
+        "key": "TO",
+        "value": "Tocantins",
+        "capitalValue": "Palmas"
+    }
+]

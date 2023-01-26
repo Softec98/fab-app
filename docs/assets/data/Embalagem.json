@@ -1,0 +1,93 @@
+[
+    {
+        "Id": 0,
+        "xEmbalagem": "Unidade",
+        "cEmbalagem": "UN",
+        "pEmbalagem": 0,
+        "Peso": 0
+    },
+    {
+        "Id": 1,
+        "xEmbalagem": "6X25G",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.150
+    },
+    {
+        "Id": 2,
+        "xEmbalagem": "6X60G",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.360
+    },
+    {
+        "Id": 3,
+        "xEmbalagem": "12X3G",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.036
+    },
+    {
+        "Id": 4,
+        "xEmbalagem": "12X5G",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.060
+    },
+    {
+        "Id": 5,
+        "xEmbalagem": "12X15G",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.180
+    },
+    {
+        "Id": 6,
+        "xEmbalagem": "12X40G",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.480
+    },
+    {
+        "Id": 7,
+        "xEmbalagem": "12X50G",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.600
+    },
+    {
+        "Id": 8,
+        "xEmbalagem": "12X60G",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.720
+    },
+    {
+        "Id": 9,
+        "xEmbalagem": "12X10ML",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.120
+    },
+    {
+        "Id": 10,
+        "xEmbalagem": "12X270ML",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 3.240
+    },
+    {
+        "Id": 11,
+        "xEmbalagem": "30X50ML",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 1.500
+    },
+    {
+        "Id": 12,
+        "xEmbalagem": "12X30ML",
+        "cEmbalagem": "CX",
+        "pEmbalagem": 0,
+        "Peso": 0.360
+    }
+]

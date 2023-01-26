@@ -1,0 +1,1822 @@
+[
+    {
+        "cProd": "15010001",
+        "xProd": "DOURADO 12X5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15010002",
+        "xProd": "DOURADO ANTIGO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15010003",
+        "xProd": "PRATEADO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15010004",
+        "xProd": "ACOBREADO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15010005",
+        "xProd": "DOURADO ROSÊ 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15010006",
+        "xProd": "DOURADO EGÍPCIO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 1,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020001",
+        "xProd": "AMARELO GEMA 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020002",
+        "xProd": "AZUL ANIS 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020003",
+        "xProd": "AZUL JEANS 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020004",
+        "xProd": "VERMELHO MORANGO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020005",
+        "xProd": "VERMELHO NATAL 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020006",
+        "xProd": "LILÁS 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020007",
+        "xProd": "ROSA CEREJA 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020008",
+        "xProd": "VERDE FOLHA 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020009",
+        "xProd": "VERDE MENTA 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020010",
+        "xProd": "PEROLADO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020011",
+        "xProd": "PRETO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020012",
+        "xProd": "BRANCO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020013",
+        "xProd": "AZUL TIFFANY 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020014",
+        "xProd": "ULTRAVIOLETA 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020015",
+        "xProd": "ROSA SECO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020016",
+        "xProd": "VERMELHO RUBI 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020017",
+        "xProd": "AMARELO DAMASCO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020018",
+        "xProd": "LARANJA 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020019",
+        "xProd": "MARROM 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020024",
+        "xProd": "AZUL ROYAL 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020025",
+        "xProd": "AZUL MARINHO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15020026",
+        "xProd": "VERMELHO MARSALA 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 2,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030001",
+        "xProd": "AMARELO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030002",
+        "xProd": "AZUL 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030003",
+        "xProd": "VERDE 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030004",
+        "xProd": "VERMELHO 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030005",
+        "xProd": "ROSA 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15030006",
+        "xProd": "CRISTAL 12x3g",
+        "Id_Embalagem": 3,
+        "Id_Produto_Familia": 3,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15040001",
+        "xProd": "DOURADO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 4,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15040002",
+        "xProd": "PRATEADO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 4,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15040003",
+        "xProd": "PEROLADO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 4,
+        "Id_Produto_Grupo": 1
+    },
+    {
+        "cProd": "15060001",
+        "xProd": "ÁLCOOL ETÍLICO DE CEREAIS 93,8º",
+        "Id_Embalagem": 11,
+        "Id_Produto_Familia": 6,
+        "Id_Produto_Grupo": 2
+    },
+    {
+        "cProd": "15060002",
+        "xProd": "SOLUÇÃO ALCOÓLICA NEUTRA",
+        "Id_Embalagem": 10,
+        "Id_Produto_Familia": 6,
+        "Id_Produto_Grupo": 2
+    },
+    {
+        "cProd": "16030501",
+        "xProd": "Cor. Liquido Art. Alim. AMARELO 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030502",
+        "xProd": "Cor. Liquido Art. Alim. AMARELO GEMA 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030503",
+        "xProd": "Cor. Liquido Art. Alim. AZUL 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030504",
+        "xProd": "Cor. Liquido Art. Alim. AZUL MARINHO 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030505",
+        "xProd": "Cor. Liquido Art. Alim. AZUL TIFFANY 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030506",
+        "xProd": "Cor. Liquido Art. Alim. BRANCO 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030507",
+        "xProd": "Cor. Liquido Art. Alim. LARANJA 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030508",
+        "xProd": "Cor. Liquido Art. Alim. LILÁS 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030509",
+        "xProd": "Cor. Liquido Art. Alim. MARROM 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030510",
+        "xProd": "Cor. Liquido Art. Alim. PINK 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030511",
+        "xProd": "Cor. Liquido Art. Alim. PRETO 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030512",
+        "xProd": "Cor. Liquido Art. Alim. ROSA 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030513",
+        "xProd": "Cor. Liquido Art. Alim. ROSA SECO 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030514",
+        "xProd": "Cor. Liquido Art. Alim. ROXO 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030515",
+        "xProd": "Cor. Liquido Art. Alim. SALMÃO 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030516",
+        "xProd": "Cor. Liquido Art. Alim. VERDE 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030517",
+        "xProd": "Cor. Liquido Art. Alim. VERDE FOLHA 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030519",
+        "xProd": "Cor. Liquido Art. Alim. VERDE MENTA 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030520",
+        "xProd": "Cor. Liquido Art. Alim. VERMELHO 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030521",
+        "xProd": "Cor. Liquido Art. Alim. VERMELHO NATAL 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030522",
+        "xProd": "Cor. Liquido Art. Alim. VERMELHO RUBI 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16030523",
+        "xProd": "Cor. Liquido Art. Alim. VINHO 12x10ml",
+        "Id_Embalagem": 9,
+        "Id_Produto_Familia": 7,
+        "Id_Produto_Grupo": 4
+    },
+    {
+        "cProd": "16020401",
+        "xProd": "Cor. Gel Art. Alim. AMARELO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020402",
+        "xProd": "Cor. Gel Art. Alim. AMARELO GEMA 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020403",
+        "xProd": "Cor. Gel Art. Alim. AZUL 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020404",
+        "xProd": "Cor. Gel Art. Alim. AZUL MARINHO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020405",
+        "xProd": "Cor. Gel Art. Alim. AZUL TIFFANY 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020406",
+        "xProd": "Cor. Gel Art. Alim. BRANCO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020407",
+        "xProd": "Cor. Gel Art. Alim. LARANJA 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020409",
+        "xProd": "Cor. Gel Art. Alim. MARROM 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020410",
+        "xProd": "Cor. Gel Art. Alim. PINK 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020411",
+        "xProd": "Cor. Gel Art. Alim. PRETO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020412",
+        "xProd": "Cor. Gel Art. Alim. ROSA 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020414",
+        "xProd": "Cor. Gel Art. Alim. ROXO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020415",
+        "xProd": "Cor. Gel Art. Alim. SALMÃO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020416",
+        "xProd": "Cor. Gel Art. Alim. VERDE 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020417",
+        "xProd": "Cor. Gel Art. Alim. VERDE FOLHA 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020419",
+        "xProd": "Cor. Gel Art. Alim. VERDE MENTA 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020420",
+        "xProd": "Cor. Gel Art. Alim. VERMELHO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020421",
+        "xProd": "Cor. Gel Art. Alim. VERMELHO NATAL 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16020422",
+        "xProd": "Cor. Gel Art. Alim. VERMELHO RUBI 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 8,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010101",
+        "xProd": "CORANTE SOFTGEL 25G AMARELO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010102",
+        "xProd": "CORANTE SOFTGEL 25G AMARELO GEMA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010103",
+        "xProd": "CORANTE SOFTGEL 25G AZUL",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010104",
+        "xProd": "CORANTE SOFTGEL 25G AZUL MARINHO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010105",
+        "xProd": "CORANTE SOFTGEL 25G AZUL TIFFANY",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010106",
+        "xProd": "CORANTE SOFTGEL 25G BRANCO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010107",
+        "xProd": "CORANTE SOFTGEL 25G LARANJA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010108",
+        "xProd": "CORANTE SOFTGEL 25G LILÁS",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010109",
+        "xProd": "CORANTE SOFTGEL 25G MARROM",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010110",
+        "xProd": "CORANTE SOFTGEL 25G PINK",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010112",
+        "xProd": "CORANTE SOFTGEL 25G ROSA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010113",
+        "xProd": "CORANTE SOFTGEL 25G ROSA SECO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010114",
+        "xProd": "CORANTE SOFTGEL 25G ROXO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010115",
+        "xProd": "CORANTE SOFTGEL 25G SALMÃO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010111",
+        "xProd": "CORANTE SOFTGEL 25G SUPER PRETO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010120",
+        "xProd": "CORANTE SOFTGEL 25G SUPER VERMELHO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010116",
+        "xProd": "CORANTE SOFTGEL 25G VERDE",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010117",
+        "xProd": "CORANTE SOFTGEL 25G VERDE FOLHA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010118",
+        "xProd": "CORANTE SOFTGEL 25G VERDE LIMÃO",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010119",
+        "xProd": "CORANTE SOFTGEL 25G VERDE MENTA",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010121",
+        "xProd": "CORANTE SOFTGEL 25G VERMELHO NATAL",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010122",
+        "xProd": "CORANTE SOFTGEL 25G VERMELHO RUBI",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 9,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010301",
+        "xProd": "Cor. SoftGel Art. Alim. AMARELO 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010302",
+        "xProd": "Cor. SoftGel Art. Alim. AMARELO GEMA 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010303",
+        "xProd": "Cor. SoftGel Art. Alim. AZUL 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010304",
+        "xProd": "Cor. SoftGel Art. Alim. AZUL MARINHO 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010305",
+        "xProd": "Cor. SoftGel Art. Alim. AZUL TIFFANY 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010306",
+        "xProd": "Cor. SoftGel Art. Alim. BRANCO 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010307",
+        "xProd": "Cor. SoftGel Art. Alim. LARANJA 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010308",
+        "xProd": "Cor. SoftGel Art. Alim. LILÁS 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010309",
+        "xProd": "Cor. SoftGel Art. Alim. MARROM 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010310",
+        "xProd": "Cor. SoftGel Art. Alim. PINK 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010311",
+        "xProd": "Cor. SoftGel Art. Alim. SUPER PRETO 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010312",
+        "xProd": "Cor. SoftGel Art. Alim. ROSA 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010313",
+        "xProd": "Cor. SoftGel Art. Alim. ROSA SECO 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010314",
+        "xProd": "Cor. SoftGel Art. Alim. ROXO 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010315",
+        "xProd": "Cor. SoftGel Art. Alim. SALMÃO 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010316",
+        "xProd": "Cor. SoftGel Art. Alim. VERDE 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010317",
+        "xProd": "Cor. SoftGel Art. Alim. VERDE FOLHA 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010318",
+        "xProd": "Cor. SoftGel Art. Alim. VERDE LIMÃO 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010319",
+        "xProd": "Cor. SoftGel Art. Alim. VERDE MENTA 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010320",
+        "xProd": "Cor. SoftGel Art. Alim. SUPER VERMELHO 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010321",
+        "xProd": "Cor. SoftGel Art. Alim. VERMELHO NATAL 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010322",
+        "xProd": "Cor. SoftGel Art. Alim. VERMELHO RUBI 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 10,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16000101",
+        "xProd": "Cor. Neocolor Art. Alim. AMARELO 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000102",
+        "xProd": "Cor. Neocolor Art. Alim. AMARELO GEMA 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000103",
+        "xProd": "Cor. Neocolor Art. Alim. AZUL 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000104",
+        "xProd": "Cor. Neocolor Art. Alim. AZUL MARINHO 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000105",
+        "xProd": "Cor. Neocolor Art. Alim. AZUL TIFFANY 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000106",
+        "xProd": "Cor. Neocolor Art. Alim. BRANCO 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000107",
+        "xProd": "Cor. Neocolor Art. Alim. LARANJA 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000108",
+        "xProd": "Cor. Neocolor Art. Alim. LILÁS 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000109",
+        "xProd": "Cor. Neocolor Art. Alim. MARROM 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000110",
+        "xProd": "Cor. Neocolor Art. Alim. PINK 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000112",
+        "xProd": "Cor. Neocolor Art. Alim. ROSA 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000113",
+        "xProd": "Cor. Neocolor Art. Alim. ROSA SECO 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000114",
+        "xProd": "Cor. Neocolor Art. Alim. ROXO 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000115",
+        "xProd": "Cor. Neocolor Art. Alim. SALMÃO 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000111",
+        "xProd": "Cor. Neocolor Art. Alim. SUPER PRETO 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000120",
+        "xProd": "Cor. Neocolor Art. Alim. SUPER VERMELHO 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000116",
+        "xProd": "Cor. Neocolor Art. Alim. VERDE 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000117",
+        "xProd": "Cor. Neocolor Art. Alim. VERDE FOLHA 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000118",
+        "xProd": "Cor. Neocolor Art. Alim. VERDE LIMÃO 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000119",
+        "xProd": "Cor. Neocolor Art. Alim. VERDE MENTA 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000121",
+        "xProd": "Cor. Neocolor Art. Alim. VERMELHO NATAL 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16000122",
+        "xProd": "Cor. Neocolor Art. Alim. VERMELHO RUBI 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 11,
+        "Id_Produto_Grupo": 9
+    },
+    {
+        "cProd": "16030601",
+        "xProd": "GLITTER AZUL 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030602",
+        "xProd": "GLITTER AZUL TIFFANY 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030603",
+        "xProd": "GLITTER CHAMPANHE 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030604",
+        "xProd": "GLITTER CRISTAL 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030605",
+        "xProd": "GLITTER DOURADO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030606",
+        "xProd": "GLITTER DOURADO EGIPCIO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030607",
+        "xProd": "GLITTER LILÁS 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030608",
+        "xProd": "GLITTER PINK 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030609",
+        "xProd": "GLITTER PRATEADO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030610",
+        "xProd": "GLITTER PRETO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030611",
+        "xProd": "GLITTER ROSA 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030612",
+        "xProd": "GLITTER ULTRAVIOLETA 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030613",
+        "xProd": "GLITTER VERDE 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030614",
+        "xProd": "GLITTER VERMELHO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030615",
+        "xProd": "GLITTER MARROM 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030616",
+        "xProd": "GLITTER AMARELO NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030617",
+        "xProd": "GLITTER LARANJA NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030618",
+        "xProd": "GLITTER ROSA NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030619",
+        "xProd": "GLITTER VERDE NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030620",
+        "xProd": "GLITTER AZUL CANDY 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030621",
+        "xProd": "GLITTER LILÁS CANDY 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030622",
+        "xProd": "GLITTER ROSA CANDY 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 12,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030701",
+        "xProd": "HOLOGRAFICO AZUL 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030702",
+        "xProd": "HOLOGRAFICO DOURADO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030703",
+        "xProd": "HOLOGRAFICO LILÁS 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030704",
+        "xProd": "GLITTER HOLOGRAFICO PINK 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030705",
+        "xProd": "HOLOGRAFICO PRATA 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030706",
+        "xProd": "HOLOGRAFICO ROSA 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030707",
+        "xProd": "HOLOGRAFICO ROSA SECO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030708",
+        "xProd": "HOLOGRAFICO VERMELHO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 13,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16030801",
+        "xProd": "NEON AMARELO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030802",
+        "xProd": "NEON AZUL 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030803",
+        "xProd": "NEON AZUL MARINHO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030804",
+        "xProd": "NEON LARANJA 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030805",
+        "xProd": "NEON PINK 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030806",
+        "xProd": "NEON ROSA 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030807",
+        "xProd": "NEON ROXO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030808",
+        "xProd": "NEON VERDE 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030809",
+        "xProd": "NEON VERMELHO 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030810",
+        "xProd": "NEON VERDE MAR 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16030811",
+        "xProd": "NEON AMARELO GEMA 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 14,
+        "Id_Produto_Grupo": 8
+    },
+    {
+        "cProd": "16010401",
+        "xProd": "Corante SoftGel Art. AMARELO NEON 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010402",
+        "xProd": "Corante SoftGel Art. AZUL NEON 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010406",
+        "xProd": "Corante SoftGel Art. AZUL TIFFANY NEON 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010403",
+        "xProd": "Corante SoftGel Art. LARANJA NEON 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010404",
+        "xProd": "Corante SoftGel Art. ROSA NEON 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010405",
+        "xProd": "Corante SoftGel Art. VERDE NEON 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 15,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "15050001",
+        "xProd": "GLICERINA 12x60g",
+        "Id_Embalagem": 8,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "15050003",
+        "xProd": "BICARBONATO DE SÓDIO 12x50g",
+        "Id_Embalagem": 7,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "15050004",
+        "xProd": "ÁCIDO CÍTRICO 12X50g",
+        "Id_Embalagem": 7,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "15050005",
+        "xProd": "CMC 12x40g",
+        "Id_Embalagem": 6,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "15050006",
+        "xProd": "CREMOR DE TÁRTARO 12x50g",
+        "Id_Embalagem": 7,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "15050007",
+        "xProd": "DIÓXIDO DE TITÂNIO 12x15g",
+        "Id_Embalagem": 5,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "15050008",
+        "xProd": "GELATINA 12x40g",
+        "Id_Embalagem": 6,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "15050009",
+        "xProd": "PECTINA 12x40g",
+        "Id_Embalagem": 6,
+        "Id_Produto_Familia": 5,
+        "Id_Produto_Grupo": 3
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER ROSA CANDY",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 16,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER AZUL CANDY",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 16,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER LILÁS CANDY",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 16,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER ROSA NEON",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 17,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER AMARELO NEON",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 17,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER LARANJA NEON",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 17,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER VERDE NEON",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 17,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "",
+        "xProd": "GLITTER COLOR MARROM",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 18,
+        "Id_Produto_Grupo": 6
+    },
+    {
+        "cProd": "16010501",
+        "xProd": "Caneta mágica com gel Amarelo 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010502",
+        "xProd": "Caneta mágica com gel Azul 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010503",
+        "xProd": "Caneta mágica com gel Cristal 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010504",
+        "xProd": "Caneta mágica com gel Dourado 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010505",
+        "xProd": "Caneta mágica com gel Prateado 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010506",
+        "xProd": "Caneta mágica com gel Preto 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010507",
+        "xProd": "Caneta mágica com gel Rosa 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010508",
+        "xProd": "Caneta mágica com gel Verde 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010509",
+        "xProd": "Caneta mágica com gel Vermelho 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 19,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010601",
+        "xProd": "Caneta mágica com gel Amarelo Neon 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 20,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010602",
+        "xProd": "Caneta mágica com gel Azul Neon 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 20,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010603",
+        "xProd": "Caneta mágica com gel Laranja Neon 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 20,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010604",
+        "xProd": "Caneta mágica com gel Rosa Neon 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 20,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010605",
+        "xProd": "Caneta mágica com gel Verde Neon 6x60g",
+        "Id_Embalagem": 2,
+        "Id_Produto_Familia": 20,
+        "Id_Produto_Grupo": 7
+    },
+    {
+        "cProd": "16010420",
+        "xProd": "Cor. SoftGel Art. Amarelo Candy 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 21,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010421",
+        "xProd": "Cor. SoftGel Art. Azul Candy 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 21,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010422",
+        "xProd": "Cor. SoftGel Art. Laranja Candy 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 21,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010423",
+        "xProd": "Cor. SoftGel Art. Lilás Candy 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 21,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010424",
+        "xProd": "Cor. SoftGel Art. Rosa Candy 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 21,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010425",
+        "xProd": "Cor. SoftGel Art. Verde Candy 6x25g",
+        "Id_Embalagem": 1,
+        "Id_Produto_Familia": 21,
+        "Id_Produto_Grupo": 5
+    },
+    {
+        "cProd": "16010701",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Amarelo 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 22,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010702",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Azul 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 22,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010703",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Azul Marinho 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 22,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010704",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Branco 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 22,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010705",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Preto 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 22,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010706",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Rosa 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 22,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010707",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Roxo 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 22,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010708",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Verde 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 22,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010709",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Vermelho 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 22,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010750",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Amarelo NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 23,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010751",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Azul NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 23,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010752",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Laranja NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 23,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010753",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Pink NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 23,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010754",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Rosa NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 23,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010755",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Roxo NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 23,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010756",
+        "xProd": "Cor. em pó p/ Chocolate Art. Alim. Verde NEON 12x5g",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 23,
+        "Id_Produto_Grupo": 10
+    },
+    {
+        "cProd": "16010801",
+        "xProd": "Aroma Art. Sabor Abacaxi 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010802",
+        "xProd": "Aroma Art. Sabor Amêndoa 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010803",
+        "xProd": "Aroma Art. Sabor Banana 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010804",
+        "xProd": "Aroma Art. Sabor Baunilha 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010805",
+        "xProd": "Aroma Art. Sabor Baunilha Branca 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010806",
+        "xProd": "Aroma Art. Sabor Cereja 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010807",
+        "xProd": "Aroma Art. Sabor Chocolate 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010808",
+        "xProd": "Aroma Art. Sabor Coco 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010809",
+        "xProd": "Aroma Art. Sabor Laranja 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010810",
+        "xProd": "Aroma Art. Sabor Limão 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010811",
+        "xProd": "Aroma Art. Sabor Maracujá 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010812",
+        "xProd": "Aroma Art. Sabor Menta 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010813",
+        "xProd": "Aroma Art. Sabor Morango 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010814",
+        "xProd": "Aroma Art. Sabor Nozes 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    },
+    {
+        "cProd": "16010815",
+        "xProd": "Aroma Art. Sabor Panetone 12x30ml",
+        "Id_Embalagem": 4,
+        "Id_Produto_Familia": 24,
+        "Id_Produto_Grupo": 11
+    }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "Id": 1,
+        "NCM": "28363000",
+        "EXTIPI": "",
+        "pIPI": 0,
+        "vIPI": 0,
+        "cIPI": ""
+    },
+    {
+        "Id": 2,
+        "NCM": "29054500",
+        "EXTIPI": "",
+        "pIPI": 0,
+        "vIPI": 0,
+        "cIPI": ""
+    },
+    {
+        "Id": 3,
+        "NCM": "32021000",
+        "EXTIPI": "",
+        "pIPI": 0,
+        "vIPI": 0,
+        "cIPI": ""
+    },
+    {
+        "Id": 4,
+        "NCM": "32049000",
+        "EXTIPI": "",
+        "pIPI": 0,
+        "vIPI": 0,
+        "cIPI": ""
+    },
+    {
+        "Id": 5,
+        "NCM": "32042090",
+        "EXTIPI": "",
+        "pIPI": 0,
+        "vIPI": 0,
+        "cIPI": ""
+    },
+    {
+        "Id": 6,
+        "NCM": "32061910",
+        "EXTIPI": "",
+        "pIPI": 0,
+        "vIPI": 0,
+        "cIPI": ""
+    },
+    {
+        "Id": 7,
+        "NCM": "32041830",
+        "EXTIPI": "",
+        "pIPI": 0,
+        "vIPI": 0,
+        "cIPI": ""
+    },
+    {
+        "Id": 8,
+        "NCM": "33021000",
+        "EXTIPI": "",
+        "pIPI": 0,
+        "vIPI": 0,
+        "cIPI": ""
+    }
+]
