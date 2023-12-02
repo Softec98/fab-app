@@ -74,7 +74,7 @@
                                 <mat-label>Região</mat-label>
                                 <mat-select matInput placeholder="Região" formControlName="idRegiao">
                                     <mat-option value="-1">[ Selecione a região ]</mat-option>
-                                    <mat-option *ngFor="let rg of Regioes" [value]="rg.Id">
+                                    <mat-option *ngFor="let rg of regiao" [value]="rg.Id">
                                         {{ rg.Id }}-{{ rg.xNome }}
                                     </mat-option>
                                 </mat-select>

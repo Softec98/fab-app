@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { db } from 'src/app/Infrastructure/ApplicationDB';
+import { ClienteDB } from 'src/app/Core/Entities/ClienteDB';
+import { DataService } from 'src/app/Infrastructure/Services/data.service';
 
 @Component({
   selector: 'app-guia-expedicao',
@@ -18,12 +19,14 @@ export class GuiaExpedicaoComponent {
   qtdLinPgN: number = 48;
   paginas: number = 0;
 
-  constructor(public dialogRef: MatDialogRef<GuiaExpedicaoComponent>,
+  constructor(
+    protected dataService: DataService,
+    public dialogRef: MatDialogRef<GuiaExpedicaoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   async ngOnInit(): Promise<void> {
     this.paginas = Math.ceil((this.data.Dados.PedidosItensDto.length - this.qtdLinPg1) / this.qtdLinPgN);
-    let cliente = await db.Clientes.get(this.data.Dados.Id_Cliente);
+    let cliente = await this.dataService.obterClientePorId(this.data.Dados.Id_Cliente);
     if (cliente != null) {
       this.cidade = cliente.xMun;
       this.uf = cliente.UF;

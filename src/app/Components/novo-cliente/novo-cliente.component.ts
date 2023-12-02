@@ -4,6 +4,7 @@ import { ClienteDB } from '../../Core/Entities/ClienteDB';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DataService } from '../../Infrastructure/Services/data.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
 import { Component, OnInit, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 
 @Component({
@@ -17,6 +18,7 @@ export class NovoClienteComponent implements OnInit, AfterViewChecked {
   public form!: FormGroup;
 
   constructor(
+    protected spinner: SpinnerOverlayService,
     protected dataService: DataService,
     private formBuilder: FormBuilder,
     private router: Router,
@@ -26,6 +28,9 @@ export class NovoClienteComponent implements OnInit, AfterViewChecked {
   ) { }
 
   async ngOnInit(): Promise<void> {
+
+    this.spinner.show();
+
     let cliente!: ClienteDB;
     this.responsive.observe([
       Breakpoints.HandsetPortrait,
@@ -70,6 +75,8 @@ export class NovoClienteComponent implements OnInit, AfterViewChecked {
       pais: [cliente?.cPais! ?? ''],
       idPedidoUltimo: [cliente.IdPedidoUltimo ?? '']
     });
+
+    this.spinner.hide();
   }
 
   ngAfterViewChecked(): void {

@@ -1,3 +1,4 @@
+import { NgxPrintModule } from 'ngx-print';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -86,6 +87,7 @@ export const MY_FORMATS = {
     PromptComponent
   ],
   imports: [
+    NgxPrintModule, 
     BrowserModule,
     MaterialModule,
     AppRoutingModule,

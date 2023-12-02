@@ -120,7 +120,7 @@
                     <mat-label>UF</mat-label>
                     <mat-select matInput placeholder="UF" formControlName="uf">
                         <mat-option value="-1">[ Selecione o estado ]</mat-option>
-                        <mat-option *ngFor="let uf of Estados" [value]="uf.key">
+                        <mat-option *ngFor="let uf of estados" [value]="uf.key">
                             {{ uf.key }}-{{ uf.value }}
                         </mat-option>
                     </mat-select>

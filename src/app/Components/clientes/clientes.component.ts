@@ -1,8 +1,6 @@
 import { Router } from '@angular/router';
 import { Utils } from '../../Utils/Utils';
 import { MatSort } from '@angular/material/sort';
-import { MatDialog } from '@angular/material/dialog';
-import { PedidoDto } from '../../Core/Dto/PedidoDto';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClienteDB } from '../../Core/Entities/ClienteDB';
 import { MatPaginator } from '@angular/material/paginator';
@@ -13,8 +11,8 @@ import { VendedorDB } from 'src/app/Core/Entities/VendedorDB';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DataService } from '../../Infrastructure/Services/data.service';
 import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { SpinnerOverlayService } from '../../Core/Services/spinner-overlay.service';
-import { ImpressaoDialogComponent } from '../impressao-dialog/impressao-dialog.component';
+import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
+import { PedidoImpressaoService } from 'src/app/Core/Services/pedido-impressao.service';
 
 @Component({
   selector: 'app-clientes',
@@ -25,24 +23,37 @@ export class ClientesComponent {
 
   estados: IAuxiliar[] = [];
   pessoas: IAuxiliar[] = [];
+
   displayedColumns: string[] = [];
   form!: FormGroup;
   isPhonePortrait: boolean = false;
 
   constructor(protected dataService: DataService,
     private formBuilder: FormBuilder,
-    private readonly spinner: SpinnerOverlayService,
     private responsive: BreakpointObserver,
-    private dialog: MatDialog,
-    private router: Router) {
+    private router: Router,
+    protected pedidoImpressaoService: PedidoImpressaoService,
+    private readonly spinner: SpinnerOverlayService) {
   }
 
-  private carregarSeletores() {
-    const promise1 = this.dataService.obterUF();
-    const promise2 = this.dataService.obterPessoas();
-    Promise.allSettled([promise1, promise2]).
-      then((results) => results.forEach((result) => console.log(result.status))).
-      finally(async () => this.atualizarSeletores());
+  private async carregarSeletores() {
+    let promises: Promise<void>[] = [];
+    if (this.dataService.estados.length == 0) {
+      promises.push(this.dataService.obterUF()); }
+    if (this.dataService.pessoas.length == 0) {
+      promises.push(this.dataService.obterPessoas()); }
+    if (promises.length > 0) {
+        await Promise.allSettled(promises).
+          then((results) => results.forEach((result) => console.log(result.status))).
+          finally(async () => this.atualizarSeletores().then(() => {
+            console.log("Seletores atualizados...");
+          }));
+    }
+    else {
+        await this.atualizarSeletores().then(() => {
+          console.log("Seletores atualizados...");
+        });
+    }
   }
 
   private async atualizarSeletores() {
@@ -57,6 +68,8 @@ export class ClientesComponent {
   @ViewChild(MatSort) sort!: MatSort;
 
   async ngOnInit(): Promise<void> {
+
+    this.spinner.show();
 
     this.responsive.observe([
       Breakpoints.HandsetPortrait,
@@ -90,7 +103,8 @@ export class ClientesComponent {
       Estado: ['']
     });
 
-    this.carregarSeletores();
+    await this.carregarSeletores();
+
     let clientes: ClienteDB[] = [];
     const usuario = JSON.parse(localStorage.getItem('usuario')!) as VendedorDB;
     if (usuario.IsAdmin) {
@@ -152,6 +166,8 @@ export class ClientesComponent {
         return retorno;
       }
     this.registros = clientes.length + 1;
+
+    this.spinner.hide();
   }
 
   applyFilter(event: Event) {
@@ -170,16 +186,6 @@ export class ClientesComponent {
 
   async openCliente(id?: number): Promise<void> {
     this.router.navigate(['/novo_cliente', id]);
-  }
-
-  async openDialogImpressao(id: number, action: string = 'show'): Promise<void> {
-    if (typeof id !== 'undefined') {
-      this.spinner.show();
-      let pedido = new PedidoDto(await this.dataService.obterPedidoPorId(id)!);
-      pedido.action = action;
-      this.dialog.open(ImpressaoDialogComponent, { data: pedido, width: '800px' });
-      this.spinner.hide();
-    }
   }
 
   async apagarCliente(id: number) {

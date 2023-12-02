@@ -1,0 +1,73 @@
+{
+    "baseurl": "https://script.google.com/macros/s",
+    "endpoints": [
+      {
+        "name": "Sales_Embalagem",
+        "url": "AKfycbx02Q8In4pDmZ-1Sww_xLbACC5LMSmtuSvA2yE5wsHKhskgAU0nbD99ioXSCIm5AemW"
+      },
+      {
+        "name": "Sales_Pessoa",
+        "url": "AKfycbwkuQ0Tpjn1uKe5aLAGvCPXooK1G_dfH7SWP5CuzBu5KOD87N5NdQhXVdhpDtnVD_z8"
+      },
+      {
+        "name": "Sales_Status",
+        "url": "AKfycbxh5mQyNAjlm48pY5u94a7yzcjIn1oUZpHs9BmEeiKDarMs5vZ4DGgwSMzFTWoOrNC_"
+      },
+      {
+        "name": "Sales_Vendedor",
+        "url": "AKfycbzFDhlou6S0q7RAoVX6DkVZiO4sbhqqtUzWqVDOMjtkXUBFth6yVp8G5nmg9chHXu8E"
+      },
+      {
+        "name": "Sales_Regiao",
+        "url": "AKfycbzc8yE4zJP_eNKcPzRPBhGYah7-5t6YgQwyC-ZBj9v6xAmbaRt2MRjjmTbkk9e08ARc"
+      },
+      {
+        "name": "Sales_Produto",
+        "url": "AKfycbxf3Ecg1dZ1KiVIaRBPbWfxfC-85aD1_E7cLEMTujX2pgaCp5_L3Jxy-QKrg4x5UIby_w"
+      },
+      {
+        "name": "Sales_ProdPreco",
+        "url": "AKfycbwcDylHh3NcBbTirLEmmmOq_m0oiqQSsXnW0c7immFitdk8_JeFDoHoKzTvVl1eqAPC"
+      },
+      {
+        "name": "Sales_CondPagto",
+        "url": "AKfycbwSBSmxSMKz99oJ8jhmkIjxDbQ3Fsz3320Rbz-fodkMK5ECOA1kq7FU9x12OBr3uW93jw"
+      },
+      {
+        "name": "Sales_ProdGrupo",
+        "url": "AKfycbxjQWwKMQ2xJTJOzzuaWRIi9JOjtgpUICzpQhAr0MB2axRY8j1rM30qEzy09rhlJ0kNSA"
+      },
+      {
+        "name": "Sales_ProdFamilia",
+        "url": "AKfycbwsfLHBYHhE70FeN0zWKry67i3VWCQMwwyQR4RMWXTbh_MPjr6bbLFX_ormhUMyLD8N"
+      },
+      {
+        "name": "Sales_CFOP",
+        "url": "AKfycby9OpqsYUtQO1n-Az7chEoRuejFNTkwDbA6DrxH6iYZNxfpymqGKMNkp0n6N9A-HdRhHg"
+      },
+      {
+        "name": "Sales_NCM",
+        "url": "AKfycbzeNcPDEkhWhdeX85reXbgt_JkMTR-w8c-2DEGtdR5W5BPIQPGM9Gthtd_Okn5oVwm8"
+      },
+      {
+        "name": "Sales_Frete",
+        "url": "AKfycbzjVpRPjZB61_-ZGn6hwIHNxA8BtkKz-js_yH2n657WxnI_VM1hmkP0PDMB28SvOUI3ng"
+      },
+      {
+        "name": "Sales_FaixaValor",
+        "url": "AKfycby154V56vS5_QixoPZc6oeWSmBesSe4YsucCTjyyCpf55sAnXsjzIxhHnv63IWypsqQ"
+      },
+      {
+        "name": "Sales_Estado",
+        "url": "AKfycbxSRKVASvCmVEWafYO5-ry61CfkBiR7iz85OCN8RhPWG4XrkET_9C28sx1f__dKH_be"
+      },
+      {
+        "name": "Sales_Cliente",
+        "url": "AKfycbzob6c-k70Z-4jQWCu19AZwZRr6lQcepQ8um5beT1D-jntVdsmlpj3eu6CPVImtCIdX"
+      },
+      {
+        "name": "Sales_Pedido",
+        "url": "AKfycbxpkS77nLKEI8DBgOoEKsJ3ObWEFc1jgq1G6rZkb1Vlqb-4PBYUgFe9dLdQHdCsiJS1dA"
+      }
+    ]
+  }

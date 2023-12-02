@@ -21,7 +21,7 @@ export class ClienteComponent implements OnInit, AfterViewChecked {
 	validation_messages = cliente_validation;
 	isPhonePortrait: boolean = false;
 	idUltimoPedido!: number;
-	Estados: IAuxiliar[] = [];
+	estados: IAuxiliar[] = [];
 	public formCliente!: FormGroup;
 
 	cepMask = Utils.cepMask;
@@ -37,6 +37,17 @@ export class ClienteComponent implements OnInit, AfterViewChecked {
 		private readonly changeDetectorRef: ChangeDetectorRef
 	) { }
 
+	private async carregarSeletores() {
+		await this.dataService.obterUF();
+		await this.atualizarSeletores().then(() => {
+			console.log("Seletores atualizados...");
+		  });
+	}
+
+	private async atualizarSeletores() {
+		this.estados = this.dataService.estados;
+	}	
+
 	async ngOnInit(): Promise<void> {
 		this.formCliente = this.rootFormGroup.control;
 		this.responsive.observe([
@@ -47,9 +58,9 @@ export class ClienteComponent implements OnInit, AfterViewChecked {
 				this.isPhonePortrait = true;
 			}
 		});
-		this.dataService.ObterEstados().subscribe(data => {
-			this.Estados = data;
-		});
+
+		await this.carregarSeletores();
+
 		setTimeout(async () => {
 			if (this.cnpj) {
 				await this.BuscarEmpresaIcon(this.cnpj);

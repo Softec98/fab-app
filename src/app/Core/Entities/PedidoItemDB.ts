@@ -3,6 +3,8 @@ export class PedidoItemDB  {
     public Id!: number;
     public Id_Pedido!: number;
     public Id_Produto!: number;
+    public Id_Produto_Familia!: number;
+    public Id_Produto_Grupo!: number;    
     public cProd!: string;
     public Unid!: string;
     public xProd!: string;

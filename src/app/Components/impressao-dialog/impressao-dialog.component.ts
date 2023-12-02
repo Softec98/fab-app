@@ -1,5 +1,4 @@
 import jsPDF from 'jspdf';
-import "jspdf/dist/polyfills.es.js";
 import html2canvas from 'html2canvas';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -37,12 +36,13 @@ export class ImpressaoDialogComponent {
       let heightLeft = imgHeight;
       let position = 0;
       heightLeft -= pageHeight;
-      const doc = new jsPDF('p', 'mm');
-      doc.addImage(canvas, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
+      const doc = new jsPDF('p', 'mm', 'a4');
+      var FILEURI = canvas.toDataURL('image/png');
+      doc.addImage(FILEURI, 'PNG', 0, position, imgWidth, imgHeight); //, '', 'MEDIUM');
       while (heightLeft >= 0) {
         position = heightLeft - imgHeight;
         doc.addPage();
-        doc.addImage(canvas, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
+        doc.addImage(FILEURI, 'PNG', 0, position, imgWidth, imgHeight) //, '', 'MEDIUM');
         heightLeft -= pageHeight;
       }
       this.spinner.hide();

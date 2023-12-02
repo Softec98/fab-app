@@ -1,20 +1,22 @@
 import { Router } from '@angular/router';
 import { MatSort } from '@angular/material/sort';
 import { PedidoDto } from '../../Core/Dto/PedidoDto';
-import { MatDialog } from '@angular/material/dialog';
-import { db } from '../../Infrastructure/ApplicationDB';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { IAuxiliar } from '../../Core/Interfaces/IAuxiliar';
 import { MatFormField } from '@angular/material/form-field';
 import { MatTableDataSource } from '@angular/material/table'
+import { EmbalagemDB } from 'src/app/Core/Entities/EmbalagemDB';
 import { LoginService } from 'src/app/Core/Services/login.service';
+import { ProdutoGrupoDB } from 'src/app/Core/Entities/ProdutoGrupoDB';
+import { ProdutoPrecoDB } from 'src/app/Core/Entities/ProdutoPrecoDB';
+import { IVendedor_aux } from 'src/app/Core/Interfaces/IVendedor_aux';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DataService } from '../../Infrastructure/Services/data.service';
-import { SpinnerOverlayService } from '../../Core/Services/spinner-overlay.service';
+import { ProdutoFamiliaDB } from 'src/app/Core/Entities/ProdutoFamiliaDB';
 import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { ImpressaoDialogComponent } from '../impressao-dialog/impressao-dialog.component';
-import { ICadastroImpressao, ICadastroTabImpressao } from 'src/app/Core/Interfaces/ICadastroImpressao';
+import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
+import { PedidoImpressaoService } from 'src/app/Core/Services/pedido-impressao.service';
 
 @Component({
   selector: 'app-pedido',
@@ -25,36 +27,66 @@ export class PedidoComponent implements OnInit {
 
   clientes: IAuxiliar[] = [];
   status: IAuxiliar[] = [];
-  fretes: IAuxiliar[] = [];
+  frete: IAuxiliar[] = [];
+  vendedores: IVendedor_aux[] = [];
+  familia: ProdutoFamiliaDB[] = [];
+  grupo: ProdutoGrupoDB[] = [];
+  preco: ProdutoPrecoDB[] = [];
+  embalagem: EmbalagemDB[] = [];  
   form!: FormGroup;
   isPhonePortrait: boolean = false;
 
   constructor(
     protected loginService: LoginService,
     protected dataService: DataService,
-    //private changeDetectorRef: ChangeDetectorRef,
     private formBuilder: FormBuilder,
-    private readonly spinner: SpinnerOverlayService,
     private responsive: BreakpointObserver,
-    private dialog: MatDialog,
-    private router: Router) {
+    private router: Router,
+    protected pedidoImpressaoService: PedidoImpressaoService,
+    private readonly spinner: SpinnerOverlayService) {
   }
 
-  private carregarSeletores() {
-    const promise1 = this.dataService.obterFretes();
-    const promise2 = this.dataService.obterStatus();
-    const promise3 = this.dataService.obterPedidosIdClientes();
-    Promise.allSettled([promise1, promise2, promise3]).
-      then((results) => results.forEach((result) => console.log(result.status))).
-      finally(async () => this.atualizarSeletores());
+  private async carregarSeletores() {
+    let promises: Promise<void>[] = [];
+    if (this.dataService.fretes.length == 0) {
+      promises.push(this.dataService.obterFretes()); }
+    if (this.dataService.status.length == 0) {
+      promises.push(this.dataService.obterStatus()); }
+    if (this.dataService.clientes_aux.length == 0) {
+      promises.push(this.dataService.obterPedidosIdClientes()); }
+    if (this.dataService.vendedores_aux.length == 0) {
+      promises.push(this.dataService.preencherVendedores()); }
+    if (this.dataService.familia.length == 0) {
+      promises.push(this.dataService.obterFamilia()); }
+    if (this.dataService.grupo.length == 0) {
+      promises.push(this.dataService.obterGrupo()); }      
+    if (this.dataService.embalagem.length == 0) {
+      promises.push(this.dataService.ObterEmbalagem()); }
+    if (this.dataService.preco.length == 0) {
+      promises.push(this.dataService.obterProdPreco()); }         
+    if (promises.length > 0) {
+      await Promise.allSettled(promises).
+        then((results) => results.forEach((result) => console.log(result.status))).
+        finally(async () => this.atualizarSeletores().then(() => {
+          console.log("Seletores atualizados...");
+        }));
+    }
+    else {
+      await this.atualizarSeletores().then(() => {
+        console.log("Seletores atualizados...");
+      });
+    }
   }
 
   private async atualizarSeletores() {
     this.status = this.dataService.status;
-    this.fretes = this.dataService.fretes;
-    this.clientes = [...await this.dataService.obterClientes(this.dataService.clientesIds)].map(cliente =>
-      <IAuxiliar>{ key: cliente.Id, value: cliente.xNome });
-    db.preencherClientesPedidos(this.clientes);
+    this.frete = this.dataService.fretes;
+    this.clientes = this.dataService.clientes_aux;
+    this.vendedores = this.dataService.vendedores_aux;
+    this.familia = this.dataService.familia;
+    this.grupo = this.dataService.grupo;
+    this.embalagem = this.dataService.embalagem;
+    this.preco = this.dataService.preco;
   }
 
   displayedColumns = [
@@ -74,6 +106,8 @@ export class PedidoComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
 
+    this.spinner.show();
+
     this.responsive.observe([
       Breakpoints.HandsetPortrait,
     ]).subscribe(result => {
@@ -89,12 +123,24 @@ export class PedidoComponent implements OnInit {
       Id_Status: ['']
     });
 
-    this.carregarSeletores();
-    let pedidos = [...await this.dataService.obterPedidos(this.loginService.ObterIdUsuario())].map(pedido => new PedidoDto(pedido));
+    await this.carregarSeletores();
+
+    let pedidos = [...await this.dataService.obterPedidos(
+      this.loginService.ObterIdUsuario(), 
+      this.loginService.IsAdministrador())].map(pedido => 
+        new PedidoDto(
+          pedido, 
+          this.clientes, 
+          this.vendedores, 
+          this.frete, 
+          this.status,
+          this.familia,
+          this.grupo,
+          this.embalagem,
+          this.preco));
+
     this.dataSource = new MatTableDataSource(pedidos);
-    if (pedidos.length > 0 && typeof pedidos[0].NomeCliente == 'undefined') {
-      pedidos[0].NomeCliente = (await this.dataService.obterClientePorId(pedidos[0].Id_Cliente))?.xNome!
-    }
+   
     setTimeout(() => {
       this.dataSource.paginator = this.paginator;
     }, 0);
@@ -116,6 +162,8 @@ export class PedidoComponent implements OnInit {
         return retorno;
       }
     this.registros = pedidos.length + 1;
+
+    this.spinner.hide();
   }
 
   applyFilter(event: Event) {
@@ -134,19 +182,6 @@ export class PedidoComponent implements OnInit {
 
   async openPedido(id?: number): Promise<void> {
     this.router.navigate(['/novo_pedido', id]);
-  }
-
-  async openDialogImpressao(id: number, action: string = 'show'): Promise<void> {
-    if (typeof id !== 'undefined') {
-      this.spinner.show();
-      let pedido = new PedidoDto(await this.dataService.obterPedidoPorId(id)!);
-      pedido.action = action;
-      let tabs = [{ NomeTab: "pedido", DescricaoTab: "Visualização pedido" },
-                  { NomeTab: "guia", DescricaoTab: "Guia de expedição" }] as ICadastroTabImpressao[];
-      let cadastroImpressao = { Cadastro: "Pedido", Dados: pedido, Tabs: tabs } as ICadastroImpressao;
-      this.dialog.open(ImpressaoDialogComponent, { data: cadastroImpressao, width: '800px' });
-      this.spinner.hide();
-    }
   }
 
   async apagarPedido(id: number) {

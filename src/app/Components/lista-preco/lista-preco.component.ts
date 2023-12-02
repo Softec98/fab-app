@@ -1,21 +1,24 @@
 import { Utils } from 'src/app/Utils/Utils';
 import { MatSort } from '@angular/material/sort';
-import { NCMDB } from '../../Core/Entities/NCMDB';
 import { MatInput } from '@angular/material/input';
+import { NCMDB } from 'src/app/Core/Entities/NCMDB';
 import { PedidoDB } from '../../Core/Entities/PedidoDB';
-import { db } from '../../Infrastructure/ApplicationDB';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutoDB } from '../../Core/Entities/ProdutoDB';
 import { ClienteDB } from '../../Core/Entities/ClienteDB';
 import { MatTableDataSource } from '@angular/material/table';
 import { PedidoListaDto } from '../../Core/Dto/PedidoListaDto'
-import { ncmJson } from 'src/app/Infrastructure/ApplicationDB';
 import { PedidoItemDB } from '../../Core/Entities/PedidoItemDB';
 import { CondPagtoDB } from 'src/app/Core/Entities/CondPagtoDB';
+import { EmbalagemDB } from 'src/app/Core/Entities/EmbalagemDB';
 import { FaixaValorDB } from 'src/app/Core/Entities/FaixaValorDB';
 import { LoginService } from 'src/app/Core/Services/login.service';
+import { IVendedor_aux } from 'src/app/Core/Interfaces/IVendedor_aux';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ProdutoPrecoDB } from 'src/app/Core/Entities/ProdutoPrecoDB';
+import { ProdutoGrupoDB } from 'src/app/Core/Entities/ProdutoGrupoDB';
 import { DataService } from '../../Infrastructure/Services/data.service';
+import { ProdutoFamiliaDB } from 'src/app/Core/Entities/ProdutoFamiliaDB';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
 import cliente_validation from '../../../assets/data/validation/cliente-validation.json'
@@ -46,9 +49,17 @@ export class ListaPrecoComponent implements OnInit {
   _allGroup!: any[];
   expandedProduto: any[] = [];
   expandedSubProduto: PedidoListaDto[] = [];
+  
   condpg: CondPagtoDB[] = [];
   faixavl: FaixaValorDB[] = [];
-
+  grupo: ProdutoGrupoDB[] =[];
+  familia: ProdutoFamiliaDB[] =[];
+  embalagem: EmbalagemDB[] = [];
+  preco: ProdutoPrecoDB[] = [];
+  ncm: NCMDB[] = [];
+  produto: ProdutoDB[] = [];
+  vendedores: IVendedor_aux[] = [];
+  
   edicao: boolean = false;
   edicaoQtde: boolean = false;
   edicaoVenda: boolean = false;
@@ -75,7 +86,7 @@ export class ListaPrecoComponent implements OnInit {
     private router: Router,
     private responsive: BreakpointObserver,
     private activatedRoute: ActivatedRoute,
-    private spinner: SpinnerOverlayService,
+    private spinner: SpinnerOverlayService
   ) {
     this.columns = [
       {
@@ -101,7 +112,9 @@ export class ListaPrecoComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    //let pedido!: PedidoDB;
+
+    this.spinner.show();
+    
     this.responsive.observe([
       Breakpoints.HandsetPortrait,
     ]).subscribe(result => {
@@ -137,15 +150,9 @@ export class ListaPrecoComponent implements OnInit {
       fone2: ['', Validators.pattern(/^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4}|d{5})[-. ]?(\d{4})[-. ]?\s*$/)],
       pais: ['']
     });
-    await this.ObterListaDePreco();
-    if (this.dataService.condpg.length == 0) {
-      await this.dataService.obterCondPagto();
-    }
-    this.condpg = await this.dataService.condpg;
-    if (this.dataService.faixavl.length == 0) {
-      await this.dataService.obterFaixaValores();
-    }
-    this.faixavl = await this.dataService.faixavl;
+
+    await this.carregarSeletores();
+    
     this.idPedido = Number(this.activatedRoute.snapshot.params["id"]);
     if (this.idPedido > 0) {
       this.pedido = <PedidoDB>(await this.dataService.obterPedidoPorId(this.idPedido));
@@ -177,6 +184,64 @@ export class ListaPrecoComponent implements OnInit {
         }
       }
     }
+
+    this.spinner.hide();
+  }
+
+  private async carregarSeletores() {
+    let promises: Promise<void>[] = [];
+    if (this.dataService.familia.length == 0) {
+       promises.push(this.dataService.obterFamilia()) }
+    if (this.dataService.preco.length == 0) {
+       promises.push(this.dataService.obterProdPreco()); }
+    if (this.dataService.embalagem.length == 0) {
+       promises.push(this.dataService.ObterEmbalagem()); }
+    if (this.dataService.faixavl.length == 0) {
+      promises.push(this.dataService.obterFaixaValores()); }
+    if (this.dataService.condpg.length == 0) {
+      promises.push(this.dataService.obterCondPagto()); }
+    if (this.dataService.ncm.length == 0) {
+      promises.push(this.dataService.obterNCM()); }
+    if (this.dataService.grupo.length == 0) {
+      promises.push(this.dataService.obterGrupo()); }
+    if (this.dataService.vendedores_aux.length == 0) {
+      promises.push(this.dataService.preencherVendedores()); }
+    if (this.dataService.produto.length == 0) {
+        promises.push(this.dataService.obterProdutos()); }      
+    if (promises.length > 0) {
+        await Promise.allSettled(promises).
+          then((results) => results.forEach((result) => console.log(result.status))).
+          finally(async () => this.atualizarSeletores().then(() => {
+            console.log("Seletores atualizados...");
+          }));
+    }
+      else {
+        await this.atualizarSeletores().then(() => {
+          console.log("Seletores atualizados...");
+        });
+    }
+  }
+
+  private async atualizarSeletores() {
+    let produto = this.dataService.produto;
+    this.produto = produto;    
+    const familia = this.dataService.familia;
+    this.familia = familia;
+    const preco = this.dataService.preco;
+    this.preco = preco;
+    const embalagem = this.dataService.embalagem;
+    this.embalagem = embalagem;
+    const faixavl = this.dataService.faixavl
+    this.faixavl = faixavl;
+    const condpg = this.dataService.condpg;
+    this.condpg = condpg;
+    const ncm = this.dataService.ncm;
+    this.ncm = ncm;
+    const grupo = this.dataService.grupo;
+    this.grupo = grupo;
+    let vendedores = this.dataService.vendedores_aux;
+    this.vendedores = vendedores;
+    this.ObterListaDePreco();
   }
 
   edit(row: number, element: string) {
@@ -193,10 +258,10 @@ export class ListaPrecoComponent implements OnInit {
     }
   }
 
-  async applyFilter(event: Event) {
+  applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     if (filterValue.length == 0 || filterValue.length > 2) {
-      await this.ObterListaDePreco(filterValue);
+      this.ObterListaDePreco(filterValue);
     }
   }
 
@@ -222,7 +287,7 @@ export class ListaPrecoComponent implements OnInit {
       return data;
     }
     let groups = this.uniqueBy(
-      data.map(
+      data?.map(
         row => {
           let result = new Group();
           result.level = level + 1;
@@ -236,13 +301,13 @@ export class ListaPrecoComponent implements OnInit {
 
     const currentColumn = groupByColumns[level];
 
-    groups.forEach((group: { [x: string]: any; totalCounts: number; }) => {
+    groups?.forEach((group: { [x: string]: any; totalCounts: number; }) => {
       const rowsInGroup = data.filter(row => group[currentColumn] === row[currentColumn]);
       group.totalCounts = rowsInGroup.length;
       this.expandedSubProduto = [];
     });
 
-    groups = groups.sort((a: ProdutoDB, b: ProdutoDB) => {
+    groups = groups?.sort((a: ProdutoDB, b: ProdutoDB) => {
       const isAsc = 'asc';
       return this.compare(a.Id_Produto_Familia, b.Id_Produto_Familia, isAsc);
 
@@ -284,7 +349,7 @@ export class ListaPrecoComponent implements OnInit {
 
   uniqueBy(a: any, key: any) {
     const seen: any = {};
-    return a.filter((item: any) => {
+    return a?.filter((item: any) => {
       const k: string = key(item);
       return seen.hasOwnProperty(k) ? false : (seen[k] = true);
     });
@@ -344,17 +409,10 @@ export class ListaPrecoComponent implements OnInit {
     return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
   }
 
-  private async ObterListaDePreco(filterValue: string = '') {
-    await this.dataService.obterProdutos(filterValue).then(
-      (data: any) => {
-        data.forEach((item: any) => {
-          item.Id = item.Id;
-        });
-        this.allData = data.map((preco: Partial<ProdutoDB> | undefined) => new PedidoListaDto(preco));
-        this.dataSource.data = this.getGroups(this.allData, this.groupByColumns);
-      },
-      (err: any) => console.log(err)
-    );
+  private ObterListaDePreco(filterValue: string = '') {
+    this.allData = this.produto.filter(x => x.xProd.toLowerCase().includes(filterValue.toLowerCase())).map(prod => 
+      new PedidoListaDto(prod, this.familia, this.embalagem, this.preco));
+    this.dataSource.data = this.getGroups(this.allData, this.groupByColumns);
   }
 
   @HostListener('click', ['$event.target'])
@@ -385,13 +443,13 @@ export class ListaPrecoComponent implements OnInit {
     return this.columns;
   }
 
-  async Salvar() { // Salvar Pedido
+  async Salvar() {
     if (typeof this.idCondPagto == 'undefined' || this.idCondPagto == -1) {
       alert("Por favor, selecione a condição de pagamento antes de salvar o pedido.");
       return;
     }
     this.spinner.show();
-    const ncm: NCMDB[] = ncmJson;
+    const ncm = this.ncm; 
     let idCliente = 0;
     let uf = ''
     let salvarUltPedido: boolean = true;
@@ -433,7 +491,7 @@ export class ListaPrecoComponent implements OnInit {
     }
 
     if (idCliente > 0) {
-      let condpg = await this.dataService.obterCondPagtoPorId(this.idCondPagto); // environment.Id_Cond_Pagto[0]
+      let condpg = await this.dataService.obterCondPagtoPorId(this.idCondPagto);
       let pedido = new PedidoDB();
       if (this.idPedido && this.idPedido > 0) {
         pedido = <PedidoDB>(await this.dataService.obterPedidoPorId(this.idPedido)!);
@@ -458,27 +516,9 @@ export class ListaPrecoComponent implements OnInit {
         this.allData = this.allData.filter(function (x) { return x.qProd > 0 });
         const itensQtd = this.allData;
         itensQtd.map(item => {
-          // if (this.idPedido && this.idPedido > 0 && pedido.PedidosItens) {
-          //   let pedidoItem = pedido.PedidosItens.find(x => x.Id_Produto == item.Id);
-          //   if (pedidoItem) {
-          //     pedidoItem.qProd = item.qProd;
-          //     pedidoItem.vProd = item.vVenda;
-          //     pedidoItem.vMerc = pedidoItem.qProd * pedidoItem.vProd;
-          //   }
-          //   else {
-          //     let novoItem = new PedidoItemDB(item);
-          //     // @ts-expect-error Aqui vai ocorrer um erro, mas estou ignorando
-          //     delete novoItem['Id'];
-          //     novoItem.Id_Produto = item.Id;
-          //     novoItem.vProd = item.vVenda;
-          //     novoItem.vMerc = novoItem.qProd * novoItem.vProd;
-          //     pedido.PedidosItens.push(novoItem);
-          //   }
-          // }
-          // else {
           let pedidoItem = new PedidoItemDB();
           pedidoItem.Id_Produto = item.Id;
-          pedidoItem.NCM = ncm.find(x => item.Id_NCM == x.Id)?.NCM!;
+          pedidoItem.NCM = ncm?.find(x => item.Id_NCM == x.Id)?.NCM!;
           pedidoItem.CFOP = uf == 'SP' ? 5101 : 6101;
           pedidoItem.Unid = item.Unid;
           pedidoItem.cProd = item.cProd;
@@ -486,8 +526,9 @@ export class ListaPrecoComponent implements OnInit {
           pedidoItem.qProd = item.qProd;
           pedidoItem.vProd = item.vVenda;
           pedidoItem.vMerc = item.qProd * item.vVenda;
+          pedidoItem.Id_Produto_Familia = item.Id_Produto_Familia;
+          pedidoItem.Id_Produto_Grupo = item.Id_Produto_Grupo;
           pedido.PedidosItens.push(pedidoItem);
-          //}
           pedido.Totalizar();
         });
       }
@@ -527,7 +568,6 @@ export class ListaPrecoComponent implements OnInit {
       }
     }
     this.idFaixaValor = idFaixaValor;
-    //this.condpg = this.obterCondPagto();
   }
 
   Totalizar(): number {
@@ -545,6 +585,6 @@ export class ListaPrecoComponent implements OnInit {
   }
 
   obterVendedores() {
-    return db.vendedores_aux;
+    return this.vendedores;
   }
 }

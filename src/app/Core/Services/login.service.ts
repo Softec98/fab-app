@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { VendedorDB } from '../Entities/VendedorDB';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { DataService } from 'src/app/Infrastructure/Services/data.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class LoginService {
   constructor(
     protected dataService: DataService,
     private router: Router) {
-    this.dataService.cadastrarVendedoresSeNenhum();
+      if (environment.pathDB.toLowerCase() == "local")
+        this.dataService.cadastrarVendedoresSeNenhum();
     this.InicializarVendedor();
   }
 

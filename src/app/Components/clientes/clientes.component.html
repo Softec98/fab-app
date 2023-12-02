@@ -21,7 +21,7 @@
                                     *ngIf="exppanel.expanded">
                                     <mat-form-field appearance="outline">
                                         <mat-label>Tipo pessoa</mat-label>
-                                        <mat-select matInput placeholder="Tipo pessoa'" formControlName="Pessoa"
+                                        <mat-select matInput placeholder="Tipo pessoa" formControlName="Pessoa"
                                             (selectionChange)="onselect($event)">
                                             <mat-option value="-1">[ Selecione o tipo de pessoa ]</mat-option>
                                             <mat-option *ngFor="let pe of pessoas" [value]="pe.key">
@@ -93,7 +93,7 @@
                                     <button (click)="apagarCliente(row.Id)" mat-icon-button color="warn">
                                         <mat-icon>delete</mat-icon>
                                     </button>
-                                    <button (click)="openDialogImpressao(row.IdPedidoUltimo, 'print')" mat-icon-button
+                                    <button (click)="pedidoImpressaoService.openDialogImpressao(row.IdPedidoUltimo, 'print')" mat-icon-button
                                         color="accent" [hidden]="!(row.IdPedidoUltimo > 0)">
                                         <mat-icon>print</mat-icon>
                                     </button>

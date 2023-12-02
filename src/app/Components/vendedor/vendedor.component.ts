@@ -1,17 +1,17 @@
-
 import { Utils } from 'src/app/Utils/Utils';
 import { formatDate } from '@angular/common';
-import { db } from '../../Infrastructure/ApplicationDB';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RegiaoDB } from 'src/app/Core/Entities/RegiaoDB';
 import { VendedorDB } from 'src/app/Core/Entities/VendedorDB';
 import { EmpresaService } from '../../Core/Services/empresa.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { IVendedor_aux } from 'src/app/Core/Interfaces/IVendedor_aux';
 import { DataService } from '../../Infrastructure/Services/data.service';
 import { CriptografiaService } from 'src/app/Core/Services/criptografia.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import vendedor_validation from '../../../assets/data/validation/vendedor-validation.json';
 import { Component, Input, OnInit, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
+import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
 
 @Component({
   selector: 'app-vendedor',
@@ -23,7 +23,8 @@ export class VendedorComponent implements OnInit, AfterViewChecked {
   @Input() cnpj!: string;
   validation_messages = vendedor_validation;
   isPhonePortrait: boolean = false;
-  Regioes: RegiaoDB[] = [];
+  regiao: RegiaoDB[] = [];
+  vendedores: IVendedor_aux[] = [];
   public formVendedor!: FormGroup;
 
   foneMask = Utils.foneMask();
@@ -32,16 +33,35 @@ export class VendedorComponent implements OnInit, AfterViewChecked {
   constructor(
     protected cripto: CriptografiaService,
     protected dataService: DataService,
-    private responsive: BreakpointObserver,
     protected empresaService: EmpresaService,
+    private responsive: BreakpointObserver,
     private formBuilder: FormBuilder,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private readonly changeDetectorRef: ChangeDetectorRef,
-    //private datePipe: DatePipe
+    private spinner: SpinnerOverlayService
+    
   ) { }
 
+  private async carregarSeletores() {
+    const promise1 = this.dataService.obterRegiao();
+    const promise2 = this.dataService.preencherVendedores();
+    await Promise.allSettled([promise1, promise2]).
+      then((results) => results.forEach((result) => console.log(result.status))).
+      finally(async () => this.atualizarSeletores().then(() => {
+        console.log("Seletores atualizados...");
+      }));
+  }
+
+  private async atualizarSeletores() {
+    this.regiao = this.dataService.regiao;
+    this.vendedores = this.dataService.vendedores_aux;
+  }
+
   async ngOnInit(): Promise<void> {
+
+    this.spinner.show();
+
     let vendedor!: VendedorDB;
     this.responsive.observe([
       Breakpoints.HandsetPortrait,
@@ -51,9 +71,6 @@ export class VendedorComponent implements OnInit, AfterViewChecked {
         this.isPhonePortrait = true;
       }
     });
-
-    await this.dataService.obterRegiao();
-    this.Regioes = this.dataService.regiao;
 
     const idVendedor = Number(this.activatedRoute.snapshot.params["id"]);
     if (idVendedor) {
@@ -99,6 +116,10 @@ export class VendedorComponent implements OnInit, AfterViewChecked {
       fone2: [vendedor?.fone2.replace('9 ', '9').replace('(', '').replace(')', '').split(' ')[1]! ?? '', Validators.pattern(/^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4}|d{5})[-. ]?(\d{4})[-. ]?\s*$/)],
       celular: [vendedor?.Celular.replace('9 ', '9').replace('(', '').replace(')', '').split(' ')[1]! ?? '', Validators.pattern(/^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4}|d{5})[-. ]?(\d{4})[-. ]?\s*$/)],
     });
+
+    await this.carregarSeletores();
+
+    this.spinner.hide();
   }
 
   ngAfterViewChecked(): void {
@@ -136,7 +157,7 @@ export class VendedorComponent implements OnInit, AfterViewChecked {
     }
   }
 
-  async Salvar() { // Salvar Vendedor
+  async Salvar() {
     let cnpj: string = this.formVendedor.controls['documento'].value.match(/\d/g)?.join('');
     if (typeof cnpj !== 'undefined' && cnpj !== null && cnpj !== '' &&
       (cnpj.length == 11 || cnpj.length == 14) && this.formVendedor.controls['documento'].valid) {
@@ -165,13 +186,13 @@ export class VendedorComponent implements OnInit, AfterViewChecked {
   }
 
   obterVendedores() {
-    return db.vendedores_aux;
+    return this.vendedores;
   }
 
   public senhaPadrao() {
     const id = this.formVendedor.controls['id'].value;
     if (id > 0) {
-      const acesso = db.vendedores_aux.filter(x => x.key == id)[0].secret;
+      const acesso = this.vendedores.filter(x => x.key == id)[0].secret;
       this.formVendedor.patchValue({
         acesso: acesso
       });

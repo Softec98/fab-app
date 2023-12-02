@@ -18,5 +18,6 @@ export const environment = {
     1
   ],
   encryptSecretKey: 'Fab@2023@Softec98#&$!',
-  pageSizeOptions: [5, 10, 25, 100]
+  pageSizeOptions: [5, 10, 25, 100],
+  pathDB: "GoogleSheets" // "Local|GoogleSheets"
 };
