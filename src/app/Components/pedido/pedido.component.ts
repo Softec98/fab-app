@@ -125,9 +125,11 @@ export class PedidoComponent implements OnInit {
 
     await this.carregarSeletores();
 
-    let pedidos = [...await this.dataService.obterPedidos(
-      this.loginService.ObterIdUsuario(), 
-      this.loginService.IsAdministrador())].map(pedido => 
+    let pedidos: PedidoDto[] = [];
+    const tabela = await this.dataService.obterPedidos(
+      this.loginService.ObterIdUsuario(), this.loginService.IsAdministrador());
+    if (tabela) {
+      pedidos = [...tabela].map(pedido => 
         new PedidoDto(
           pedido, 
           this.clientes, 
@@ -138,31 +140,33 @@ export class PedidoComponent implements OnInit {
           this.grupo,
           this.embalagem,
           this.preco));
-
-    this.dataSource = new MatTableDataSource(pedidos);
-   
-    setTimeout(() => {
-      this.dataSource.paginator = this.paginator;
-    }, 0);
-    this.dataSource.sort = this.sort;
-    this.dataSource.filterPredicate =
-      (data: any, filter: string) => {
-        let retorno: boolean = true;
-        if (filter.includes(':')) {
-          const valor: string = filter.split(':')[1].toString();
-          if (valor !== '-1') {
-            const selectArray: string[] = ['Id_Cliente', 'Frete', 'Id_Status'];
-            const indice = selectArray.indexOf(filter.split(':')[0]);
-            if (indice > -1)
-              retorno = data[selectArray[indice]] == valor
-          }
-        }
-        else
-          retorno = filter.length < 3 || data.NomeCliente.toLowerCase().includes(filter) ? true : false;
-        return retorno;
+      if (pedidos) {
+        this.dataSource = new MatTableDataSource(pedidos);
       }
-    this.registros = pedidos.length + 1;
 
+      setTimeout(() => {
+        this.dataSource.paginator = this.paginator;
+      }, 0);
+
+      this.dataSource.sort = this.sort;
+      this.dataSource.filterPredicate =
+        (data: any, filter: string) => {
+          let retorno: boolean = true;
+          if (filter.includes(':')) {
+            const valor: string = filter.split(':')[1].toString();
+            if (valor !== '-1') {
+              const selectArray: string[] = ['Id_Cliente', 'Frete', 'Id_Status'];
+              const indice = selectArray.indexOf(filter.split(':')[0]);
+              if (indice > -1)
+                retorno = data[selectArray[indice]] == valor
+            }
+          }
+          else
+            retorno = filter.length < 3 || data.NomeCliente.toLowerCase().includes(filter) ? true : false;
+          return retorno;
+      }
+      this.registros = pedidos.length + 1;
+    }
     this.spinner.hide();
   }
 

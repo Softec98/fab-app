@@ -57,9 +57,13 @@ export class DataService {
      if (IsLocal) {
         retorno =  await db.CFOP.toArray(); }
      else {
-        retorno = [...(<any>await this.googleApiService.obterApi('CFOP')).
-          objetoRetorno]?.map(cf => new CFOPDB(cf)); }
-     this.cfop = retorno;
+        const tabela = (<any>await this.googleApiService.obterApi('CFOP')).objetoRetorno;
+        if (tabela) {
+          retorno = [...tabela].map(cf => new CFOPDB(cf)); 
+        }
+      }
+     if (retorno)
+      this.cfop = retorno;
     }
   }
 
@@ -426,12 +430,21 @@ export class DataService {
     }
     else {
       if (is_admin) {
-        retorno = [...(<any>await this.googleApiService.obterApi('Pedido')).
-          objetoRetorno]?.map(pedido => new PedidoDB(pedido));
+        await this.googleApiService.obterApi('Pedido').then(
+          (tabela: any) => {
+              if (tabela && tabela.isOk) {
+                retorno = [...tabela.objetoRetorno].map(pedido => new PedidoDB(pedido));
+              }
+            });
       }
       else {
-        retorno = [...(<any>await this.googleApiService.obterApi('Pedido')).
-          objetoRetorno]?.map(pedido => new PedidoDB(pedido)).filter(x => x.Id_Vendedor == id_vendedor);
+        await this.googleApiService.obterApi('Pedido').then(
+          (tabela: any) => {
+              if (tabela && tabela.isOk) {
+                retorno = [...tabela.objetoRetorno].map(pedido => new PedidoDB(pedido));
+                retorno = retorno.filter(x => x.Id_Vendedor == id_vendedor);
+              }
+            });
       }      
     }
     return retorno;

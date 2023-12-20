@@ -1,7 +1,10 @@
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { PlanilhaDto } from '../Dto/PlanilhaDto';
+import { Observable, retry, timeout } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { GoogleApiRequest } from '../Dto/GoogleApiRequest ';
 import { googleApiJson } from 'src/app/Infrastructure/ApplicationDB';
+import { UsuarioDto } from '../Dto/UsuarioDto';
 
 @Injectable({
   providedIn: 'root'
@@ -21,24 +24,66 @@ export class GoogleApiService {
   private vendedores: any;
   private faixaValor: any;
   private prodFamilia: any;
+  private Token: string | undefined;
     
-  constructor() { }
+  constructor(private http: HttpClient) { }
     
-  async obterApi(entidade: string, id?: string | undefined) : Promise<Observable<any | undefined>> {
-      let retorno = this.atualizarRetorno(entidade);
-      if (retorno && retorno !== undefined) 
-        return <any>retorno;
-      else
-        var urlApi = new GoogleApiRequest(googleApiJson, entidade, id?.toString()).url!      
-        return await fetch(urlApi).then(res => res.json())
-          .then(data => {
-            return this.atualizarRetorno(entidade, data);
-          });
-    }
+  async obterApi(entidade: string, id?: string | undefined) { // : Promise<Observable<any | undefined>> 
+    
+    if (!this.Token) {
+      var usuario = localStorage.getItem('usuario');
+      if (usuario) {
+        var usuarioDto = new UsuarioDto(JSON.parse(usuario));
+        if (usuarioDto)
+          this.Token = usuarioDto.Token;
+      }
+   }
+    
+    let retorno = this.atualizarRetorno(entidade);
+    if (retorno && retorno !== undefined) 
+      return <any>retorno;
+    else {
+      var tabela = localStorage.getItem(`Sales_${entidade}`);
+      if (tabela != null && tabela != 'undefined') {
+        var planilha = new PlanilhaDto(JSON.parse(tabela!));
+        if (planilha.objetoRetorno) {
+          return this.atualizarRetorno(entidade, planilha);
+        }
+      }
+      var urlApi = new GoogleApiRequest(googleApiJson, entidade, id?.toString()).url!
+      if (this.Token) {
+        urlApi += `${(urlApi.indexOf("?") == -1 ? '?' : '&')}Authorization=${this.Token}`;
+      }
+      // var data = this.http.get<any>(urlApi)
+      //                  .pipe(
+      //                      timeout(30000),
+      //                      retry(3)
+      //                  );
 
-    private atualizarRetorno(nome: string, entidade: any = undefined): any {
-      let retorno: any = entidade;
-      switch (nome) {
+      return await fetch(urlApi).then(res => res.json())
+        .then(data => {
+          return data;
+        });
+    }
+  }
+
+  async obterTokenApi(user: string, password: string) : Promise<Observable<any | undefined>> {
+    var urlApi = GoogleApiRequest.BuscarTokenApi(googleApiJson, user, password)!
+    // var data = this.http.get<any>(urlApi)
+    //   .pipe(
+    //       timeout(30000),
+    //       retry(3)
+    //   );   
+    return await fetch(urlApi).then(res => res.json())
+      .then(data => {
+        this.Token = data?.objetoRetorno?.Token!;
+        return data;
+      });
+  }
+
+  private atualizarRetorno(nome: string, entidade: any = undefined): any {
+    let retorno: any = entidade;
+    switch (nome) {
         case 'NCM':
           if (entidade !== undefined) {
             this.ncm = entidade; }
@@ -104,7 +149,7 @@ export class GoogleApiService {
             this.prodFamilia = entidade; }
           retorno = this.prodFamilia;
           break;
-      }
-      return retorno;
     }
+    return retorno;
+  }
 }

@@ -1,0 +1,14 @@
+<div class="d-flex margin-bottom-1">
+    <div class="flex-grow-1 font-size-small">{{barraProgresso.label_ini}}</div>
+    <div class="font-size-small">{{barraProgresso.label_fim}}</div>
+</div>
+<div class="d-flex flex-column margin-bottom-1">
+    <div class="barra-background"></div>
+    <div class="barra-progresso"
+         [style.width.%]="barraProgresso.progress"
+    ></div>
+</div>
+<div class="d-flex">
+    <div class="flex-grow-1"></div>
+    <div class="font-bold font-size-small">{{(progress / 100) | percent}}</div>
+</div>

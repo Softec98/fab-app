@@ -9,9 +9,9 @@ import { IVendedor_aux } from 'src/app/Core/Interfaces/IVendedor_aux';
 import { DataService } from '../../Infrastructure/Services/data.service';
 import { CriptografiaService } from 'src/app/Core/Services/criptografia.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
 import vendedor_validation from '../../../assets/data/validation/vendedor-validation.json';
 import { Component, Input, OnInit, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
-import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
 
 @Component({
   selector: 'app-vendedor',
@@ -104,7 +104,7 @@ export class VendedorComponent implements OnInit, AfterViewChecked {
       login: vendedor?.Login! ?? [''],
       acesso: vendedor?.Acesso! == null ? [''] : this.cripto.decryptData(vendedor?.Acesso!),
       nasc: vendedor?.DataNasc! ?? [''],
-      ultAcesso: new FormControl({ value: vendedor?.UltimoAcesso! == null ? '' : formatDate(vendedor?.UltimoAcesso!, 'yyyy-MM-ddTHH:mm', 'en'), disabled: true }),
+      ultAcesso: new FormControl({ value: ((vendedor?.UltimoAcesso! + '') === '') ? '' : formatDate(vendedor?.UltimoAcesso!, 'yyyy-MM-ddTHH:mm', 'en'), disabled: true }),
       idPai: vendedor?.IdPai! ?? [''],
       idRegiao: vendedor?.IdRegiao! ?? [''],
       isAdmin: vendedor?.IsAdmin! ?? [''],

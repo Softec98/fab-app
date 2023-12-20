@@ -23,6 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TextMaskModule } from 'angular2-text-mask';
@@ -51,6 +52,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
     MatTabsModule,
     TextMaskModule
@@ -73,6 +75,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     CdkAccordionModule,
     MatBottomSheetModule,
     MatPaginatorModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
     MatTabsModule,
     TextMaskModule,

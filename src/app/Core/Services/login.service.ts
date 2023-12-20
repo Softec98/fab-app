@@ -1,8 +1,6 @@
 import { Router } from '@angular/router';
-import { VendedorDB } from '../Entities/VendedorDB';
+import { UsuarioDto } from '../Dto/UsuarioDto';
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { DataService } from 'src/app/Infrastructure/Services/data.service';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,40 +8,23 @@ import { environment } from 'src/environments/environment';
 export class LoginService {
   @Output() obterNomeUsuario: EventEmitter<any> = new EventEmitter();
   @Output() isAdmin: EventEmitter<any> = new EventEmitter();
+  @Output() BarraProgresso: EventEmitter<any> = new EventEmitter();
+  @Output() TabelaBarProgr: EventEmitter<any> = new EventEmitter();  
   private NomeUsuario: string = '';
   private IsAdmin: boolean = false;
   private IdUsuario: number = 0;
   private IdUsuarioPai: number = 0;
 
   constructor(
-    protected dataService: DataService,
-    private router: Router) {
-      if (environment.pathDB.toLowerCase() == "local")
-        this.dataService.cadastrarVendedoresSeNenhum();
-    this.InicializarVendedor();
-  }
-
-  async login(login: string, senha: string): Promise<boolean> {
-    const vendedor = await this.dataService.obterVendedorPelasCredenciais(login, senha);
-    if (vendedor) {
-      localStorage.setItem('usuario', JSON.stringify(vendedor));
-      this.obterNomeUsuario.emit(vendedor.xContato.split(',')[0]);
-      this.isAdmin.emit(vendedor.IsAdmin);
-      this.InicializarVendedor();
-      return true;
-    } else {
-      this.obterNomeUsuario.emit(undefined);
-      return false;
-    }
-  }
+    private router: Router) { }
 
   logout(): void {
-    const vendedor = JSON.parse(localStorage.getItem('usuario')!) as VendedorDB;
-    if (vendedor) {
+    const usuario = JSON.parse(localStorage.getItem('usuario')!) as UsuarioDto;
+    if (usuario) {
       if (confirm('Deseja realmente fazer logout?')) {
         localStorage.removeItem('usuario');
-        alert(`Até logo, ${vendedor.xContato.split(',')[0]}!`);
-        this.obterNomeUsuario.emit(undefined);
+        this.InicializarVendedor();
+        alert(`Até logo, ${usuario.xContato.split(',')[0]}!`);
         this.router.navigate(['login']);
       }
     }
@@ -65,17 +46,19 @@ export class LoginService {
     return this.IdUsuarioPai > 0 ? this.IdUsuarioPai : this.IdUsuario;
   }
 
-  private InicializarVendedor(): void {
+  public InicializarVendedor(): void {
     this.NomeUsuario = '';
     this.IsAdmin = false;
     this.IdUsuario = 0;
     this.IdUsuarioPai = 0;
-    const vendedor = JSON.parse(localStorage.getItem('usuario')!) as VendedorDB;
-    if (vendedor) {
-      this.NomeUsuario = vendedor.xNome;
-      this.IsAdmin = vendedor.IsAdmin;
-      this.IdUsuario = vendedor.Id;
-      this.IdUsuarioPai = vendedor.IdPai ?? 0;
+    const usuario = JSON.parse(localStorage.getItem('usuario')!) as UsuarioDto;
+    if (usuario) {
+      this.NomeUsuario = usuario.xNome;
+      this.IsAdmin =  Boolean(usuario.IsAdmin);
+      this.IdUsuario = usuario.Id;
+      this.IdUsuarioPai = usuario.IdPai ?? 0;
     }
+    this.obterNomeUsuario.emit(usuario?.xContato?.split(',')[0]!);
+    this.isAdmin.emit(usuario?.IsAdmin!);
   }
 }

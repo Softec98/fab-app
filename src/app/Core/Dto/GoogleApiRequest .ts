@@ -10,12 +10,23 @@ export class GoogleApiRequest {
     }
 
     BuscarApi(jsonData: any) {
-        const apiEndpoint = jsonData.endpoints.find((endpoint: any) => endpoint.name === `Sales_${this.name}`);
-        if (apiEndpoint) {
-          const url = `${jsonData.baseurl}/${apiEndpoint.url}/exec?action=getInfo` + 
-            (this.id ? `&id=${this.id}` : '');
-          this.url = url;
-        } else
-          console.error(`O Endpoint '${this.name}' não foi encontrado.`);
-      }
+      const apiEndpoint = jsonData.endpoints.find((endpoint: any) => endpoint.name === `Sales_${this.name}`);
+      if (apiEndpoint) {
+        const url = `${jsonData.baseurl}/${apiEndpoint.url}/exec?action=getInfo` + 
+          (this.id ? `&id=${this.id}` : '');
+        this.url = url;
+      } else
+        console.error(`O Endpoint '${this.name}' não foi encontrado.`);
+    }
+
+    public static BuscarTokenApi(jsonData: any, user: string, pw: string) {
+      let url = '';
+      const apiEndpoint = jsonData.endpoints.find((endpoint: any) => endpoint.name === 'Sales_Vendedor');
+      if (apiEndpoint) {
+           url = `${jsonData.baseurl}/${apiEndpoint.url}/exec?action=getToken` + 
+          (user && pw ? `&user=${user}&password=${pw}` : '');
+      } else {
+        console.error(`O Endpoint 'GetToken' não foi encontrado.`); }
+      return url;
+    }    
  }

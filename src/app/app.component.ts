@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { UsuarioDto } from './Core/Dto/UsuarioDto';
 import { ETheme } from '../app/Core/ENums/ETheme.enum';
-import { VendedorDB } from './Core/Entities/VendedorDB';
 import { MenuService } from './Core/Services/menu.service';
 import { LoginService } from './Core/Services/login.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -45,10 +45,10 @@ export class AppComponent {
         if (!result.matches)
           this.hideSideMenu = true;
       });
-    const vendedor = JSON.parse(localStorage.getItem('usuario')!) as VendedorDB;
-    if (vendedor) {
-      this.saudacao = `Oi ${vendedor.xContato.split(',')[0]}!`;
-      this.isAdmin = vendedor.IsAdmin;
+    const usuario = JSON.parse(localStorage.getItem('usuario')!) as UsuarioDto;
+    if (usuario) {
+      this.saudacao = `Oi ${usuario.xContato.split(',')[0]}!`;
+      this.isAdmin = usuario.IsAdmin;
     }
   }
 

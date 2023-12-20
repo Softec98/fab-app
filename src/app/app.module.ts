@@ -40,6 +40,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { PromptComponent } from './Components/prompt/prompt.component';
 import { PwaService } from './Core/Services/pwa.service';
+import { BarraProgressoComponent } from './Components/barra-progresso/barra-progresso.component';
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
 
@@ -84,7 +85,8 @@ export const MY_FORMATS = {
     VendedorImpressaoComponent,
     VendedorComponent,
     DatePickerComponent,
-    PromptComponent
+    PromptComponent,
+    BarraProgressoComponent
   ],
   imports: [
     NgxPrintModule, 
