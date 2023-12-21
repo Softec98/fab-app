@@ -16,15 +16,16 @@ import { BarraProgressoService } from 'src/app/Core/Services/barra.progresso.ser
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  barraProgresso: IBarraProgresso = 
-    { 
-      label_ini: 'Carregando...', 
-      label_fim: '', 
-      count: 0, 
-      progress: 1, 
-      increment: 0, 
-      show: true 
-    } as IBarraProgresso;
+  barraProgresso!: IBarraProgresso;
+  //  = 
+  //   { 
+  //     label_ini: 'Carregando...', 
+  //     label_fim: '', 
+  //     count: 0, 
+  //     progress: 1, 
+  //     increment: 0, 
+  //     show: true 
+  //   } as IBarraProgresso;
   erro: boolean = false;
   constructor(
     public loginService: LoginService,
@@ -46,7 +47,7 @@ export class LoginComponent {
         }
         else {
           this.spinner.show();
-          this.barraProgresso.show = true;
+          //this.barraProgresso.show = true;
           usuario = (await <any>this.googleApiService.obterTokenApi(login, senha)).objetoRetorno as UsuarioDto;
           if (usuario) {
               let incremento: number;
@@ -59,9 +60,9 @@ export class LoginComponent {
                         planilhaArray = planilhaArray.filter(x => x.Atualiza == true);
                         incremento = 100 / (planilhaArray.length + 1);
                         progresso = incremento;
-                        this.barraProgresso.increment = incremento;
-                        this.barraProgresso.progress = incremento;
-                        this.barraProgressoService.updateProgress(progresso); //this.barraProgresso
+                        // this.barraProgresso.increment = incremento;
+                        // this.barraProgresso.progress = incremento;
+                        // this.barraProgressoService.updateProgress(progresso);
                         let isGravar: boolean = false;
                         planilhaArray.forEach(async x => {
                             let planilha = new PlanilhaDto(x);
@@ -86,11 +87,11 @@ export class LoginComponent {
                                   });
                             }
                             progresso += incremento;
-                            this.barraProgresso.progress = progresso;
-                            this.barraProgresso.label_ini = `Carregando ${planilha.Tabela.replace("Sales_", "")} ...`;
-                            this.barraProgressoService.updateProgress(progresso); //this.barraProgresso
+                            // this.barraProgresso.progress = progresso;
+                            // this.barraProgresso.label_ini = `Carregando ${planilha.Tabela.replace("Sales_", "")} ...`;
+                            // this.barraProgressoService.updateProgress(progresso);
                             if (progresso > 99) {
-                              //this.spinner.hide();
+                              this.spinner.hide();
                               this.router.navigate(['/home']);
                             }
                           },
@@ -102,9 +103,9 @@ export class LoginComponent {
         if (usuario) {
           localStorage.setItem('usuario', JSON.stringify(usuario));
           this.loginService.InicializarVendedor();
-          this.barraProgresso.show = false;
+          //this.barraProgresso.show = false;
           this.spinner.hide();
-          //this.router.navigate(['/home']);
+          this.router.navigate(['/home']);
         } else {
           this.loginService.InicializarVendedor();
           this.barraProgresso.show = false;

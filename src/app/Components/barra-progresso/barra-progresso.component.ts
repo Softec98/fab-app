@@ -11,7 +11,15 @@ import { BarraProgressoService } from 'src/app/Core/Services/barra.progresso.ser
 export class BarraProgressoComponent implements OnInit {
 
   progress: number = 0;
-  barraProgresso!: IBarraProgresso; 
+  barraProgresso: IBarraProgresso = 
+  { 
+    label_ini: 'Carregando...', 
+    label_fim: '', 
+    count: 0, 
+    progress: 15, 
+    increment: 10, 
+    show: true 
+  } as IBarraProgresso;
   private progressSubscription: Subscription = new Subscription();
 
   constructor(private barraProgressoService: BarraProgressoService) { }
