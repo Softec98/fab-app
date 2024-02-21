@@ -453,19 +453,20 @@ export class ListaPrecoComponent implements OnInit {
     let idCliente = 0;
     let uf = ''
     let salvarUltPedido: boolean = true;
+    let salvarVendedor: boolean = false;
     let cnpj: string = this.form.controls['cnpj'].value.match(/\d/g)?.join('');
     if (typeof cnpj !== 'undefined' && cnpj !== null && cnpj !== '' &&
       (cnpj.length == 11 || cnpj.length == 14) && this.form.controls['cnpj'].valid) {
       let cliente = new ClienteDB();
-      if (this.form.controls['id'].value != '0') {
-        cliente.Id = this.form.controls['id'].value;
+      cliente.Id = this.form.controls['id'].value;
+      if (this.form.controls['id'].value !== '0') {
         if (cliente.Id && cliente.Id > 0) {
           cliente = <ClienteDB>(await this.dataService.obterClientePorId(cliente.Id));
           salvarUltPedido = false;
         }
       }
       else {
-        cliente.Id_Vendedor = this.loginService.ObterIdUsuarioPai();
+        salvarVendedor = true;
       }
       cliente.CNPJ = cnpj;
       cliente.IE = this.form.controls['IE'].value;
@@ -478,11 +479,14 @@ export class ListaPrecoComponent implements OnInit {
       cliente.cBairro = this.form.controls['bairro'].value;
       cliente.xMun = this.form.controls['cidade'].value;
       cliente.UF = this.form.controls['uf'].value;
-      cliente.indME = this.form.controls['me'].value;
       cliente.cPais = this.form.controls['pais'].value;
-      cliente.email = this.form.controls['email'].value;
       cliente.fone = this.form.controls['ddd'].value + ' ' + this.form.controls['fone'].value;
       cliente.fone2 = this.form.controls['ddd2'].value + ' ' + this.form.controls['fone2'].value;
+      cliente.email = this.form.controls['email'].value;
+      cliente.indME = this.form.controls['me'].value;
+      if (salvarVendedor) {
+        cliente.Id_Vendedor = this.loginService.ObterIdUsuarioPai();
+      }
       uf = cliente.UF;
       idCliente = await this.dataService.salvarCliente(cliente);
       this.form.patchValue({

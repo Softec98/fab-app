@@ -12,8 +12,8 @@ export class GoogleApiRequest {
     BuscarApi(jsonData: any) {
       const apiEndpoint = jsonData.endpoints.find((endpoint: any) => endpoint.name === `Sales_${this.name}`);
       if (apiEndpoint) {
-        const url = `${jsonData.baseurl}/${apiEndpoint.url}/exec?action=getInfo` + 
-          (this.id ? `&id=${this.id}` : '');
+        const url = `${jsonData.baseurl}/${apiEndpoint.url}/exec` + 
+          (this.id ? `?id=${this.id}` : '');
         this.url = url;
       } else
         console.error(`O Endpoint '${this.name}' não foi encontrado.`);

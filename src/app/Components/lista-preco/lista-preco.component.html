@@ -79,6 +79,7 @@
             style="margin: 15px 0 15px 0; padding-left: 10px;">
 
             <ng-container [formGroup]="form">
+                <input matInput formControlName="id" [hidden]="true" value="0">
                 <app-cliente cnpj="{{ form.controls['cnpj'].value }}"></app-cliente>
             </ng-container>
 

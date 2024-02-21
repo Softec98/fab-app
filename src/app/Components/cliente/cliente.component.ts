@@ -8,6 +8,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DataService } from '../../Infrastructure/Services/data.service';
 import cliente_validation from '../../../assets/data/validation/cliente-validation.json';
 import { Component, Input, ViewChild, ElementRef, OnInit, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
+import { SpinnerOverlayService } from 'src/app/Core/Services/spinner-overlay.service';
 
 @Component({
 	selector: 'app-cliente',
@@ -34,7 +35,8 @@ export class ClienteComponent implements OnInit, AfterViewChecked {
 		private responsive: BreakpointObserver,
 		protected empresaService: EmpresaService,
 		private rootFormGroup: FormGroupDirective,
-		private readonly changeDetectorRef: ChangeDetectorRef
+		private readonly changeDetectorRef: ChangeDetectorRef,
+		private readonly spinner: SpinnerOverlayService
 	) { }
 
 	private async carregarSeletores() {
@@ -49,6 +51,9 @@ export class ClienteComponent implements OnInit, AfterViewChecked {
 	}	
 
 	async ngOnInit(): Promise<void> {
+		
+		this.spinner.show();
+
 		this.formCliente = this.rootFormGroup.control;
 		this.responsive.observe([
 			Breakpoints.HandsetPortrait,
@@ -66,6 +71,8 @@ export class ClienteComponent implements OnInit, AfterViewChecked {
 				await this.BuscarEmpresaIcon(this.cnpj);
 			}
 		}, 0);
+
+		this.spinner.hide();
 	}
 
 	async ngAfterViewInit(): Promise<void> {

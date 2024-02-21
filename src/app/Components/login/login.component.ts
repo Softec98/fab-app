@@ -57,6 +57,7 @@ export class LoginComponent {
                   (planilha: any) => {
                       if (planilha && planilha.isOk) {
                         planilhaArray = planilha.objetoRetorno as PlanilhaDto[];
+                        this.googleApiService.planilhas = planilhaArray;
                         planilhaArray = planilhaArray.filter(x => x.Atualiza == true);
                         incremento = 100 / (planilhaArray.length + 1);
                         progresso = incremento;

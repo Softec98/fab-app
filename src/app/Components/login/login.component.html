@@ -14,7 +14,7 @@
                     <div class="coluna">
                         <mat-form-field appearance="outline">
                             <mat-label>Login</mat-label>
-                            <input matInput placeholder="Login" #inputLogin autofocus maxlength="6">
+                            <input matInput placeholder="Login" #inputLogin autofocus maxlength="8">
                         </mat-form-field>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     <div class="coluna">
                         <mat-form-field appearance="outline">
                             <mat-label>Senha</mat-label>
-                            <input matInput placeholder="Senha" #inputSenha type="password" maxlength="6"
+                            <input matInput placeholder="Senha" #inputSenha type="password" maxlength="20"
                                 (keyup.enter)="login(inputLogin.value, inputSenha.value)">
                         </mat-form-field>
                     </div>

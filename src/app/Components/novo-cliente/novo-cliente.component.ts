@@ -29,8 +29,6 @@ export class NovoClienteComponent implements OnInit, AfterViewChecked {
 
   async ngOnInit(): Promise<void> {
 
-    this.spinner.show();
-
     let cliente!: ClienteDB;
     this.responsive.observe([
       Breakpoints.HandsetPortrait,
@@ -43,7 +41,7 @@ export class NovoClienteComponent implements OnInit, AfterViewChecked {
 
     const idCliente = Number(this.activatedRoute.snapshot.params["id"]);
     if (idCliente) {
-      cliente = <ClienteDB>(await this.dataService.obterClientePorId(idCliente));
+      cliente = new ClienteDB(await this.dataService.obterClientePorId(idCliente));
     }
 
     this.form = this.formBuilder.group({
@@ -75,8 +73,6 @@ export class NovoClienteComponent implements OnInit, AfterViewChecked {
       pais: [cliente?.cPais! ?? ''],
       idPedidoUltimo: [cliente.IdPedidoUltimo ?? '']
     });
-
-    this.spinner.hide();
   }
 
   ngAfterViewChecked(): void {
@@ -84,13 +80,14 @@ export class NovoClienteComponent implements OnInit, AfterViewChecked {
   }
 
   async Salvar() { // Salvar Cliente
-    let cnpj: string = this.form.controls['cnpj'].value.match(/\d/g)?.join('');
+    let cnpj: string = this.form.controls['cnpj'].value.toString().match(/\d/g)?.join('');
     if (typeof cnpj !== 'undefined' && cnpj !== null && cnpj !== '' &&
       (cnpj.length == 11 || cnpj.length == 14) && this.form.controls['cnpj'].valid) {
+        this.spinner.show();  
       let cliente = new ClienteDB();
-      if (this.form.controls['id'].value != '0') {
+      //if (this.form.controls['id'].value !== '0') {
         cliente.Id = this.form.controls['id'].value;
-      }
+      //}
       cliente.CNPJ = cnpj;
       cliente.IE = this.form.controls['IE'].value;
       cliente.xNome = this.form.controls['nome'].value;
@@ -108,9 +105,12 @@ export class NovoClienteComponent implements OnInit, AfterViewChecked {
       cliente.fone = this.form.controls['ddd'].value + ' ' + this.form.controls['fone'].value;
       cliente.fone2 = this.form.controls['ddd2'].value + ' ' + this.form.controls['fone2'].value;
       cliente.IdPedidoUltimo = this.form.controls['idPedidoUltimo'].value;
-      await this.dataService.salvarCliente(cliente);
+      var retorno = await this.dataService.salvarCliente(cliente);
+      this.spinner.hide();
+      if (retorno != null) {
+        alert(retorno.mensagem);
+      }
     }
-    alert("O cliente foi salvo com sucesso!");
     this.router.navigate(['/clientes']);
   }
 }

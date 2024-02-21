@@ -19,6 +19,8 @@ import { IVendedor_aux } from 'src/app/Core/Interfaces/IVendedor_aux';
 import { ProdutoFamiliaDB } from 'src/app/Core/Entities/ProdutoFamiliaDB';
 import { GoogleApiService } from 'src/app/Core/Services/google.api.service';
 import { CriptografiaService } from 'src/app/Core/Services/criptografia.service';
+import { lastValueFrom } from 'rxjs';
+import { PlanilhaDto } from 'src/app/Core/Dto/PlanilhaDto';
 
 @Injectable({
   providedIn: 'root'
@@ -260,8 +262,9 @@ export class DataService {
       retorno = await db.Clientes.get(id); }
     else {
       await this.googleApiService.obterApi('Cliente', id.toString()).then((data: any) => {
-        retorno = [...data.objetoRetorno].map(cliente => new ClienteDB(cliente))[0];
-      });  
+        retorno = [...data.objetoRetorno].map(cliente => 
+          new ClienteDB(cliente)).filter(x => x.Id == id)[0];
+      });
     }
     return retorno;
   }
@@ -276,17 +279,32 @@ export class DataService {
     return retorno;
   }
 
-  async salvarCliente(data: ClienteDB): Promise<number> {
-    await db.transaction('rw', db.Clientes, function () {
-      db.Clientes.put(data);
-    }).catch(function (err) {
-      console.error(err.stack || err);
-    });
-    db.clientes_aux = [];
-    (await db.Clientes.toArray()).forEach(cliente => {
-      db.clientes_aux.push({ key: cliente.Id, value: cliente.xNome })
-    });
-    return data.Id;
+  async salvarCliente(data: ClienteDB) {
+    let retorno: any;
+    if (IsLocal) {
+      await db.transaction('rw', db.Clientes, function () {
+        db.Clientes.put(data);
+      }).catch(function (err) {
+        console.error(err.stack || err);
+      });
+      db.clientes_aux = [];
+      (await db.Clientes.toArray()).forEach(cliente => {
+        db.clientes_aux.push({ key: cliente.Id, value: cliente.xNome })
+      });
+      retorno = data;
+    }
+    else {
+        let retorno$ = this.googleApiService.postarApi('Cliente', data);
+        retorno = await lastValueFrom(retorno$);
+        var planilha = localStorage.getItem(`Sales_Cliente`);
+        if (planilha) {
+          var dto = new PlanilhaDto(JSON.parse(planilha));
+          dto.objetoRetorno = dto.objetoRetorno.filter((x: { Id: number; }) => x.Id !== retorno.objetoRetorno.Id);
+          dto.objetoRetorno.push(retorno.objetoRetorno);
+          localStorage.setItem(`Sales_Cliente`, JSON.stringify(dto));
+        }        
+    }
+    return retorno;
   }
 
   async salvarVendedor(data: VendedorDB): Promise<number> {
@@ -501,7 +519,7 @@ export class DataService {
       ([...(<any>await this.googleApiService.obterApi('Vendedor')).objetoRetorno].
         map(vend => new VendedorDB(vend))).filter(x => x.Login == login && this.cripto.decryptData(x.Acesso) == acesso)[0];
 
-    if (vendedor) {
+    if (IsLocal && vendedor) {
       vendedor.UltimoAcesso = new Date();
       await this.salvarVendedor(vendedor);
     }

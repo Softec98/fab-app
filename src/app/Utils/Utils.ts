@@ -29,7 +29,7 @@ export class Utils {
 
     static isDocumento() {
         return (control: AbstractControl): Validators => {
-            let documento = control.value.replace(/[^0-9]+/g, '')
+            let documento = control.value.toString().replace(/[^0-9]+/g, '')
             switch (documento.length) {
                 case 11: {
                     return this.isValidCpf(documento)
